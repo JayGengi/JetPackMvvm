@@ -16,7 +16,7 @@
 -optimizations !code/simplification/artithmetic,!field/*,!class/merging/*
 
 
--keep class me.hgj.jetpackmvvm.demo.data.**{*;}
+-keep class com.duobang.jetpackmvvm.demo.data.**{*;}
 
 ################common###############
 
@@ -70,7 +70,7 @@
 -keep class com.tbruyelle.rxpermissions2.** { *; }
 -keep interface com.tbruyelle.rxpermissions2.** { *; }
 
--keep class me.hgj.jetpackmvvm.demo.data.model.bean.**{ *; }
+-keep class com.duobang.jetpackmvvm.demo.data.model.bean.**{ *; }
 
 # 保留自定义控件(继承自View)不能被混淆
 -keep public class * extends android.view.View {

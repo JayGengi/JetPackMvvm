@@ -1,34 +1,12 @@
-[![Platform][1]][2] [![GitHub license][3]][4]  [![GitHub license][5]][6] 
 
-[1]:https://img.shields.io/badge/platform-Android-blue.svg  
-[2]:https://github.com/hegaojian/JetpackMvvm
-[3]:https://img.shields.io/github/release/hegaojian/JetpackMvvm.svg
-[4]:https://github.com/hegaojian/JetpackMvvm/releases/latest
-[5]:https://img.shields.io/badge/license-Apache%202-blue.svg
-[6]:https://github.com/hegaojian/JetpackMvvm/blob/master/LICENSE
-
-# :chicken::chicken::chicken:JetPackMvvm
+# JetPackMvvm
 - **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation组件**
 - **使用kotlin语言，添加大量拓展函数，简化代码**
 - **加入Retrofit网络请求,协程，帮你简化各种操作，让你快速请求网络**  
 
-## 演示Demo
- 已用该库重构了我之前的玩安卓项目，利用Navigation组件以单Activity+Fragment架构编写，优化了很多代码，对比之前的mvp项目，开发效率与舒适度要提高了不少，想看之前MVP的项目可以去 [https://github.com/hegaojian/WanAndroid](https://github.com/hegaojian/WanAndroid) 
+ 利用Navigation组件以单Activity+Fragment架构编写，开发效率与舒适度要提高了不少
  
-#### 效果图展示 
-![项目效果图](https://upload-images.jianshu.io/upload_images/9305757-818106225dd01e65.gif?imageMogr2/auto-orient/strip)
- 
-#### APK下载：
 
-- [Github下载](https://github.com/hegaojian/JetpackMvvm/releases/download/1.1.8/app-release.apk)
-
-- [firm下载(推荐)](http://d.6short.com/v9q7)
-
-- 扫码下载(推荐)
-
-![](https://upload-images.jianshu.io/upload_images/9305757-4999111e26d5e93a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-  
-  
 ## 1.如何集成
 
 - **1.1 在root's build.gradle中加入Jitpack仓库**
@@ -39,15 +17,6 @@ allprojects {
         ...
         maven { url 'https://jitpack.io' }
     }
-}
-```
-
-- **1.2 在app's build.gradle中添加依赖**
-
-```
-dependencies {
-  ...
-  implementation 'me.hegj:JetpackMvvm:1.1.9'
 }
 ```
 
@@ -434,29 +403,5 @@ private val mainViewModel by lazy { getAppViewModel<MainViewModel>()}
  me.hgj.jetpackmvvm.ext.util
  me.hgj.jetpackmvvm.ext.view
  的包中看，反正你也可以自己写，按照自己的喜好与需求来
-```
-
-## 感谢
-- [Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice)
-- [重学安卓](https://xiaozhuanlan.com/kunminx?rel=8184827882)
-
-## 联系
-- QQ交流群：419581249
-
-## License
-```
- Copyright 2019, hegaojian(何高建)       
-  
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at 
- 
-       http://www.apache.org/licenses/LICENSE-2.0 
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
 ```
 

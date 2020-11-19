@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="me.hgj.jetpackmvvm.demo">
+    package="com.duobang.jetpackmvvm.pms">
 
-    <uses-sdk tools:overrideLibrary="me.hgj.jetpackmvvm" />
+    <uses-sdk tools:overrideLibrary="com.duobang.jetpackmvvm" />
 
     <application
         android:name=".app.App"
@@ -32,10 +32,6 @@
         <activity
             android:name=".ui.activity.ErrorActivity"
             android:label="错误界面"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.TestActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

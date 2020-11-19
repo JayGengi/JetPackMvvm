@@ -1,2 +1,1 @@
 include ':app', ':JetpackMvvm'
-rootProject.name='JetpackMvvmDemo'

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="click"
-            type="me.hgj.jetpackmvvm.demo.ui.activity.WelcomeActivity.ProxyClick" />
+            type="com.duobang.jetpackmvvm.pms.ui.activity.WelcomeActivity.ProxyClick" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

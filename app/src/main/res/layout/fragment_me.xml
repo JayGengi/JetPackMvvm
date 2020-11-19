@@ -8,11 +8,11 @@
 
         <variable
             name="vm"
-            type="me.hgj.jetpackmvvm.demo.viewmodel.state.MeViewModel" />
+            type="com.duobang.jetpackmvvm.pms.viewmodel.state.MeViewModel" />
 
         <variable
             name="click"
-            type="me.hgj.jetpackmvvm.demo.ui.fragment.me.MeFragment.ProxyClick" />
+            type="com.duobang.jetpackmvvm.pms.ui.fragment.me.MeFragment.ProxyClick" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
