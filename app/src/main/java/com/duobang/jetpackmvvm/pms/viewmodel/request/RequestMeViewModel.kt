@@ -8,7 +8,7 @@ import com.duobang.jetpackmvvm.pms.data.model.bean.IntegralResponse
 import com.duobang.jetpackmvvm.state.ResultState
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/27
  * 描述　:
  */

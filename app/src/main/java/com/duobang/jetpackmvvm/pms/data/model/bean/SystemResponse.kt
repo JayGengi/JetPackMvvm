@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 /**
  *  体系数据
-  * @Author:         hegaojian
+  * @Author:         JayGengi
   * @CreateDate:     2019/8/21 15:46
  */
 @SuppressLint("ParcelCreator")

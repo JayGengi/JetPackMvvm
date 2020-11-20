@@ -16,7 +16,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 网络请求构建器，继承BasenetworkApi 并实现setHttpClientBuilder/setRetrofitBuilder方法，
  * 在这里可以添加拦截器，设置构造器可以对Builder做任意操作

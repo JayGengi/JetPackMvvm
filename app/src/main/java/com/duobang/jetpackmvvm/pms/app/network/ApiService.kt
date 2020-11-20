@@ -4,7 +4,7 @@ import com.duobang.jetpackmvvm.pms.data.model.bean.*
 import retrofit2.http.*
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 网络API
  */

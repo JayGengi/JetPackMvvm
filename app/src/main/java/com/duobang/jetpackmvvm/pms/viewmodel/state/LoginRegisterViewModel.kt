@@ -6,7 +6,7 @@ import com.duobang.jetpackmvvm.callback.databind.StringObservableField
 import com.duobang.jetpackmvvm.callback.livedata.StringLiveData
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　:登录注册的ViewModel
  */

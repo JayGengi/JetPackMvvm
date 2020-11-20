@@ -6,7 +6,7 @@ import android.view.View
 
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/4/24
  * 描述　:
  */

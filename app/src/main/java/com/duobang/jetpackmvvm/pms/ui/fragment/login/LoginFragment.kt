@@ -21,7 +21,7 @@ import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.jetpackmvvm.pms.app.base.BaseFragment
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 登录页面
  */

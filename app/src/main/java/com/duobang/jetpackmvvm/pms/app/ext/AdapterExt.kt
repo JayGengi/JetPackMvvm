@@ -4,7 +4,7 @@ import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/4/16
  * 描述　:
  */

@@ -1,7 +1,7 @@
 package com.duobang.jetpackmvvm.pms.data.model.bean
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/3/4
  * 描述　:
  */

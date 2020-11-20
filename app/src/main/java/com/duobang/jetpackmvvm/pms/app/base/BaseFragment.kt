@@ -13,7 +13,7 @@ import com.duobang.jetpackmvvm.pms.app.event.AppViewModel
 import com.duobang.jetpackmvvm.pms.app.event.EventViewModel
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/21
  * 描述　: 你项目中的Fragment基类，在这里实现显示弹窗，吐司，还有自己的需求操作 ，如果不想用Databind，请继承
  * BaseVmFragment例如

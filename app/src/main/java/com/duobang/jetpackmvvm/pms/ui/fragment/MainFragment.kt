@@ -14,7 +14,7 @@ import com.duobang.jetpackmvvm.pms.viewmodel.state.MainViewModel
 
 /**
  * 时间　: 2019/12/27
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 描述　:项目主页Fragment
  */
 class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {

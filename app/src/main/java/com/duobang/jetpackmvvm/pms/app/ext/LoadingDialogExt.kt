@@ -15,7 +15,7 @@ import com.duobang.jetpackmvvm.pms.app.util.ColorUtil
 import com.duobang.jetpackmvvm.pms.app.util.SettingUtil
 
 /**
- * @author : hgj
+ * @author : JayGengi
  * @date : 2020/6/28
  */
 

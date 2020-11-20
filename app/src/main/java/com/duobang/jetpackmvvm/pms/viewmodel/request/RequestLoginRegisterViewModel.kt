@@ -9,7 +9,7 @@ import com.duobang.jetpackmvvm.ext.request
 import com.duobang.jetpackmvvm.state.ResultState
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　:登录注册的请求ViewModel
  */

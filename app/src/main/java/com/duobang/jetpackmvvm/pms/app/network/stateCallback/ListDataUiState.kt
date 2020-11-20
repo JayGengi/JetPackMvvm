@@ -1,7 +1,7 @@
 package com.duobang.jetpackmvvm.pms.app.network.stateCallback
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/3/3
  * 描述　: 列表数据状态类
  */

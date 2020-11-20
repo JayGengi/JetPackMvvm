@@ -16,7 +16,7 @@ import com.duobang.jetpackmvvm.pms.app.weight.preference.MyColorCircleView
 import com.duobang.jetpackmvvm.ext.view.textString
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 自定义 BindingAdapter
  */

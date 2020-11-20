@@ -14,7 +14,7 @@ import me.jessyan.autosize.AutoSizeCompat
 
 /**
  * 时间　: 2019/12/21
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 描述　: 你项目中的Activity基类，在这里实现显示弹窗，吐司，还有加入自己的需求操作 ，如果不想用Databind，请继承
  * BaseVmActivity例如
  * abstract class BaseActivity<VM : BaseViewModel> : BaseVmActivity<VM>() {

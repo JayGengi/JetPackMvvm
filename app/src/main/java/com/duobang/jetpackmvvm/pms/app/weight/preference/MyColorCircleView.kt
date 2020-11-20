@@ -14,7 +14,7 @@ import com.afollestad.materialdialogs.color.R.drawable
 import com.afollestad.materialdialogs.utils.MDUtil.dimenPx
 
 /**
- * @Author:         hegaojian
+ * @Author:         JayGengi
  * @CreateDate:     2019/8/12 14:23
  */
 class MyColorCircleView(

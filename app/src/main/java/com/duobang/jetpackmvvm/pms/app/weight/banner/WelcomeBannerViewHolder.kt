@@ -1,7 +1,7 @@
 package com.duobang.jetpackmvvm.pms.app.weight.banner
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/2/20
  * 描述　:
  */

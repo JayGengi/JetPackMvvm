@@ -7,7 +7,7 @@ import com.liulishuo.filedownloader.exception.FileDownloadOutOfSpaceException
 import com.duobang.jetpackmvvm.ext.download.DownloadResultState
 
 /**
- * @author : hgj
+ * @author : JayGengi
  * @date   : 2020/7/13
  *
  */

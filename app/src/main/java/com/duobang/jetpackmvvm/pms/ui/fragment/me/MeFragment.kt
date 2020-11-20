@@ -16,7 +16,7 @@ import com.duobang.jetpackmvvm.pms.viewmodel.state.MeViewModel
 import kotlinx.android.synthetic.main.fragment_me.*
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 我的
  */

@@ -18,7 +18,7 @@ import com.duobang.jetpackmvvm.pms.ui.activity.WelcomeActivity
 import com.duobang.jetpackmvvm.ext.util.jetpackMvvmLog
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　:
  */

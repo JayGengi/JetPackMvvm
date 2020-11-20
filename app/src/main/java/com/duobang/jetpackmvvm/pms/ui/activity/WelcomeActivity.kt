@@ -17,7 +17,7 @@ import com.duobang.jetpackmvvm.ext.view.visible
 import com.duobang.jetpackmvvm.pms.app.base.BaseActivity
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/2/22
  * 描述　:
  */
@@ -65,7 +65,7 @@ class WelcomeActivity : BaseActivity<BaseViewModel, ActivityWelcomeBinding>() {
                 finish()
                 //带点渐变动画
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            }, 300)
+            }, 1500)
         }
     }
 

@@ -8,7 +8,7 @@ import com.duobang.jetpackmvvm.pms.app.util.ColorUtil
 
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/27
  * 描述　: 专门存放 MeFragment 界面数据的ViewModel
  */

@@ -14,7 +14,7 @@ import com.duobang.jetpackmvvm.pms.data.model.bean.UserInfo
 import com.duobang.jetpackmvvm.network.AppException
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/5/4
  * 描述　: 处理协程的请求类
  */

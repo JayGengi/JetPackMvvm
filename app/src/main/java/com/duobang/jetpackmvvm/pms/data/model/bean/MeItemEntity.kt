@@ -3,7 +3,7 @@ package com.duobang.jetpackmvvm.pms.data.model.bean
 import com.duobang.jetpackmvvm.pms.data.model.enums.MeItemType
 
 /**
- * @author : hgj
+ * @author : JayGengi
  * @date   : 2020/6/11
  *
  */

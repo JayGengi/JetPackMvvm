@@ -105,7 +105,7 @@ class DefineLoadMoreView(context: Context) : LinearLayout(context), SwipeRecycle
         mTvMessage.visibility = View.VISIBLE
         // 这里要不直接设置错误信息，要不根据errorCode动态设置错误数据。
         mTvMessage.text = errorMessage
-        Log.i("hgj","加载失败啦")
+        Log.i("JayGengi","加载失败啦")
     }
 
     /**
