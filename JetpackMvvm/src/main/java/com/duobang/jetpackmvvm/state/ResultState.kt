@@ -5,7 +5,7 @@ import com.duobang.jetpackmvvm.network.BaseResponse
 import com.duobang.jetpackmvvm.network.ExceptionHandle
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/4/9
  * 描述　: 自定义结果集封装类
  */

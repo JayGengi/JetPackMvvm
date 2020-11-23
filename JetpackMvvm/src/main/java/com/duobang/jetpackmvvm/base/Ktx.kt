@@ -13,7 +13,7 @@ import com.duobang.jetpackmvvm.ext.lifecycle.KtxLifeCycleCallBack
 import com.duobang.jetpackmvvm.network.manager.NetworkStateReceive
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/14
  * 描述　:
  */

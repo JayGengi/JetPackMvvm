@@ -11,14 +11,14 @@ import kotlinx.android.synthetic.main.activity_error.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.pms.R
-import com.duobang.jetpackmvvm.pms.app.ext.init
-import com.duobang.jetpackmvvm.pms.app.ext.showMessage
-import com.duobang.jetpackmvvm.pms.app.util.SettingUtil
-import com.duobang.jetpackmvvm.pms.app.util.StatusBarUtil
+import com.duobang.jetpackmvvm.pms.ext.init
+import com.duobang.jetpackmvvm.pms.ext.showMessage
+import com.duobang.jetpackmvvm.pms.util.SettingUtil
+import com.duobang.jetpackmvvm.pms.util.StatusBarUtil
 import com.duobang.jetpackmvvm.pms.databinding.ActivityErrorBinding
 import com.duobang.jetpackmvvm.ext.util.clipboardManager
 import com.duobang.jetpackmvvm.ext.view.clickNoRepeat
-import com.duobang.jetpackmvvm.pms.app.base.BaseActivity
+import com.duobang.jetpackmvvm.pms.base.BaseActivity
 
 
 /**

@@ -1,20 +1,23 @@
 package com.duobang.jetpackmvvm.pms.ui.activity
 
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.blankj.utilcode.util.ToastUtils
-import com.tencent.bugly.beta.Beta
-import com.duobang.jetpackmvvm.pms.R
-import com.duobang.jetpackmvvm.pms.app.util.StatusBarUtil
-import com.duobang.jetpackmvvm.pms.databinding.ActivityMainBinding
+import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.jetpackmvvm.network.manager.NetState
-import com.duobang.jetpackmvvm.pms.app.base.BaseActivity
+import com.duobang.jetpackmvvm.pms.R
+import com.duobang.jetpackmvvm.pms.base.BaseActivity
+import com.duobang.jetpackmvvm.pms.databinding.ActivityMainBinding
+import com.duobang.jetpackmvvm.pms.util.CacheUtil
+import com.duobang.jetpackmvvm.pms.viewmodel.request.RequestHomeViewModel
+import com.duobang.jetpackmvvm.pms.viewmodel.request.RequestMainViewModel
 import com.duobang.jetpackmvvm.pms.viewmodel.state.MainViewModel
+import com.tencent.bugly.beta.Beta
 
 /**
  * 项目主页Activity
@@ -22,12 +25,13 @@ import com.duobang.jetpackmvvm.pms.viewmodel.state.MainViewModel
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     var exitTime = 0L
+
+    //请求数据ViewModel
+    private val requestMainViewModel: RequestMainViewModel by viewModels()
+
     override fun layoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
-        //进入首页检查更新
-        Beta.checkUpgrade(false, true)
-
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val nav = Navigation.findNavController(this@MainActivity, R.id.host_fragment)
@@ -44,18 +48,22 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                     }
                 }
             }
-            })
-        appViewModel.appColor.value?.let {
-            window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-            supportActionBar?.setBackgroundDrawable(ColorDrawable(it))
-            StatusBarUtil.setColor(this, it, 0) }
+        })
+
+        requestMainViewModel.loadDashboardQuota()
     }
 
     override fun createObserver() {
-        appViewModel.appColor.observe(this, Observer {
-            supportActionBar?.setBackgroundDrawable(ColorDrawable(it))
-            StatusBarUtil.setColor(this, it, 0)
-        })
+        requestMainViewModel.resultPersonOrgData.observe(
+            this,
+            Observer { resultState ->
+                parseState(resultState, {
+                    //缓存组织信息（orgId）
+                    CacheUtil.setOrg(it)
+                }, {
+                    ToastUtils.showShort(it.errorMsg)
+                })
+            })
     }
 
     /**
@@ -64,9 +72,9 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     override fun onNetworkStateChanged(netState: NetState) {
         super.onNetworkStateChanged(netState)
         if (netState.isSuccess) {
-            Toast.makeText(applicationContext, "我特么终于有网了啊!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "网络已连接", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(applicationContext, "我特么怎么断网了!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "网络中断", Toast.LENGTH_SHORT).show()
         }
     }
 

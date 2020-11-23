@@ -7,6 +7,7 @@ import com.duobang.jetpackmvvm.base.activity.BaseVmActivity
 import com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity
 import com.duobang.jetpackmvvm.base.fragment.BaseVmFragment
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
+import com.duobang.jetpackmvvm.ext.util.logd
 import com.duobang.jetpackmvvm.ext.util.loge
 import com.duobang.jetpackmvvm.network.AppException
 import com.duobang.jetpackmvvm.network.BaseResponse
@@ -152,7 +153,7 @@ fun <T> BaseViewModel.request(
         }.onSuccess {
             resultState.paresResult(it)
         }.onFailure {
-            it.message?.loge()
+            it.toString().logd()
             resultState.paresException(it)
         }
     }

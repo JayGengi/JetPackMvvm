@@ -10,16 +10,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/include_toolbar" />
-
-        <!--        <include layout="@layout/include_list" />-->
-        <TextView
-            android:id="@+id/homeTv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Home"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+        <include layout="@layout/include_list" />
     </LinearLayout>
 </layout>

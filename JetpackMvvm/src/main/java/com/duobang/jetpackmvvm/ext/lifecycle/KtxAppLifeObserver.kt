@@ -6,7 +6,7 @@ import androidx.lifecycle.OnLifecycleEvent
 import com.duobang.jetpackmvvm.callback.livedata.BooleanLiveData
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 20120/1/7
  * 描述　:
  */

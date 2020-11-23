@@ -4,7 +4,7 @@ import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.callback.databind.IntObservableField
 import com.duobang.jetpackmvvm.callback.databind.StringObservableField
 import com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData
-import com.duobang.jetpackmvvm.pms.app.util.ColorUtil
+import com.duobang.jetpackmvvm.pms.util.ColorUtil
 
 
 /**
@@ -22,5 +22,4 @@ class MeViewModel : BaseViewModel() {
 
     var imageUrl = StringObservableField(ColorUtil.randomImage())
 
-    var testString = UnPeekLiveData<String>()
 }

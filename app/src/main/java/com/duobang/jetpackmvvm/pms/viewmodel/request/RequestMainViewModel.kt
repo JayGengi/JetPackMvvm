@@ -1,0 +1,29 @@
+package com.duobang.jetpackmvvm.pms.viewmodel.request
+
+import androidx.lifecycle.MutableLiveData
+import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
+import com.duobang.jetpackmvvm.ext.request
+import com.duobang.jetpackmvvm.pms.data.model.bean.Dashboard
+import com.duobang.jetpackmvvm.pms.data.model.bean.Organization
+import com.duobang.jetpackmvvm.pms.data.model.bean.RecordWrapper
+import com.duobang.jetpackmvvm.pms.network.apiService
+import com.duobang.jetpackmvvm.pms.network.stateCallback.ListDataUiState
+import com.duobang.jetpackmvvm.state.ResultState
+
+/**
+ * @作者　: JayGengi
+ * @时间　: 2020/11/23 16:51
+ * @描述　: 首页VM
+ */
+class RequestMainViewModel : BaseViewModel() {
+
+    //获取总览页面指标
+    var resultPersonOrgData: MutableLiveData<ResultState<Organization>> = MutableLiveData()
+
+    /**
+     * 获取总览页面指标
+     */
+    fun loadDashboardQuota() {
+        request({ apiService.loadPersonOrg() }, resultPersonOrgData)
+    }
+}

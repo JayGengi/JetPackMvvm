@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/12
  * 描述　: ViewModelFragment基类，自动把ViewModel注入Fragment和Databind注入进来了
  * 需要使用Databind的清继承它

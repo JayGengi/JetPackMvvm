@@ -7,7 +7,7 @@ import com.duobang.jetpackmvvm.ext.util.logd
 import com.duobang.jetpackmvvm.ext.util.loge
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 20120/1/7
  * 描述　:
  */

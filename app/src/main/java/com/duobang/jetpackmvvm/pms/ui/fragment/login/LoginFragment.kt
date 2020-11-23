@@ -4,21 +4,19 @@ import android.os.Bundle
 import android.widget.CompoundButton
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.include_toolbar.*
-import com.duobang.jetpackmvvm.pms.R
-import com.duobang.jetpackmvvm.pms.app.ext.hideSoftKeyboard
-import com.duobang.jetpackmvvm.pms.app.ext.initClose
-import com.duobang.jetpackmvvm.pms.app.ext.showMessage
-import com.duobang.jetpackmvvm.pms.app.util.CacheUtil
-import com.duobang.jetpackmvvm.pms.app.util.SettingUtil
-import com.duobang.jetpackmvvm.pms.databinding.FragmentLoginBinding
-import com.duobang.jetpackmvvm.pms.viewmodel.request.RequestLoginRegisterViewModel
-import com.duobang.jetpackmvvm.pms.viewmodel.state.LoginRegisterViewModel
+import com.blankj.utilcode.util.ToastUtils
 import com.duobang.jetpackmvvm.ext.nav
-import com.duobang.jetpackmvvm.ext.navigateAction
 import com.duobang.jetpackmvvm.ext.parseState
-import com.duobang.jetpackmvvm.pms.app.base.BaseFragment
+import com.duobang.jetpackmvvm.pms.R
+import com.duobang.jetpackmvvm.pms.base.BaseFragment
+import com.duobang.jetpackmvvm.pms.databinding.FragmentLoginBinding
+import com.duobang.jetpackmvvm.pms.ext.hideSoftKeyboard
+import com.duobang.jetpackmvvm.pms.ext.initClose
+import com.duobang.jetpackmvvm.pms.util.SettingUtil
+import com.duobang.jetpackmvvm.pms.viewmodel.request.RequestLoginViewModel
+import com.duobang.jetpackmvvm.pms.viewmodel.state.LoginRegisterViewModel
+import kotlinx.android.synthetic.main.include_toolbar.*
+import okhttp3.Response
 
 /**
  * 作者　: JayGengi
@@ -27,7 +25,7 @@ import com.duobang.jetpackmvvm.pms.app.base.BaseFragment
  */
 class LoginFragment : BaseFragment<LoginRegisterViewModel, FragmentLoginBinding>() {
 
-    private val requestLoginRegisterViewModel: RequestLoginRegisterViewModel by viewModels()
+    private val requestLoginRegisterViewModel: RequestLoginViewModel by viewModels()
 
     override fun layoutId() = R.layout.fragment_login
 
@@ -37,29 +35,27 @@ class LoginFragment : BaseFragment<LoginRegisterViewModel, FragmentLoginBinding>
 
         mDatabind.click = ProxyClick()
 
-
-        toolbar.initClose("登录") {
+        SettingUtil.setShapColor(toolbar, R.color.white)
+        toolbar.initClose("") {
             nav().navigateUp()
-        }
-        //设置颜色跟主题颜色一致
-        appViewModel.appColor.value?.let {
-            SettingUtil.setShapColor(loginSub, it)
-            loginGoregister.setTextColor(it)
-            toolbar.setBackgroundColor(it)
         }
     }
 
     override fun createObserver() {
-        requestLoginRegisterViewModel.loginResult.observe(viewLifecycleOwner,Observer { resultState ->
+        requestLoginRegisterViewModel.loginResult.observe(
+            viewLifecycleOwner,
+            Observer { resultState ->
                 parseState(resultState, {
+                    it as Response
                     //登录成功 通知账户数据发生改变鸟
-                    CacheUtil.setUser(it)
-                    CacheUtil.setIsLogin(true)
-                    appViewModel.userinfo.value = it
-                    nav().navigateUp()
+                    ToastUtils.showShort("登录成功")
+//                    CacheUtil.setUser(it)
+//                    CacheUtil.setIsLogin(true)
+//                    appViewModel.userinfo.value = it
+//                    nav().navigateUp()
                 }, {
                     //登录失败
-                    showMessage(it.errorMsg)
+                    ToastUtils.showShort(it.errorMsg)
                 })
             })
     }
@@ -72,12 +68,14 @@ class LoginFragment : BaseFragment<LoginRegisterViewModel, FragmentLoginBinding>
 
         fun login() {
             when {
-                mViewModel.username.value.isEmpty() -> showMessage("请填写账号")
-                mViewModel.password.get().isEmpty() -> showMessage("请填写密码")
-                else -> requestLoginRegisterViewModel.loginReq(
-                    mViewModel.username.value,
-                    mViewModel.password.get()
-                )
+                mViewModel.username.value.isEmpty() -> ToastUtils.showShort("请填写账号")
+                mViewModel.password.get().isEmpty() -> ToastUtils.showShort("请填写密码")
+                else -> {
+                    val map = HashMap<String, Any>()
+                    map["username"] = mViewModel.username.value
+                    map["password"] = mViewModel.password.get()
+                    requestLoginRegisterViewModel.loginReq(map)
+                }
             }
         }
 

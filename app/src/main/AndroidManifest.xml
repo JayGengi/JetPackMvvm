@@ -6,7 +6,7 @@
     <uses-sdk tools:overrideLibrary="com.duobang.jetpackmvvm" />
 
     <application
-        android:name=".app.App"
+        android:name=".App"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity">
         <activity
-            android:name=".ui.activity.WelcomeActivity"
+            android:name=".ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullscreenThemse">
             <intent-filter>
@@ -28,6 +28,11 @@
             android:name=".ui.activity.MainActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.ErrorActivity"

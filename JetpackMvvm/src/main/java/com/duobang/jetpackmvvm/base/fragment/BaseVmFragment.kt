@@ -16,7 +16,7 @@ import com.duobang.jetpackmvvm.network.manager.NetState
 import com.duobang.jetpackmvvm.network.manager.NetworkStateManager
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/12
  * 描述　: ViewModelFragment基类，自动把ViewModel注入Fragment
  */

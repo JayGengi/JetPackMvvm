@@ -5,7 +5,7 @@ import android.util.Log
 import com.duobang.jetpackmvvm.ext.util.jetpackMvvmLog
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2020/3/26
  * 描述　:
  */

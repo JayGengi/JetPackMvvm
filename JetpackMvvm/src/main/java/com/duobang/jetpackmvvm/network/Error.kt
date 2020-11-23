@@ -1,7 +1,7 @@
 package com.duobang.jetpackmvvm.network
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/17
  * 描述　: 错误枚举类
  */

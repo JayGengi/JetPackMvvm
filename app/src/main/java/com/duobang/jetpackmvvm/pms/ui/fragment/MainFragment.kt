@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_main.*
 import com.duobang.jetpackmvvm.pms.R
-import com.duobang.jetpackmvvm.pms.app.base.BaseFragment
-import com.duobang.jetpackmvvm.pms.app.ext.init
-import com.duobang.jetpackmvvm.pms.app.ext.initMain
-import com.duobang.jetpackmvvm.pms.app.ext.interceptLongClick
-import com.duobang.jetpackmvvm.pms.app.ext.setUiTheme
+import com.duobang.jetpackmvvm.pms.base.BaseFragment
+import com.duobang.jetpackmvvm.pms.ext.init
+import com.duobang.jetpackmvvm.pms.ext.initMain
+import com.duobang.jetpackmvvm.pms.ext.interceptLongClick
+import com.duobang.jetpackmvvm.pms.ext.setUiTheme
 import com.duobang.jetpackmvvm.pms.databinding.FragmentMainBinding
 import com.duobang.jetpackmvvm.pms.viewmodel.state.MainViewModel
 
@@ -38,8 +38,5 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
     }
 
     override fun createObserver() {
-        appViewModel.appColor.observe(viewLifecycleOwner, Observer {
-            setUiTheme(it, mainBottom)
-        })
     }
 }

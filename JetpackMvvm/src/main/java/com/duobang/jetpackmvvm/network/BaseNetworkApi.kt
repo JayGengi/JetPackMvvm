@@ -1,11 +1,10 @@
 package com.duobang.jetpackmvvm.network
 
-import me.jessyan.retrofiturlmanager.RetrofitUrlManager
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
 /**
- * 作者　: hegaojian
+ * 作者　: JayGengi
  * 时间　: 2019/12/23
  * 描述　: 网络请求构建器基类
  */
@@ -35,7 +34,7 @@ abstract class BaseNetworkApi {
      */
     private val okHttpClient: OkHttpClient
         get() {
-            var builder = RetrofitUrlManager.getInstance().with(OkHttpClient.Builder())
+            var builder = OkHttpClient.Builder()
             builder = setHttpClientBuilder(builder)
             return builder.build()
         }
