@@ -49,7 +49,6 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                 }
             }
         })
-
         requestMainViewModel.loadDashboardQuota()
     }
 
