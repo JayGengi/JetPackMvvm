@@ -3,11 +3,8 @@ package com.duobang.jetpackmvvm.pms.viewmodel.request
 import androidx.lifecycle.MutableLiveData
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.ext.request
-import com.duobang.jetpackmvvm.pms.data.model.bean.Dashboard
 import com.duobang.jetpackmvvm.pms.data.model.bean.Organization
-import com.duobang.jetpackmvvm.pms.data.model.bean.RecordWrapper
 import com.duobang.jetpackmvvm.pms.network.apiService
-import com.duobang.jetpackmvvm.pms.network.stateCallback.ListDataUiState
 import com.duobang.jetpackmvvm.state.ResultState
 
 /**
