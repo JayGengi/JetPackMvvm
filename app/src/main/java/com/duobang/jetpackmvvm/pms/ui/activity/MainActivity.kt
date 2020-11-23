@@ -25,7 +25,6 @@ import com.tencent.bugly.beta.Beta
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     var exitTime = 0L
-
     //请求数据ViewModel
     private val requestMainViewModel: RequestMainViewModel by viewModels()
 
