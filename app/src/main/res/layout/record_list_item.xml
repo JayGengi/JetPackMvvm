@@ -8,6 +8,76 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
 
+        <com.duobang.common.weight.customview.AvatarView
+            android:id="@+id/avatar_user_record_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_user_record_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/avatar_user_record_item"
+            app:layout_constraintTop_toTopOf="@id/avatar_user_record_item" />
+
+        <TextView
+            android:id="@+id/create_date_record_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/avatar_user_record_item"
+            app:layout_constraintTop_toBottomOf="@id/name_user_record_item" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/type_sign_record_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            app:layout_constraintTop_toTopOf="@id/avatar_user_record_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:backgroundTint="#33319aef"
+            android:textSize="12sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/title_record_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:id="@+id/container_record_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="60dp">
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="12dp"
+        android:background="@color/grey_background"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>

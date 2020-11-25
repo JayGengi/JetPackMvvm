@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    dataBinding{
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    def dependencies = rootProject.ext.dependencies
+
+    api dependencies.appcompat
+    //kotlin
+    api dependencies.kotlinStdlib
+    api dependencies.coreKtx
+    //lifecycle
+    api dependencies.lifecycleRuntime
+    api dependencies.lifecycleCommon
+    api dependencies.lifecycleExt
+    // viewModel
+    api dependencies.lifecycleVM
+    api dependencies.fragmentKtx
+    // liveData
+    api dependencies.lifecycleLiveData
+    //navigation
+    api dependencies.navigation
+    //retrofit
+    api dependencies.retrofit
+    api dependencies.retrofitGson
+    api dependencies.PersistentCookieJar
+    api dependencies.httpLog
+
+}
+

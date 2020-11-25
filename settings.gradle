@@ -1,1 +1,2 @@
-include ':app', ':JetpackMvvm'
+include ':module_lib_common'
+include ':app', ':module_lib_base'

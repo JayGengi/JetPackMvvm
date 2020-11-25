@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/mainfragment"
-        android:name="com.duobang.jetpackmvvm.pms.ui.fragment.MainFragment"
+        android:name="com.duobang.jetpackmvvm.ui.fragment.MainFragment"
         android:label="HomeFragment">
 
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.duobang.jetpackmvvm.pms.ui.fragment.login.LoginFragment"
+        android:name="com.duobang.jetpackmvvm.ui.fragment.login.LoginFragment"
         android:label="LoginFragment">
 
     </fragment>

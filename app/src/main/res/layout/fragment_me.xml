@@ -8,11 +8,11 @@
 
         <variable
             name="vm"
-            type="com.duobang.jetpackmvvm.pms.viewmodel.state.MeViewModel" />
+            type="com.duobang.jetpackmvvm.viewmodel.state.MeViewModel" />
 
         <variable
             name="click"
-            type="com.duobang.jetpackmvvm.pms.ui.fragment.me.MeFragment.ProxyClick" />
+            type="com.duobang.jetpackmvvm.ui.fragment.me.MeFragment.ProxyClick" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:elevation="6dp"
             tools:ignore="UnusedAttribute">
 
-            <com.duobang.jetpackmvvm.pms.weight.customview.AvatarView
+            <com.duobang.common.weight.customview.AvatarView
                 android:id="@+id/user_icon_person"
                 android:layout_width="48dp"
                 android:layout_height="48dp"

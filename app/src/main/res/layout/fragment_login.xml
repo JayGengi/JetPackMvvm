@@ -6,7 +6,7 @@
 
         <variable
             name="viewmodel"
-            type="com.duobang.jetpackmvvm.pms.viewmodel.state.LoginRegisterViewModel" />
+            type="com.duobang.jetpackmvvm.viewmodel.state.LoginRegisterViewModel" />
 
         <variable
             name="view"
@@ -14,7 +14,7 @@
 
         <variable
             name="click"
-            type="com.duobang.jetpackmvvm.pms.ui.fragment.login.LoginFragment.ProxyClick" />
+            type="com.duobang.jetpackmvvm.ui.fragment.login.LoginFragment.ProxyClick" />
 
     </data>
 

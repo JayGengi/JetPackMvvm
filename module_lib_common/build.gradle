@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
+    }
+    dataBinding {
+        enabled = true
+    }
+    //使用Kotlin实验特性
+    androidExtensions {
+        experimental = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //项目核心框架
+    implementation project(path: ':module_lib_base')
+
+    def dependencies = rootProject.ext.dependencies
+    //multidex
+    api dependencies.multidex
+    //androidx UI
+    api dependencies.appcompat
+    api dependencies.constraintlayout
+    api dependencies.material
+    api dependencies.cardview
+    api dependencies.swiperefreshlayout
+    api dependencies.preference
+    //dialog
+    api dependencies.dialogLifecycle
+    api dependencies.dialogCore
+    api dependencies.dialogColor
+    api dependencies.dialogDatetime
+    api dependencies.dialogBottomsheets
+    //util
+    api dependencies.blankj
+    //RevealLayout
+    api dependencies.RevealLayout
+    //微信开源项目，替代SP
+    api dependencies.mmkv
+
+    //BaseAdapter
+    api dependencies.BaseAdapter
+    //第三方recyclerview
+    api dependencies.recyclerview
+    //管理界面状态库
+    api dependencies.loadsir
+    //Bugly
+    api dependencies.bugly
+    api dependencies.buglyNative
+    //glide
+    api dependencies.glide
+    //屏幕适配
+    api dependencies.autosize
+    //下载
+    api(dependencies.filedownloader) {
+        exclude group: "com.android.support"
+    }
+    //splitties
+    api dependencies.splitties
+}

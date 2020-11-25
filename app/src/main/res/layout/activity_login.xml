@@ -9,7 +9,7 @@
 
         <variable
             name="viewmodel"
-            type="com.duobang.jetpackmvvm.pms.viewmodel.state.LoginRegisterViewModel" />
+            type="com.duobang.jetpackmvvm.viewmodel.state.LoginRegisterViewModel" />
 
         <variable
             name="view"
@@ -17,14 +17,14 @@
 
         <variable
             name="click"
-            type="com.duobang.jetpackmvvm.pms.ui.activity.login.LoginActivity.ProxyClick" />
+            type="com.duobang.jetpackmvvm.ui.activity.login.LoginActivity.ProxyClick" />
 
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/ic_login_background"
         android:orientation="vertical">
 
         <include layout="@layout/include_toolbar"
