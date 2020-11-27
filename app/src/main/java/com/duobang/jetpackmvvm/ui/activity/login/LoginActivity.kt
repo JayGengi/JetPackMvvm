@@ -37,7 +37,6 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
             finish()
         }
     }
-
     override fun createObserver() {
         requestLoginRegisterViewModel.run {
             loginResult.observe(
