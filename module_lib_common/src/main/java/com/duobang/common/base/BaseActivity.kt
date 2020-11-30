@@ -1,7 +1,10 @@
 package com.duobang.common.base
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
+import android.graphics.Color
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.databinding.ViewDataBinding
 import com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
@@ -9,6 +12,8 @@ import com.duobang.common.ext.dismissLoadingExt
 import com.duobang.common.ext.showLoadingExt
 import com.duobang.jetpackmvvm.ext.getAppViewModel
 import com.duobang.common.event.AppViewModel
+import com.duobang.common.util.StatusBarUtil
+import com.duobang.jetpackmvvm.R
 import me.jessyan.autosize.AutoSizeCompat
 
 /**
@@ -21,9 +26,18 @@ import me.jessyan.autosize.AutoSizeCompat
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmDbActivity<VM, DB>() {
 
     //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
-    val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>()}
+    val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
 
     abstract override fun layoutId(): Int
+
+    @SuppressLint("ResourceType")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //状态栏全透明
+//        StatusBarUtil.setColor(this, ContextCompat.getColor(this, Color.WHITE), 0)
+//        StatusBarUtil.setTranslucent(this, 0)
+//        StatusBarUtil.setLightMode(this)
+    }
 
     abstract override fun initView(savedInstanceState: Bundle?)
 

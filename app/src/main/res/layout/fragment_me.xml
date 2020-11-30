@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="56dp"
+            android:paddingTop="16dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:background="@drawable/fill_personal_top_bg"

@@ -66,5 +66,11 @@ ext {
             filedownloader         :'com.liulishuo.filedownloader:library:1.7.7',
             //splitties
             splitties              :'com.louiscad.splitties:splitties-collections:2.1.1',
+            //图片压缩工具
+            Luban                  :'top.zibin:Luban:1.1.8',
+            // 图片选择
+            matisse                :'com.zhihu.android:matisse:0.5.1',
+            // 图片剪裁
+            ucrop                  :'com.github.yalantis:ucrop:2.2.2',
     ]
 }

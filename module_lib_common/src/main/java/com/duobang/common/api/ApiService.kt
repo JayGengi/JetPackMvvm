@@ -57,4 +57,11 @@ interface ApiService {
         @Query("pageNumber") page: Int,
         @Query("pageSize") count: Int
     ): ApiResponse<RecordWrapper>
+
+    /**
+     * 更新昵称
+     */
+    @PUT("api/account/v1/user/nickname")
+    suspend fun updateNickName(@Body map: Map<String, @JvmSuppressWildcards Any>): ApiResponse<User>
+
 }

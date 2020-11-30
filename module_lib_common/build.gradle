@@ -86,4 +86,10 @@ dependencies {
     }
     //splitties
     api dependencies.splitties
+    //图片压缩工具
+    api dependencies.Luban
+    //图片选择
+    api dependencies.matisse
+    //图片剪裁
+    api dependencies.ucrop
 }

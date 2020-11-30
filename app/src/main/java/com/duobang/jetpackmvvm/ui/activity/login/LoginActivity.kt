@@ -10,7 +10,6 @@ import com.duobang.common.base.BaseActivity
 import com.duobang.common.ext.hideSoftKeyboard
 import com.duobang.common.ext.initClose
 import com.duobang.common.util.CacheUtil
-import com.duobang.common.util.SettingUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.ActivityLoginBinding
 import com.duobang.jetpackmvvm.viewmodel.request.RequestLoginViewModel
@@ -30,12 +29,15 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
 
     override fun layoutId() = R.layout.activity_login
 
+
+
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
         toolbar.initClose("",R.drawable.ic_delete) {
             finish()
         }
+        toolbar.background = null
     }
     override fun createObserver() {
         requestLoginRegisterViewModel.run {

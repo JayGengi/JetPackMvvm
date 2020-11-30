@@ -1,5 +1,6 @@
 package com.duobang.common.event
 
+import com.duobang.common.data.bean.Organization
 import com.duobang.common.data.bean.User
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData
@@ -17,12 +18,17 @@ class AppViewModel : BaseViewModel() {
     //App的账户信息
     var userinfo = UnPeekLiveData<User>()
 
+    //App当前组织信息
+    var orginfo = UnPeekLiveData<Organization>()
+
     //App 列表动画
     var appAnimation = UnPeekLiveData<Int>()
 
     init {
         //默认值保存的账户信息，没有登陆过则为null
         userinfo.value = CacheUtil.getUser()
+        //
+        orginfo.value = CacheUtil.getOrg()
         //初始化列表动画
         appAnimation.value = SettingUtil.getListMode()
     }

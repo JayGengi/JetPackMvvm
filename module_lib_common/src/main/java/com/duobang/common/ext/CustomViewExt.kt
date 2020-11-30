@@ -14,6 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -176,10 +177,11 @@ fun Toolbar.init(titleStr: String = ""): Toolbar {
  */
 fun Toolbar.initClose(
     titleStr: String = "",
-    backImg: Int = R.drawable.ic_back,
+    backImg: Int = R.drawable.back,
+//    bg: Int = ContextCompat.getColor(context, R.color.white),
     onBack: (toolbar: Toolbar) -> Unit
 ): Toolbar {
-    setBackgroundColor(SettingUtil.getColor(appContext))
+//    setBackgroundColor(bg)
     title = titleStr.toHtml()
     setNavigationIcon(backImg)
     setNavigationOnClickListener { onBack.invoke(this) }
