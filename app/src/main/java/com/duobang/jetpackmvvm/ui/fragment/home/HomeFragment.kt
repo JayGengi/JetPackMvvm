@@ -5,10 +5,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.ConvertUtils
-import com.duobang.common.base.BaseFragment
-import com.duobang.common.ext.*
-import com.duobang.common.weight.recyclerview.DefineLoadMoreView
-import com.duobang.common.weight.recyclerview.SpaceItemDecoration
+import com.duobang.jetpackmvvm.base.BaseFragment
+import com.duobang.jetpackmvvm.ext.*
+import com.duobang.jetpackmvvm.weight.recyclerview.DefineLoadMoreView
+import com.duobang.jetpackmvvm.weight.recyclerview.SpaceItemDecoration
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentHomeBinding
 import com.duobang.jetpackmvvm.ui.adapter.RecordAdapter

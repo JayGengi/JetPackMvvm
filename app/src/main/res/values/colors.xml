@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="colorPrimary">#298eff</color>
+    <color name="colorPrimaryDark">#1479ca</color>
+    <color name="colorAccent">#319aef</color>
+    <color name="colorLess">#a0a5ab</color>
+
+
+    <color name="textHint">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="colorGray">#333</color>
+    <color name="colorBlack666">#666</color>
+    <color name="colorBlack333">#333</color>
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="background">#d8d8d8</color>
+    <color name="backgroundeee">#eeeeee</color>
+    <color name="backgrounGrey">#CCCCCC</color>
+    <color name="texttipColor">#a0a0a0</color>
+    <color name="diverColoe">#cecece</color>
+    <color name="accent">#E91E63</color>
+    <color name="chinaHoliDay">#e10015</color>
+    <color name="gainsboro">#dcdcdc</color><!--淡灰色 -->
+
+    <color name="glass">#f1f1f1</color><!--玻璃色 -->
+    <color name="linkable_text">#1a87da</color>
+    <color name="grey_background">#edf0f4</color>
+    <color name="grey_background_dark">#d4d5d7</color>
+    <color name="transparent_background">#50000000</color>
+
+    <color name="black_icon">#555555</color>
+
+    <color name="blackTitle">#3f3f3f</color><!--黑色标题 -->
+    <color name="blackCaption">#8f8f8f</color><!--说明文字 -->
+    <color name="blackSurface">#2f2f2f</color><!--黑色平面 -->
+
+    <color name="approval_going">#FFA313</color>
+    <color name="approval_pass">#00B143</color>
+    <color name="approval_refuse">#FF2121</color>
+    <color name="approval_retract">#999999</color>
 </resources>

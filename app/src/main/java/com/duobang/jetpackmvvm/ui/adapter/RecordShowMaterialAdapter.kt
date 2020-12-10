@@ -3,7 +3,7 @@ package com.duobang.jetpackmvvm.ui.adapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.duobang.jetpackmvvm.R
-import com.duobang.common.data.bean.Material
+import com.duobang.jetpackmvvm.data.bean.Material
 
 class RecordShowMaterialAdapter( list: List<Material>?) : BaseQuickAdapter<Material, BaseViewHolder>(
     R.layout.record_material_show_list_item, list as MutableList<Material>?

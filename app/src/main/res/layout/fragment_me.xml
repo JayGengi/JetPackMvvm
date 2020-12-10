@@ -31,7 +31,7 @@
             android:elevation="6dp"
             tools:ignore="UnusedAttribute">
 
-            <com.duobang.common.weight.customview.AvatarView
+            <com.duobang.jetpackmvvm.weight.customview.AvatarView
                 android:id="@+id/user_icon_person"
                 android:layout_width="48dp"
                 android:layout_height="48dp"

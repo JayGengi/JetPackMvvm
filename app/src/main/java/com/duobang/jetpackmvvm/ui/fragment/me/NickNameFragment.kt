@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
-import com.duobang.common.base.BaseFragment
-import com.duobang.common.data.bean.Organization
-import com.duobang.common.event.AppViewModel
-import com.duobang.common.ext.initClose
-import com.duobang.common.util.CacheUtil
+import com.duobang.jetpackmvvm.base.BaseFragment
+import com.duobang.jetpackmvvm.data.bean.Organization
+import com.duobang.jetpackmvvm.event.AppViewModel
+import com.duobang.jetpackmvvm.ext.initClose
+import com.duobang.jetpackmvvm.util.CacheUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentNickNameBinding
 import com.duobang.jetpackmvvm.ext.nav

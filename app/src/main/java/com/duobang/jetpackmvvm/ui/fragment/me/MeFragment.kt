@@ -2,8 +2,8 @@ package com.duobang.jetpackmvvm.ui.fragment.me
 
 import android.os.Bundle
 import androidx.fragment.app.viewModels
-import com.duobang.common.base.BaseFragment
-import com.duobang.common.util.AppImageLoader
+import com.duobang.jetpackmvvm.base.BaseFragment
+import com.duobang.jetpackmvvm.util.AppImageLoader
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentMeBinding
 import com.duobang.jetpackmvvm.ext.nav

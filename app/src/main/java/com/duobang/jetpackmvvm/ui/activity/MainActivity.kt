@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.duobang.common.base.BaseActivity
-import com.duobang.common.util.CacheUtil
+import com.duobang.jetpackmvvm.base.BaseActivity
+import com.duobang.jetpackmvvm.util.CacheUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.ActivityMainBinding
 import com.duobang.jetpackmvvm.ext.parseState
@@ -80,5 +80,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             Toast.makeText(applicationContext, "网络中断", Toast.LENGTH_SHORT).show()
         }
     }
+
+
 
 }

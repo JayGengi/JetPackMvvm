@@ -6,10 +6,10 @@ import android.widget.CompoundButton
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
-import com.duobang.common.base.BaseActivity
-import com.duobang.common.ext.hideSoftKeyboard
-import com.duobang.common.ext.initClose
-import com.duobang.common.util.CacheUtil
+import com.duobang.jetpackmvvm.base.BaseActivity
+import com.duobang.jetpackmvvm.ext.hideSoftKeyboard
+import com.duobang.jetpackmvvm.ext.initClose
+import com.duobang.jetpackmvvm.util.CacheUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.ActivityLoginBinding
 import com.duobang.jetpackmvvm.viewmodel.request.RequestLoginViewModel

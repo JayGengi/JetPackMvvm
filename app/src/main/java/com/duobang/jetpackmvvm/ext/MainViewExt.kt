@@ -9,17 +9,15 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.duobang.common.util.CacheUtil
 import com.duobang.jetpackmvvm.base.appContext
-import com.duobang.common.util.SettingUtil
-import com.duobang.common.weight.recyclerview.DefineLoadMoreView
-import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.ui.fragment.home.HomeFragment
 import com.duobang.jetpackmvvm.ui.fragment.me.MeFragment
+import com.duobang.jetpackmvvm.ui.fragment.project.ProjectFragment
+import com.duobang.jetpackmvvm.util.SettingUtil
+import com.duobang.jetpackmvvm.weight.recyclerview.DefineLoadMoreView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 import com.kingja.loadsir.core.LoadService
@@ -74,6 +72,9 @@ fun ViewPager2.initMain(fragment: Fragment): ViewPager2 {
                     return HomeFragment()
                 }
                 1 -> {
+                    return ProjectFragment()
+                }
+                2 -> {
                     return MeFragment()
                 }
                 else -> {
@@ -142,29 +143,4 @@ fun getProcessName(pid: Int): String? {
 
     }
     return null
-}
-
-/**
- * 拦截登录操作，如果没有登录跳转登录，登录过了贼执行你的方法
- */
-fun NavController.jumpByLogin(action: (NavController) -> Unit) {
-    if ("" != CacheUtil.getToken()) {
-        action(this)
-    } else {
-        this.navigateAction(R.id.action_to_loginFragment)
-    }
-}
-
-/**
- * 拦截登录操作，如果没有登录执行方法 actionLogin 登录过了执行 action
- */
-fun NavController.jumpByLogin(
-    actionLogin: (NavController) -> Unit,
-    action: (NavController) -> Unit
-) {
-    if ("" != CacheUtil.getToken()) {
-        action(this)
-    } else {
-        actionLogin(this)
-    }
 }

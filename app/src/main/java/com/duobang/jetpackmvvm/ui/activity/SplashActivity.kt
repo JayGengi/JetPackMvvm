@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.duobang.common.base.BaseActivity
-import com.duobang.common.util.CacheUtil
+import com.duobang.jetpackmvvm.base.BaseActivity
+import com.duobang.jetpackmvvm.util.CacheUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.databinding.ActivityWelcomeBinding

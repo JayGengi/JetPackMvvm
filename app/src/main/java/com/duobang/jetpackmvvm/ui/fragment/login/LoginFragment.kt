@@ -5,10 +5,10 @@ import android.widget.CompoundButton
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
-import com.duobang.common.base.BaseFragment
-import com.duobang.common.ext.hideSoftKeyboard
-import com.duobang.common.ext.initClose
-import com.duobang.common.util.SettingUtil
+import com.duobang.jetpackmvvm.base.BaseFragment
+import com.duobang.jetpackmvvm.ext.hideSoftKeyboard
+import com.duobang.jetpackmvvm.ext.initClose
+import com.duobang.jetpackmvvm.util.SettingUtil
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentLoginBinding
 import com.duobang.jetpackmvvm.ext.nav

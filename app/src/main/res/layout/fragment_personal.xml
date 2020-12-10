@@ -40,10 +40,11 @@
                     android:background="@color/white"
                     android:padding="12dp">
 
-                    <com.duobang.common.weight.customview.AvatarView
+                    <com.duobang.jetpackmvvm.weight.customview.AvatarView
                         android:id="@+id/user_avatar_per"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
+                        android:onClick="@{()->click.updateAvatar()}"
                         android:layout_gravity="center_horizontal"
                         android:background="#1a298eff" />
 
