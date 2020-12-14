@@ -1,6 +1,8 @@
 package com.duobang.jetpackmvvm.ext
 
+import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -8,6 +10,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.WhichButton
 import com.afollestad.materialdialogs.actions.getActionButton
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
+import com.duobang.jetpackmvvm.App
 import com.duobang.jetpackmvvm.base.AppManager
 import com.duobang.jetpackmvvm.base.appContext
 import com.duobang.jetpackmvvm.ui.activity.login.LoginActivity
@@ -16,6 +19,17 @@ import com.duobang.jetpackmvvm.util.ActivityMessenger
 import com.duobang.jetpackmvvm.util.SettingUtil
 import com.duobang.jetpackmvvm.util.permissions.LiveDataFragment
 
+fun Fragment.showToast(content: String): Toast {
+    val toast = Toast.makeText(this.activity?.applicationContext, content, Toast.LENGTH_SHORT)
+    toast.show()
+    return toast
+}
+
+fun Context.showToast(content: String): Toast {
+    val toast = Toast.makeText(App.instance.applicationContext, content, Toast.LENGTH_SHORT)
+    toast.show()
+    return toast
+}
 /**
  * @param message 显示对话框的内容 必填项
  * @param title 显示对话框的标题 默认 温馨提示

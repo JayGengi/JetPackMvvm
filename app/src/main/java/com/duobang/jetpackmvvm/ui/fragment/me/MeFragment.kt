@@ -6,8 +6,6 @@ import com.duobang.jetpackmvvm.base.BaseFragment
 import com.duobang.jetpackmvvm.util.AppImageLoader
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentMeBinding
-import com.duobang.jetpackmvvm.ext.nav
-import com.duobang.jetpackmvvm.ext.navigateAction
 import com.duobang.jetpackmvvm.viewmodel.request.RequestMeViewModel
 import com.duobang.jetpackmvvm.viewmodel.state.MeViewModel
 import kotlinx.android.synthetic.main.fragment_me.*
@@ -45,7 +43,7 @@ class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
     inner class ProxyClick {
         /** 个人信息*/
         fun userInfo(){
-            nav().navigateAction(R.id.action_to_PersonalFragment)
+//            nav().navigateAction(R.id.action_to_PersonalFragment)
         }
         /** 设置*/
         fun setting() {

@@ -20,8 +20,6 @@ ext {
             fragmentKtx            : "androidx.fragment:fragment-ktx:1.2.5",
             // liveData
             lifecycleLiveData      : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
-            //navigation
-            navigation             : 'androidx.navigation:navigation-runtime:2.3.0',
             //androidx UI
             appcompat              :'androidx.appcompat:appcompat:1.2.0',
             constraintlayout       :'androidx.constraintlayout:constraintlayout:2.0.2',

@@ -52,7 +52,6 @@ class PersonalFragment : BaseFragment<PersonalViewModel, FragmentPersonalBinding
         mDatabind.click = ProxyClick()
 
         toolbar.initClose("个人信息") {
-            nav().navigateUp()
         }
 
         appViewModel.userinfo.value!!.apply {
@@ -161,7 +160,6 @@ class PersonalFragment : BaseFragment<PersonalViewModel, FragmentPersonalBinding
     inner class ProxyClick {
         /** 用户昵称*/
         fun nickName() {
-            nav().navigateAction(R.id.action_to_NickNameFragment)
         }
 
         /** 用户头像*/

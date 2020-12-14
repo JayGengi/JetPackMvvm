@@ -46,8 +46,6 @@ dependencies {
     api dependencies.fragmentKtx
     // liveData
     api dependencies.lifecycleLiveData
-    //navigation
-    api dependencies.navigation
     //retrofit
     api dependencies.retrofit
     api dependencies.retrofitGson
