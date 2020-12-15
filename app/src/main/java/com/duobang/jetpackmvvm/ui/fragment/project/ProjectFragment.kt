@@ -2,21 +2,28 @@ package com.duobang.jetpackmvvm.ui.fragment.project
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.BarUtils
 import com.chad.library.adapter.base.entity.node.BaseNode
 import com.duobang.jetpackmvvm.R
-import com.duobang.jetpackmvvm.base.BaseFragment
-import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
-import com.duobang.jetpackmvvm.data.bean.Structure
-import com.duobang.jetpackmvvm.data.bean.StructureGroup
+import com.duobang.common.base.BaseFragment
+import com.duobang.common.base.viewmodel.BaseViewModel
+import com.duobang.common.ext.init
+import com.duobang.common.ext.loadServiceInit
+import com.duobang.common.ext.setErrorText
+import com.duobang.common.ext.showLoading
+import com.duobang.common.data.bean.Structure
+import com.duobang.common.data.bean.StructureGroup
 import com.duobang.jetpackmvvm.databinding.FragmentProjectBinding
 import com.duobang.jetpackmvvm.ext.*
 import com.duobang.jetpackmvvm.ui.adapter.project.ProjectNodeAdapter
 import com.duobang.jetpackmvvm.viewmodel.request.RequestProjectViewModel
-import com.duobang.jetpackmvvm.weight.loadCallBack.ErrorCallback
+import com.duobang.common.weight.loadCallBack.ErrorCallback
 import com.kingja.loadsir.core.LoadService
+import kotlinx.android.synthetic.main.fragment_project.*
 import kotlinx.android.synthetic.main.include_recyclerview.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 
@@ -39,8 +46,10 @@ class ProjectFragment : BaseFragment<BaseViewModel, FragmentProjectBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
 
+        val layoutParams = proBar.layoutParams as LinearLayout.LayoutParams
+        layoutParams.height = BarUtils.getStatusBarHeight() //这里拿到状态栏的高度
+        proBar.layoutParams = layoutParams//设置view高度
         toolbar.init("工程")
-
         //状态页配置
         loadsir = loadServiceInit(swipeRefresh) {
             //点击重试时触发的操作
@@ -63,7 +72,6 @@ class ProjectFragment : BaseFragment<BaseViewModel, FragmentProjectBinding>() {
 
     override fun lazyLoadData() {
         //设置界面 加载中
-        loadsir.showLoading()
         requestProViewModel.getProjectData()
     }
 
@@ -76,13 +84,13 @@ class ProjectFragment : BaseFragment<BaseViewModel, FragmentProjectBinding>() {
                 val list: ArrayList<BaseNode> = ArrayList()
                 for (i in it.indices) {
                     val secondList: ArrayList<BaseNode> = ArrayList()
-                    for (y in it[i].structures.indices) {
-                        val secondNode: Structure = it[i].structures[y]
+                    for (y in it[i].structures!!.indices) {
+                        val secondNode: Structure = it[i].structures!![y]
                         secondList.add(secondNode)
                     }
                     val firstNode: StructureGroup = it[i]
                     firstNode.isExpanded = firstNode.structures!!.size > 0
-                    firstNode.setChildNode(secondList)
+                    firstNode.childNode =secondList
                     list.add(firstNode)
                 }
                 baseAdapter.setList(list)

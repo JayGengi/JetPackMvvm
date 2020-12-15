@@ -10494,110 +10494,110 @@ com.duobang.jetpackmvvm.DataBinderMapperImpl$InnerBrLookup -> com.duobang.jetpac
     android.util.SparseArray sKeys -> a
 com.duobang.jetpackmvvm.DataBinderMapperImpl$InnerLayoutIdLookup -> com.duobang.jetpackmvvm.DataBinderMapperImpl$b:
     java.util.HashMap sKeys -> a
-com.duobang.jetpackmvvm.base.BaseApp -> com.duobang.jetpackmvvm.base.BaseApp:
+com.duobang.common.base.BaseApp -> com.duobang.common.base.BaseApp:
     androidx.lifecycle.ViewModelStore mAppViewModelStore -> a
     androidx.lifecycle.ViewModelProvider$Factory mFactory -> b
     androidx.lifecycle.ViewModelProvider getAppViewModelProvider() -> a
     androidx.lifecycle.ViewModelProvider$Factory getAppFactory() -> b
-com.duobang.jetpackmvvm.base.Ktx -> com.duobang.jetpackmvvm.base.Ktx:
+com.duobang.common.base.Ktx -> com.duobang.common.base.Ktx:
     android.app.Application app -> a
-    com.duobang.jetpackmvvm.base.Ktx$Companion Companion -> e
+    com.duobang.common.base.Ktx$Companion Companion -> e
     boolean watchActivityLife -> c
-    com.duobang.jetpackmvvm.network.manager.NetworkStateReceive mNetworkStateReceive -> b
+    com.duobang.common.network.manager.NetworkStateReceive mNetworkStateReceive -> b
     boolean watchAppLife -> d
     android.app.Application access$getApp$cp() -> a
     void install(android.app.Application) -> a
-com.duobang.jetpackmvvm.base.Ktx$Companion -> com.duobang.jetpackmvvm.base.Ktx$a:
+com.duobang.common.base.Ktx$Companion -> com.duobang.common.base.Ktx$a:
     android.app.Application getApp() -> a
-com.duobang.jetpackmvvm.base.KtxKt -> com.duobang.jetpackmvvm.base.KtxKt:
+com.duobang.common.base.KtxKt -> com.duobang.common.base.KtxKt:
     kotlin.Lazy appContext$delegate -> a
     android.app.Application getAppContext() -> a
-com.duobang.jetpackmvvm.base.KtxKt$appContext$2 -> com.duobang.jetpackmvvm.base.KtxKt$appContext$2:
-    com.duobang.jetpackmvvm.base.KtxKt$appContext$2 INSTANCE -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity:
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel mViewModel -> b
+com.duobang.common.base.KtxKt$appContext$2 -> com.duobang.common.base.KtxKt$appContext$2:
+    com.duobang.common.base.KtxKt$appContext$2 INSTANCE -> a
+com.duobang.common.base.activity.BaseVmActivity -> com.duobang.common.base.activity.BaseVmActivity:
+    com.duobang.common.base.viewmodel.BaseViewModel mViewModel -> b
     boolean isUserDb -> a
-    void addLoadingObserve(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel[]) -> a
+    void addLoadingObserve(com.duobang.common.base.viewmodel.BaseViewModel[]) -> a
     void createObserver() -> a
     void initView(android.os.Bundle) -> a
-    void onNetworkStateChanged(com.duobang.jetpackmvvm.network.manager.NetState) -> a
+    void onNetworkStateChanged(com.duobang.common.network.manager.NetState) -> a
     void showLoading(java.lang.String) -> a
     void userDataBinding(boolean) -> a
     void dismissLoading() -> b
     void init(android.os.Bundle) -> b
     void initDataBind() -> c
     int layoutId() -> d
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel createViewModel() -> e
+    com.duobang.common.base.viewmodel.BaseViewModel createViewModel() -> e
     void registerUiChange() -> f
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity$addLoadingObserve$$inlined$forEach$lambda$1 -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity$a:
-    com.duobang.jetpackmvvm.base.activity.BaseVmActivity this$0 -> a
+com.duobang.common.base.activity.BaseVmActivity$addLoadingObserve$$inlined$forEach$lambda$1 -> com.duobang.common.base.activity.BaseVmActivity$a:
+    com.duobang.common.base.activity.BaseVmActivity this$0 -> a
     void onChanged(java.lang.String) -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity$addLoadingObserve$$inlined$forEach$lambda$2 -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity$b:
-    com.duobang.jetpackmvvm.base.activity.BaseVmActivity this$0 -> a
+com.duobang.common.base.activity.BaseVmActivity$addLoadingObserve$$inlined$forEach$lambda$2 -> com.duobang.common.base.activity.BaseVmActivity$b:
+    com.duobang.common.base.activity.BaseVmActivity this$0 -> a
     void onChanged(java.lang.Boolean) -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity$init$1 -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity$c:
-    com.duobang.jetpackmvvm.base.activity.BaseVmActivity this$0 -> a
-    void onChanged(com.duobang.jetpackmvvm.network.manager.NetState) -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity$registerUiChange$1 -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity$d:
-    com.duobang.jetpackmvvm.base.activity.BaseVmActivity this$0 -> a
+com.duobang.common.base.activity.BaseVmActivity$init$1 -> com.duobang.common.base.activity.BaseVmActivity$c:
+    com.duobang.common.base.activity.BaseVmActivity this$0 -> a
+    void onChanged(com.duobang.common.network.manager.NetState) -> a
+com.duobang.common.base.activity.BaseVmActivity$registerUiChange$1 -> com.duobang.common.base.activity.BaseVmActivity$d:
+    com.duobang.common.base.activity.BaseVmActivity this$0 -> a
     void onChanged(java.lang.String) -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmActivity$registerUiChange$2 -> com.duobang.jetpackmvvm.base.activity.BaseVmActivity$e:
-    com.duobang.jetpackmvvm.base.activity.BaseVmActivity this$0 -> a
+com.duobang.common.base.activity.BaseVmActivity$registerUiChange$2 -> com.duobang.common.base.activity.BaseVmActivity$e:
+    com.duobang.common.base.activity.BaseVmActivity this$0 -> a
     void onChanged(java.lang.Boolean) -> a
-com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity -> com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity:
+com.duobang.common.base.activity.BaseVmDbActivity -> com.duobang.common.base.activity.BaseVmDbActivity:
     androidx.databinding.ViewDataBinding mDatabind -> c
     void initDataBind() -> c
     androidx.databinding.ViewDataBinding getMDatabind() -> e
-com.duobang.jetpackmvvm.base.fragment.BaseVmDbFragment -> com.duobang.jetpackmvvm.base.fragment.BaseVmDbFragment:
+com.duobang.common.base.fragment.BaseVmDbFragment -> com.duobang.common.base.fragment.BaseVmDbFragment:
     androidx.databinding.ViewDataBinding mDatabind -> e
     java.util.HashMap _$_findViewCache -> f
     void _$_clearFindViewByIdCache() -> d
     androidx.databinding.ViewDataBinding getMDatabind() -> l
-com.duobang.jetpackmvvm.base.fragment.BaseVmFragment -> com.duobang.jetpackmvvm.base.fragment.BaseVmFragment:
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel mViewModel -> b
+com.duobang.common.base.fragment.BaseVmFragment -> com.duobang.common.base.fragment.BaseVmFragment:
+    com.duobang.common.base.viewmodel.BaseViewModel mViewModel -> b
     androidx.appcompat.app.AppCompatActivity mActivity -> c
     boolean isFirst -> a
     java.util.HashMap _$_findViewCache -> d
-    boolean access$isFirst$p(com.duobang.jetpackmvvm.base.fragment.BaseVmFragment) -> a
-    void access$setFirst$p(com.duobang.jetpackmvvm.base.fragment.BaseVmFragment,boolean) -> a
+    boolean access$isFirst$p(com.duobang.common.base.fragment.BaseVmFragment) -> a
+    void access$setFirst$p(com.duobang.common.base.fragment.BaseVmFragment,boolean) -> a
     void initView(android.os.Bundle) -> a
-    void onNetworkStateChanged(com.duobang.jetpackmvvm.network.manager.NetState) -> a
+    void onNetworkStateChanged(com.duobang.common.network.manager.NetState) -> a
     void showLoading(java.lang.String) -> a
-    void showLoading$default(com.duobang.jetpackmvvm.base.fragment.BaseVmFragment,java.lang.String,int,java.lang.Object) -> a
+    void showLoading$default(com.duobang.common.base.fragment.BaseVmFragment,java.lang.String,int,java.lang.Object) -> a
     void _$_clearFindViewByIdCache() -> d
     void createObserver() -> e
     void dismissLoading() -> f
     androidx.appcompat.app.AppCompatActivity getMActivity() -> g
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel getMViewModel() -> h
+    com.duobang.common.base.viewmodel.BaseViewModel getMViewModel() -> h
     void initData() -> i
     int layoutId() -> j
     void lazyLoadData() -> k
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel createViewModel() -> l
+    com.duobang.common.base.viewmodel.BaseViewModel createViewModel() -> l
     void onVisible() -> m
     void registorDefUIChange() -> n
-com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$onVisible$1 -> com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$a:
-    com.duobang.jetpackmvvm.base.fragment.BaseVmFragment this$0 -> a
-com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$onVisible$1$1 -> com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$a$a:
-    com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$onVisible$1 this$0 -> a
-    void onChanged(com.duobang.jetpackmvvm.network.manager.NetState) -> a
-com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$registorDefUIChange$1 -> com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$b:
-    com.duobang.jetpackmvvm.base.fragment.BaseVmFragment this$0 -> a
+com.duobang.common.base.fragment.BaseVmFragment$onVisible$1 -> com.duobang.common.base.fragment.BaseVmFragment$a:
+    com.duobang.common.base.fragment.BaseVmFragment this$0 -> a
+com.duobang.common.base.fragment.BaseVmFragment$onVisible$1$1 -> com.duobang.common.base.fragment.BaseVmFragment$a$a:
+    com.duobang.common.base.fragment.BaseVmFragment$onVisible$1 this$0 -> a
+    void onChanged(com.duobang.common.network.manager.NetState) -> a
+com.duobang.common.base.fragment.BaseVmFragment$registorDefUIChange$1 -> com.duobang.common.base.fragment.BaseVmFragment$b:
+    com.duobang.common.base.fragment.BaseVmFragment this$0 -> a
     void onChanged(java.lang.String) -> a
-com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$registorDefUIChange$2 -> com.duobang.jetpackmvvm.base.fragment.BaseVmFragment$c:
-    com.duobang.jetpackmvvm.base.fragment.BaseVmFragment this$0 -> a
+com.duobang.common.base.fragment.BaseVmFragment$registorDefUIChange$2 -> com.duobang.common.base.fragment.BaseVmFragment$c:
+    com.duobang.common.base.fragment.BaseVmFragment this$0 -> a
     void onChanged(java.lang.Boolean) -> a
-com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel -> com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel:
+com.duobang.common.base.viewmodel.BaseViewModel -> com.duobang.common.base.viewmodel.BaseViewModel:
     kotlin.Lazy loadingChange$delegate -> a
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange getLoadingChange() -> a
-com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange -> com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange:
+    com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange getLoadingChange() -> a
+com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange -> com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange:
     kotlin.Lazy dismissDialog$delegate -> b
     kotlin.Lazy showDialog$delegate -> a
     com.duobang.jetpackmvvm.callback.livedata.event.EventLiveData getDismissDialog() -> a
     com.duobang.jetpackmvvm.callback.livedata.event.EventLiveData getShowDialog() -> b
-com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2 -> com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2:
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2 INSTANCE -> a
-com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2 -> com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2:
-    com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2 INSTANCE -> a
+com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2 -> com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2:
+    com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$dismissDialog$2 INSTANCE -> a
+com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2 -> com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2:
+    com.duobang.common.base.viewmodel.BaseViewModel$UiLoadingChange$showDialog$2 INSTANCE -> a
 com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData -> com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData:
     void hook(androidx.lifecycle.Observer) -> a
 com.duobang.jetpackmvvm.callback.livedata.event.EventLiveData -> com.duobang.jetpackmvvm.callback.livedata.event.EventLiveData:
@@ -11361,7 +11361,7 @@ com.duobang.jetpackmvvm.demo.ui.activity.MainActivity -> com.duobang.jetpackmvvm
     long exitTime -> e
     void createObserver() -> a
     void initView(android.os.Bundle) -> a
-    void onNetworkStateChanged(com.duobang.jetpackmvvm.network.manager.NetState) -> a
+    void onNetworkStateChanged(com.duobang.common.network.manager.NetState) -> a
     void setExitTime(long) -> a
     int layoutId() -> d
     long getExitTime() -> g
@@ -11388,7 +11388,7 @@ com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$createObserver$1 -> com.du
 com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$createObserver$1$1:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.UserInfo) -> a
 com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$initView$1$1 -> com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$initView$1$1:
     com.duobang.jetpackmvvm.demo.ui.activity.TestActivity$initView$1$1 INSTANCE -> a
     java.lang.Object invoke(java.lang.Object,java.lang.Object,java.lang.Object) -> a
@@ -11828,7 +11828,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$createObserver$1 ->
 com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$createObserver$1$1:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.UserInfo) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$initView$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.LoginFragment$initView$1:
     void invoke(androidx.appcompat.widget.Toolbar) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment -> com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment:
@@ -11859,7 +11859,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$createObserver$1 
 com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$createObserver$1$1:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.UserInfo) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$initView$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.login.RegisterFrgment$initView$1:
     void invoke(androidx.appcompat.widget.Toolbar) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.lookinfo.LookInfoFragment -> com.duobang.jetpackmvvm.demo.ui.fragment.lookinfo.LookInfoFragment:
@@ -11963,7 +11963,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.me.MeFragment$createObserver$1$1 -> com
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.IntegralResponse) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.me.MeFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.me.MeFragment$createObserver$1$2:
     com.duobang.jetpackmvvm.demo.ui.fragment.me.MeFragment$createObserver$1$2 INSTANCE -> a
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectChildFragment -> com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectChildFragment:
     com.duobang.jetpackmvvm.demo.app.weight.recyclerview.DefineLoadMoreView footView -> l
     boolean isNew -> m
@@ -12047,7 +12047,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$
 com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$1$1:
     void invoke(java.util.ArrayList) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$createObserver$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment$a:
     com.duobang.jetpackmvvm.demo.ui.fragment.project.ProjectFragment this$0 -> a
     void onChanged(java.lang.Integer) -> a
@@ -12129,7 +12129,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$creat
 com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$createObserver$1$1:
     void invoke(java.util.ArrayList) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$createObserver$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment$a:
     com.duobang.jetpackmvvm.demo.ui.fragment.publicNumber.PublicNumberFragment this$0 -> a
     void onChanged(java.lang.Integer) -> a
@@ -12216,7 +12216,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObser
 com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObserver$1$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObserver$1$1:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$createObserver$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment$c:
     com.duobang.jetpackmvvm.demo.ui.fragment.search.SearchResultFragment this$0 -> a
     void onChanged(com.duobang.jetpackmvvm.demo.app.network.stateCallback.CollectUiState) -> a
@@ -12281,7 +12281,7 @@ com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$createObserve
     com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment this$0 -> a
     void onChanged(com.duobang.jetpackmvvm.state.ResultState) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$createObserver$1$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$createObserver$1$2:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$initView$$inlined$run$lambda$1 -> com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$initView$$inlined$run$lambda$1:
     void invoke(androidx.appcompat.widget.Toolbar) -> a
 com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$initView$$inlined$run$lambda$2 -> com.duobang.jetpackmvvm.demo.ui.fragment.share.AddAriticleFragment$a:
@@ -12685,11 +12685,11 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel -> com.d
     int getPageNo() -> d
     androidx.lifecycle.MutableLiveData getShareDataState() -> e
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$deleteShareData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$deleteShareData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$getShareData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$getShareData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ShareResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$getShareData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestAriticleViewModel$getShareData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel:
     androidx.lifecycle.MutableLiveData collectUiState -> c
     int pageNo -> b
@@ -12709,23 +12709,23 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel -> com.du
     androidx.lifecycle.MutableLiveData getCollectUrlUiState() -> e
     androidx.lifecycle.MutableLiveData getUrlDataState() -> f
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collect$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collect$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collectUrl$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collectUrl$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.CollectUrlResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collectUrl$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$collectUrl$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectAriticleData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectAriticleData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectAriticleData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectAriticleData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectUrlData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectUrlData$2:
     void invoke(java.util.ArrayList) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectUrlData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$getCollectUrlData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$uncollect$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$uncollect$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$uncollectUrl$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestCollectViewModel$uncollectUrl$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel:
     androidx.lifecycle.MutableLiveData homeDataState -> c
     int pageNo -> b
@@ -12739,7 +12739,7 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel -> com.duoba
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel$getHomeData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel$getHomeData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel$getHomeData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestHomeViewModel$getHomeData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel:
     androidx.lifecycle.MutableLiveData integralDataState -> c
     int pageNo -> b
@@ -12753,11 +12753,11 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel -> com.d
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralHistoryData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralHistoryData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralHistoryData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestIntegralViewModel$getIntegralHistoryData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel:
     androidx.lifecycle.MutableLiveData loginResult -> b
     void loginReq(java.lang.String,java.lang.String) -> a
@@ -12768,7 +12768,7 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel$log
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.UserInfo) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel$loginReq$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel$loginReq$3:
     com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLoginRegisterViewModel$loginReq$3 INSTANCE -> a
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel:
     androidx.lifecycle.MutableLiveData shareListDataUistate -> c
     int pageNo -> b
@@ -12781,7 +12781,7 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel -> com.d
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel$getLookinfo$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel$getLookinfo$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ShareResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel$getLookinfo$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestLookInfoViewModel$getLookinfo$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestMeViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestMeViewModel:
     androidx.lifecycle.MutableLiveData meData -> b
     void getIntegral() -> b
@@ -12799,7 +12799,7 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestProjectViewModel -> com.du
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestProjectViewModel$getProjectData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestProjectViewModel$getProjectData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestProjectViewModel$getProjectData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestProjectViewModel$getProjectData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel:
     androidx.lifecycle.MutableLiveData titleData -> c
     int pageNo -> b
@@ -12813,7 +12813,7 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel -> c
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel$getPublicData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel$getPublicData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel$getPublicData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestPublicNumberViewModel$getPublicData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestSearchViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestSearchViewModel:
     androidx.lifecycle.MutableLiveData hotData -> c
     int pageNo -> b
@@ -12851,17 +12851,17 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel -> com.duoba
     androidx.lifecycle.MutableLiveData getTodoDataState() -> e
     androidx.lifecycle.MutableLiveData getUpdateDataState() -> f
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$addTodo$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$addTodo$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$delTodo$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$delTodo$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$doneTodo$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$doneTodo$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$getTodoData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$getTodoData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$getTodoData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$getTodoData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$updateTodo$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTodoViewModel$updateTodo$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel:
     androidx.lifecycle.MutableLiveData plazaDataState -> c
     int pageNo -> b
@@ -12884,23 +12884,23 @@ com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel -> com.duoba
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getAskData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getAskData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getAskData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getAskData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getNavigationData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getNavigationData$2:
     void invoke(java.util.ArrayList) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getNavigationData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getNavigationData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getPlazaData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getPlazaData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getPlazaData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getPlazaData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemChildData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemChildData$2:
     void invoke(com.duobang.jetpackmvvm.demo.data.model.bean.ApiPagerResponse) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemChildData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemChildData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemData$2 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemData$2:
     void invoke(java.util.ArrayList) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemData$3 -> com.duobang.jetpackmvvm.demo.viewmodel.request.RequestTreeViewModel$getSystemData$3:
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.demo.viewmodel.state.AriticleViewModel -> com.duobang.jetpackmvvm.demo.viewmodel.state.AriticleViewModel:
     com.duobang.jetpackmvvm.callback.databind.StringObservableField shareName -> d
     com.duobang.jetpackmvvm.callback.databind.StringObservableField shareUrl -> c
@@ -12983,19 +12983,19 @@ com.duobang.jetpackmvvm.demo.viewmodel.state.WebViewModel -> com.duobang.jetpack
     java.lang.String getShowTitle() -> e
     java.lang.String getUrl() -> f
 com.duobang.jetpackmvvm.ext.BaseViewModelExtKt -> com.duobang.jetpackmvvm.ext.BaseViewModelExtKt:
-    java.lang.Object executeResponse(com.duobang.jetpackmvvm.network.BaseResponse,kotlin.jvm.functions.Function3,kotlin.coroutines.Continuation) -> a
-    void launch(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function0,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1) -> a
-    void parseState(com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0) -> a
-    void parseState(com.duobang.jetpackmvvm.base.fragment.BaseVmFragment,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0) -> a
-    void parseState$default(com.duobang.jetpackmvvm.base.activity.BaseVmDbActivity,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0,int,java.lang.Object) -> a
-    void parseState$default(com.duobang.jetpackmvvm.base.fragment.BaseVmFragment,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0,int,java.lang.Object) -> a
-    kotlinx.coroutines.Job request(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,androidx.lifecycle.MutableLiveData,boolean,java.lang.String) -> a
-    kotlinx.coroutines.Job request(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,boolean,java.lang.String) -> a
-    kotlinx.coroutines.Job request$default(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,androidx.lifecycle.MutableLiveData,boolean,java.lang.String,int,java.lang.Object) -> a
-    kotlinx.coroutines.Job request$default(com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,boolean,java.lang.String,int,java.lang.Object) -> a
+    java.lang.Object executeResponse(com.duobang.common.network.BaseResponse,kotlin.jvm.functions.Function3,kotlin.coroutines.Continuation) -> a
+    void launch(com.duobang.common.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function0,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1) -> a
+    void parseState(com.duobang.common.base.activity.BaseVmDbActivity,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0) -> a
+    void parseState(com.duobang.common.base.fragment.BaseVmFragment,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0) -> a
+    void parseState$default(com.duobang.common.base.activity.BaseVmDbActivity,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0,int,java.lang.Object) -> a
+    void parseState$default(com.duobang.common.base.fragment.BaseVmFragment,com.duobang.jetpackmvvm.state.ResultState,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function0,int,java.lang.Object) -> a
+    kotlinx.coroutines.Job request(com.duobang.common.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,androidx.lifecycle.MutableLiveData,boolean,java.lang.String) -> a
+    kotlinx.coroutines.Job request(com.duobang.common.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,boolean,java.lang.String) -> a
+    kotlinx.coroutines.Job request$default(com.duobang.common.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,androidx.lifecycle.MutableLiveData,boolean,java.lang.String,int,java.lang.Object) -> a
+    kotlinx.coroutines.Job request$default(com.duobang.common.base.viewmodel.BaseViewModel,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,boolean,java.lang.String,int,java.lang.Object) -> a
 com.duobang.jetpackmvvm.ext.BaseViewModelExtKt$request$2 -> com.duobang.jetpackmvvm.ext.BaseViewModelExtKt$request$2:
     com.duobang.jetpackmvvm.ext.BaseViewModelExtKt$request$2 INSTANCE -> a
-    void invoke(com.duobang.jetpackmvvm.network.AppException) -> a
+    void invoke(com.duobang.common.network.AppException) -> a
 com.duobang.jetpackmvvm.ext.BaseViewModelExtKt$request$3$invokeSuspend$$inlined$onSuccess$lambda$1 -> com.duobang.jetpackmvvm.ext.BaseViewModelExtKt$request$3$invokeSuspend$$inlined$onSuccess$lambda$1:
     kotlin.coroutines.Continuation create(kotlinx.coroutines.CoroutineScope,java.lang.Object,kotlin.coroutines.Continuation) -> a
     java.lang.Object invoke(java.lang.Object,java.lang.Object,java.lang.Object) -> a
@@ -13177,38 +13177,38 @@ com.duobang.jetpackmvvm.navigation.NavHostFragment -> com.duobang.jetpackmvvm.na
     void onCreateNavController(androidx.navigation.NavController) -> a
     androidx.navigation.Navigator createFragmentNavigator() -> d
     int getContainerId() -> e
-com.duobang.jetpackmvvm.network.AppException -> com.duobang.jetpackmvvm.network.AppException:
+com.duobang.common.network.AppException -> com.duobang.common.network.AppException:
     java.lang.String getErrorMsg() -> a
-com.duobang.jetpackmvvm.network.BaseNetworkApi -> com.duobang.jetpackmvvm.network.a:
+com.duobang.common.network.BaseNetworkApi -> com.duobang.common.network.a:
     java.lang.Object getApi(java.lang.Class,java.lang.String) -> a
     okhttp3.OkHttpClient getOkHttpClient() -> a
     okhttp3.OkHttpClient$Builder setHttpClientBuilder(okhttp3.OkHttpClient$Builder) -> a
     retrofit2.Retrofit$Builder setRetrofitBuilder(retrofit2.Retrofit$Builder) -> a
-com.duobang.jetpackmvvm.network.BaseResponse -> com.duobang.jetpackmvvm.network.b:
-com.duobang.jetpackmvvm.network.Error -> com.duobang.jetpackmvvm.network.Error:
-    com.duobang.jetpackmvvm.network.Error PARSE_ERROR -> b
-    com.duobang.jetpackmvvm.network.Error NETWORK_ERROR -> c
-    com.duobang.jetpackmvvm.network.Error UNKNOWN -> a
-    com.duobang.jetpackmvvm.network.Error SSL_ERROR -> d
-    com.duobang.jetpackmvvm.network.Error[] $VALUES -> f
-    com.duobang.jetpackmvvm.network.Error TIMEOUT_ERROR -> e
+com.duobang.common.network.BaseResponse -> com.duobang.common.network.b:
+com.duobang.common.network.Error -> com.duobang.common.network.Error:
+    com.duobang.common.network.Error PARSE_ERROR -> b
+    com.duobang.common.network.Error NETWORK_ERROR -> c
+    com.duobang.common.network.Error UNKNOWN -> a
+    com.duobang.common.network.Error SSL_ERROR -> d
+    com.duobang.common.network.Error[] $VALUES -> f
+    com.duobang.common.network.Error TIMEOUT_ERROR -> e
     int getKey() -> a
     java.lang.String getValue() -> b
-com.duobang.jetpackmvvm.network.ExceptionHandle -> com.duobang.jetpackmvvm.network.c:
-    com.duobang.jetpackmvvm.network.ExceptionHandle INSTANCE -> a
-    com.duobang.jetpackmvvm.network.AppException handleException(java.lang.Throwable) -> a
-com.duobang.jetpackmvvm.network.NetworkUtil -> com.duobang.jetpackmvvm.network.d:
+com.duobang.common.network.ExceptionHandle -> com.duobang.common.network.c:
+    com.duobang.common.network.ExceptionHandle INSTANCE -> a
+    com.duobang.common.network.AppException handleException(java.lang.Throwable) -> a
+com.duobang.common.network.NetworkUtil -> com.duobang.common.network.d:
     boolean isNetworkAvailable(android.content.Context) -> a
-com.duobang.jetpackmvvm.network.interceptor.CacheInterceptor -> com.duobang.jetpackmvvm.network.e.a:
+com.duobang.common.network.interceptor.CacheInterceptor -> com.duobang.common.network.e.a:
     int day -> a
-com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter -> com.duobang.jetpackmvvm.network.interceptor.logging.a:
+com.duobang.common.network.interceptor.logging.DefaultFormatPrinter -> com.duobang.common.network.interceptor.logging.a:
     java.lang.String[] ARMS -> e
     java.lang.ThreadLocal last -> f
     java.lang.String[] OMITTED_REQUEST -> d
     java.lang.String LINE_SEPARATOR -> a
     java.lang.String DOUBLE_SEPARATOR -> b
     java.lang.String[] OMITTED_RESPONSE -> c
-    com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion Companion -> g
+    com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion Companion -> g
     java.lang.String[] access$getARMS$cp() -> a
     void printFileRequest(okhttp3.Request) -> a
     void printFileResponse(long,boolean,int,java.lang.String,java.util.List,java.lang.String,java.lang.String) -> a
@@ -13217,11 +13217,11 @@ com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter -> com.
     java.lang.String access$getDOUBLE_SEPARATOR$cp() -> b
     java.lang.String access$getLINE_SEPARATOR$cp() -> c
     java.lang.ThreadLocal access$getLast$cp() -> d
-com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion -> com.duobang.jetpackmvvm.network.interceptor.logging.a$b:
-    java.lang.String[] access$getRequest(com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion,okhttp3.Request) -> a
-    java.lang.String[] access$getResponse(com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion,java.lang.String,long,int,boolean,java.util.List,java.lang.String) -> a
-    java.lang.String access$getTag(com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion,boolean) -> a
-    void access$logLines(com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion,java.lang.String,java.lang.String[],boolean) -> a
+com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion -> com.duobang.common.network.interceptor.logging.a$b:
+    java.lang.String[] access$getRequest(com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion,okhttp3.Request) -> a
+    java.lang.String[] access$getResponse(com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion,java.lang.String,long,int,boolean,java.util.List,java.lang.String) -> a
+    java.lang.String access$getTag(com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion,boolean) -> a
+    void access$logLines(com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion,java.lang.String,java.lang.String[],boolean) -> a
     java.lang.String computeKey() -> a
     java.lang.String dotHeaders(java.lang.String) -> a
     java.lang.String[] getRequest(okhttp3.Request) -> a
@@ -13231,19 +13231,19 @@ com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Compani
     java.lang.String slashSegments(java.util.List) -> a
     boolean isEmpty(java.lang.String) -> b
     java.lang.String resolveTag(java.lang.String) -> c
-com.duobang.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter$Companion$last$1 -> com.duobang.jetpackmvvm.network.interceptor.logging.a$a:
-com.duobang.jetpackmvvm.network.interceptor.logging.FormatPrinter -> com.duobang.jetpackmvvm.network.interceptor.logging.b:
+com.duobang.common.network.interceptor.logging.DefaultFormatPrinter$Companion$last$1 -> com.duobang.common.network.interceptor.logging.a$a:
+com.duobang.common.network.interceptor.logging.FormatPrinter -> com.duobang.common.network.interceptor.logging.b:
     void printFileRequest(okhttp3.Request) -> a
     void printFileResponse(long,boolean,int,java.lang.String,java.util.List,java.lang.String,java.lang.String) -> a
     void printJsonRequest(okhttp3.Request,java.lang.String) -> a
     void printJsonResponse(long,boolean,int,java.lang.String,okhttp3.MediaType,java.lang.String,java.util.List,java.lang.String,java.lang.String) -> a
-com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor -> com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor:
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Companion Companion -> c
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level printLevel -> b
-    com.duobang.jetpackmvvm.network.interceptor.logging.FormatPrinter mPrinter -> a
+com.duobang.common.network.interceptor.logging.LogInterceptor -> com.duobang.common.network.interceptor.logging.LogInterceptor:
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Companion Companion -> c
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level printLevel -> b
+    com.duobang.common.network.interceptor.logging.FormatPrinter mPrinter -> a
     java.lang.String parseContent(okhttp3.ResponseBody,java.lang.String,okio.Buffer) -> a
     java.lang.String printResult(okhttp3.Request,okhttp3.Response,boolean) -> a
-com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Companion -> com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$a:
+com.duobang.common.network.interceptor.logging.LogInterceptor$Companion -> com.duobang.common.network.interceptor.logging.LogInterceptor$a:
     java.lang.String convertCharset(java.nio.charset.Charset) -> a
     boolean isForm(okhttp3.MediaType) -> a
     java.lang.String parseParams(okhttp3.Request) -> a
@@ -13253,36 +13253,36 @@ com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Companion -> 
     boolean isPlain(okhttp3.MediaType) -> e
     boolean isText(okhttp3.MediaType) -> f
     boolean isXml(okhttp3.MediaType) -> g
-com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level -> com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level:
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level REQUEST -> b
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level NONE -> a
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level ALL -> d
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level RESPONSE -> c
-    com.duobang.jetpackmvvm.network.interceptor.logging.LogInterceptor$Level[] $VALUES -> e
-com.duobang.jetpackmvvm.network.manager.NetState -> com.duobang.jetpackmvvm.network.manager.a:
+com.duobang.common.network.interceptor.logging.LogInterceptor$Level -> com.duobang.common.network.interceptor.logging.LogInterceptor$Level:
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level REQUEST -> b
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level NONE -> a
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level ALL -> d
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level RESPONSE -> c
+    com.duobang.common.network.interceptor.logging.LogInterceptor$Level[] $VALUES -> e
+com.duobang.common.network.manager.NetState -> com.duobang.common.network.manager.a:
     boolean isSuccess -> a
     boolean isSuccess() -> a
-com.duobang.jetpackmvvm.network.manager.NetworkStateManager -> com.duobang.jetpackmvvm.network.manager.NetworkStateManager:
+com.duobang.common.network.manager.NetworkStateManager -> com.duobang.common.network.manager.NetworkStateManager:
     kotlin.Lazy instance$delegate -> b
     com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData mNetworkStateCallback -> a
-    com.duobang.jetpackmvvm.network.manager.NetworkStateManager$Companion Companion -> c
+    com.duobang.common.network.manager.NetworkStateManager$Companion Companion -> c
     com.duobang.jetpackmvvm.callback.livedata.UnPeekLiveData getMNetworkStateCallback() -> a
     kotlin.Lazy access$getInstance$cp() -> b
-com.duobang.jetpackmvvm.network.manager.NetworkStateManager$Companion -> com.duobang.jetpackmvvm.network.manager.NetworkStateManager$a:
-    com.duobang.jetpackmvvm.network.manager.NetworkStateManager getInstance() -> a
-com.duobang.jetpackmvvm.network.manager.NetworkStateManager$Companion$instance$2 -> com.duobang.jetpackmvvm.network.manager.NetworkStateManager$Companion$instance$2:
-    com.duobang.jetpackmvvm.network.manager.NetworkStateManager$Companion$instance$2 INSTANCE -> a
-com.duobang.jetpackmvvm.network.manager.NetworkStateReceive -> com.duobang.jetpackmvvm.network.manager.b:
+com.duobang.common.network.manager.NetworkStateManager$Companion -> com.duobang.common.network.manager.NetworkStateManager$a:
+    com.duobang.common.network.manager.NetworkStateManager getInstance() -> a
+com.duobang.common.network.manager.NetworkStateManager$Companion$instance$2 -> com.duobang.common.network.manager.NetworkStateManager$Companion$instance$2:
+    com.duobang.common.network.manager.NetworkStateManager$Companion$instance$2 INSTANCE -> a
+com.duobang.common.network.manager.NetworkStateReceive -> com.duobang.common.network.manager.b:
     boolean isInit -> a
 com.duobang.jetpackmvvm.state.ResultState -> com.duobang.jetpackmvvm.a.a:
     com.duobang.jetpackmvvm.state.ResultState$Companion Companion -> a
 com.duobang.jetpackmvvm.state.ResultState$Companion -> com.duobang.jetpackmvvm.a.a$a:
-    com.duobang.jetpackmvvm.state.ResultState onAppError(com.duobang.jetpackmvvm.network.AppException) -> a
+    com.duobang.jetpackmvvm.state.ResultState onAppError(com.duobang.common.network.AppException) -> a
     com.duobang.jetpackmvvm.state.ResultState onAppLoading(java.lang.String) -> a
     com.duobang.jetpackmvvm.state.ResultState onAppSuccess(java.lang.Object) -> a
 com.duobang.jetpackmvvm.state.ResultState$Error -> com.duobang.jetpackmvvm.a.a$b:
-    com.duobang.jetpackmvvm.network.AppException error -> b
-    com.duobang.jetpackmvvm.network.AppException getError() -> a
+    com.duobang.common.network.AppException error -> b
+    com.duobang.common.network.AppException getError() -> a
 com.duobang.jetpackmvvm.state.ResultState$Loading -> com.duobang.jetpackmvvm.a.a$c:
     java.lang.String loadingMessage -> b
     java.lang.String getLoadingMessage() -> a
@@ -13291,15 +13291,15 @@ com.duobang.jetpackmvvm.state.ResultState$Success -> com.duobang.jetpackmvvm.a.a
     java.lang.Object getData() -> a
 com.duobang.jetpackmvvm.state.ResultStateKt -> com.duobang.jetpackmvvm.a.b:
     void paresException(androidx.lifecycle.MutableLiveData,java.lang.Throwable) -> a
-    void paresResult(androidx.lifecycle.MutableLiveData,com.duobang.jetpackmvvm.network.BaseResponse) -> a
-com.duobang.jetpackmvvm.util.CharacterHandler -> com.duobang.jetpackmvvm.util.a:
-    com.duobang.jetpackmvvm.util.CharacterHandler$Companion Companion -> a
-com.duobang.jetpackmvvm.util.CharacterHandler$Companion -> com.duobang.jetpackmvvm.util.a$b:
+    void paresResult(androidx.lifecycle.MutableLiveData,com.duobang.common.network.BaseResponse) -> a
+com.duobang.common.util.CharacterHandler -> com.duobang.common.util.a:
+    com.duobang.common.util.CharacterHandler$Companion Companion -> a
+com.duobang.common.util.CharacterHandler$Companion -> com.duobang.common.util.a$b:
     java.lang.String jsonFormat(java.lang.String) -> a
     java.lang.String xmlFormat(java.lang.String) -> b
-com.duobang.jetpackmvvm.util.CharacterHandler$Companion$EMOJI_FILTER$1 -> com.duobang.jetpackmvvm.util.a$a:
+com.duobang.common.util.CharacterHandler$Companion$EMOJI_FILTER$1 -> com.duobang.common.util.a$a:
     java.util.regex.Pattern emoji -> a
-com.duobang.jetpackmvvm.util.Drawables -> com.duobang.jetpackmvvm.util.b:
+com.duobang.common.util.Drawables -> com.duobang.common.util.b:
     int[] tmpPadding -> a
     android.graphics.drawable.Drawable create(int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float) -> a
     int dip2px(float) -> a
@@ -13307,26 +13307,26 @@ com.duobang.jetpackmvvm.util.Drawables -> com.duobang.jetpackmvvm.util.b:
     void setRingValue(android.graphics.drawable.GradientDrawable,java.lang.Float,java.lang.Float,java.lang.Float,java.lang.Float) -> a
     void setViewBackground(android.view.View,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,int,java.lang.Integer,int,float,float,float,float,float,float,float,float,java.lang.Integer,java.lang.Integer,java.lang.Integer,int,int,java.lang.Float,java.lang.Float,float,float,float,float,float,float,float,float,float,float,float,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable) -> a
     int validShapeMode(int) -> b
-com.duobang.jetpackmvvm.util.GhostFragment -> com.duobang.jetpackmvvm.util.GhostFragment:
+com.duobang.common.util.GhostFragment -> com.duobang.common.util.GhostFragment:
     android.content.Intent intent -> b
     java.util.HashMap _$_findViewCache -> d
     int requestCode -> a
     kotlin.jvm.functions.Function1 callback -> c
     void _$_clearFindViewByIdCache() -> d
-com.duobang.jetpackmvvm.util.LogUtils -> com.duobang.jetpackmvvm.util.c:
-    com.duobang.jetpackmvvm.util.LogUtils INSTANCE -> a
+com.duobang.common.util.LogUtils -> com.duobang.common.util.c:
+    com.duobang.common.util.LogUtils INSTANCE -> a
     void debugInfo(java.lang.String,java.lang.String) -> a
-com.duobang.jetpackmvvm.util.ProxyDrawable -> com.duobang.jetpackmvvm.util.d:
+com.duobang.common.util.ProxyDrawable -> com.duobang.common.util.d:
     android.graphics.drawable.Drawable originDrawable -> a
     android.graphics.drawable.Drawable getOriginDrawable() -> a
-com.duobang.jetpackmvvm.util.UrlEncoderUtils -> com.duobang.jetpackmvvm.util.e:
-    com.duobang.jetpackmvvm.util.UrlEncoderUtils$Companion Companion -> a
-com.duobang.jetpackmvvm.util.UrlEncoderUtils$Companion -> com.duobang.jetpackmvvm.util.e$a:
+com.duobang.common.util.UrlEncoderUtils -> com.duobang.common.util.e:
+    com.duobang.common.util.UrlEncoderUtils$Companion Companion -> a
+com.duobang.common.util.UrlEncoderUtils$Companion -> com.duobang.common.util.e$a:
     boolean hasUrlEncoded(java.lang.String) -> a
     boolean isValidHexChar(char) -> a
-com.duobang.jetpackmvvm.util.ZipHelper -> com.duobang.jetpackmvvm.util.f:
-    com.duobang.jetpackmvvm.util.ZipHelper$Companion Companion -> a
-com.duobang.jetpackmvvm.util.ZipHelper$Companion -> com.duobang.jetpackmvvm.util.f$a:
+com.duobang.common.util.ZipHelper -> com.duobang.common.util.f:
+    com.duobang.common.util.ZipHelper$Companion Companion -> a
+com.duobang.common.util.ZipHelper$Companion -> com.duobang.common.util.f$a:
     void closeQuietly(java.io.Closeable) -> a
     java.lang.String decompressForGzip(byte[],java.lang.String) -> a
     byte[] decompressForZlib(byte[]) -> a

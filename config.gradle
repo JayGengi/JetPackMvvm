@@ -28,6 +28,10 @@ ext {
             swiperefreshlayout     :"androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
             preference             :'androidx.preference:preference:1.1.1',
 
+            //arouter
+            aroutreApi             : "com.alibaba:arouter-api:1.5.0",
+            arouterCompiler        : "com.alibaba:arouter-compiler:1.2.2",
+
             //dialog
             dialogLifecycle        :"com.afollestad.material-dialogs:lifecycle:3.3.0",
             dialogCore             :"com.afollestad.material-dialogs:core:3.3.0",

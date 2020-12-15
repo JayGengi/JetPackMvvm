@@ -26,7 +26,7 @@
             android:visibility="invisible"
             app:elevation="5dp"
             app:fabSize="mini"
-            app:layout_behavior="com.duobang.jetpackmvvm.weight.recyclerview.FatScrollAwareFABBehavior" />
+            app:layout_behavior="com.duobang.common.weight.recyclerview.FatScrollAwareFABBehavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

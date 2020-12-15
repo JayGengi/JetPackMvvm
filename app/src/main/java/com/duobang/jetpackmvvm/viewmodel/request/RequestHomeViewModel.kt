@@ -1,13 +1,13 @@
 package com.duobang.jetpackmvvm.viewmodel.request
 
 import androidx.lifecycle.MutableLiveData
-import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
+import com.duobang.common.base.viewmodel.BaseViewModel
 import com.duobang.jetpackmvvm.ext.request
-import com.duobang.jetpackmvvm.data.bean.Dashboard
-import com.duobang.jetpackmvvm.data.bean.Record
-import com.duobang.jetpackmvvm.network.apiService
-import com.duobang.jetpackmvvm.network.stateCallback.ListDataUiState
-import com.duobang.jetpackmvvm.util.CacheUtil
+import com.duobang.common.data.bean.Dashboard
+import com.duobang.common.data.bean.Record
+import com.duobang.common.network.apiService
+import com.duobang.common.network.stateCallback.ListDataUiState
+import com.duobang.common.util.CacheUtil
 import com.duobang.jetpackmvvm.state.ResultState
 
 /**

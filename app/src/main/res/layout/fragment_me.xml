@@ -15,23 +15,20 @@
             type="com.duobang.jetpackmvvm.ui.fragment.me.MeFragment.ProxyClick" />
     </data>
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".personal.PersonalFragment">
-
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/baseLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
             android:background="@drawable/fill_personal_top_bg"
-            android:paddingBottom="24dp"
             android:elevation="6dp"
             tools:ignore="UnusedAttribute">
 
-            <com.duobang.jetpackmvvm.weight.customview.AvatarView
+            <com.duobang.common.weight.customview.AvatarView
                 android:id="@+id/user_icon_person"
                 android:layout_width="48dp"
                 android:layout_height="48dp"

@@ -4,9 +4,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.duobang.jetpackmvvm.util.AppImageLoader
+import com.duobang.common.util.AppImageLoader
 import com.duobang.jetpackmvvm.ext.view.visibleOrGone
-import com.duobang.jetpackmvvm.data.enums.IConstant
+import com.duobang.common.data.constant.IConstant
 import com.duobang.jetpackmvvm.R
 
 class PhotoAdapter(

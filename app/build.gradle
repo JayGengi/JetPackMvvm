@@ -3,6 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+//1.当*.kt 后缀的Activity上使用@Router（path =xxxxx）时候遇到No match path；原因： *.kt 上的注解需要使用 kotlin方式的注解解释器才可以识别。
+//kapt {
+//    arguments {
+//        arg("moduleName", project.getName())
+//    }
+//    generateStubs = true
+//}
+
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
@@ -11,12 +20,19 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 19
         versionName "1.1.9"
-        /* ndk {
-              // 设置支持的SO库架构 一般只设置这个就阔以设配所有的设备了，还可以减少apk的大小
-              abiFilters 'armeabi','armeabi-v7a'
-          }*/
         multiDexEnabled true
+        ndk {
+              // 设置支持的SO库架构 一般只设置这个就阔以设配所有的设备了，还可以减少apk的大小
+              abiFilters 'armeabi','armeabi-v7a','x86'
+          }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
     }
+    //支持DataBinding
     dataBinding {
         enabled = true
     }
@@ -34,7 +50,7 @@ android {
 
         release {
             minifyEnabled true//开启混淆
-            shrinkResources true
+            shrinkResources true// 移除无用的resource文件
             zipAlignEnabled true//去除无用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -46,75 +62,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    lintOptions {
-        disable 'InvalidPackage'
-        disable "ResourceType"
-        abortOnError false
-    }
-    dexOptions {
-        javaMaxHeapSize "4g"
-        jumboMode = true
-        preDexLibraries = false
-        additionalParameters = [
-                '--multi-dex',//多分包
-                '--set-max-idx-number=60000'//每个包内方法数上限
-        ]
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //项目核心框架
-    implementation project(path: ':module_lib_base')
 
     def dependencies = rootProject.ext.dependencies
-    //底部bottomBar
-    implementation dependencies.BottomNavigationViewEx
-    //multidex
-    api dependencies.multidex
-    //androidx UI
-    api dependencies.appcompat
-    api dependencies.constraintlayout
-    api dependencies.material
-    api dependencies.cardview
-    api dependencies.swiperefreshlayout
-    api dependencies.preference
-    //dialog
-    api dependencies.dialogLifecycle
-    api dependencies.dialogCore
-    api dependencies.dialogColor
-    api dependencies.dialogDatetime
-    api dependencies.dialogBottomsheets
-    //util
-    api dependencies.blankj
-    //RevealLayout
-    api dependencies.RevealLayout
-    //微信开源项目，替代SP
-    api dependencies.mmkv
 
-    //BaseAdapter
-    api dependencies.BaseAdapter
-    //第三方recyclerview
-    api dependencies.recyclerview
-    //管理界面状态库
-    api dependencies.loadsir
-    //Bugly
-    api dependencies.bugly
-    api dependencies.buglyNative
-    //glide
-    api dependencies.glide
-    //屏幕适配
-    api dependencies.autosize
-    //下载
-    api(dependencies.filedownloader) {
-        exclude group: "com.android.support"
-    }
-    //splitties
-    api dependencies.splitties
-    //图片压缩工具
-    api dependencies.Luban
-    //图片选择
-    api dependencies.matisse
-    //图片剪裁
-    api dependencies.ucrop
+    //项目核心框架
+    implementation project(":lib_common")
+    implementation project(":module_login")
+
+    kapt dependencies.arouterCompiler
 }

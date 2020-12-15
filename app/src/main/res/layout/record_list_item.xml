@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.duobang.jetpackmvvm.weight.customview.AvatarView
+        <com.duobang.common.weight.customview.AvatarView
             android:id="@+id/avatar_user_record_item"
             android:layout_width="36dp"
             android:layout_height="36dp"

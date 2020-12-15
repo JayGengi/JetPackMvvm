@@ -2,8 +2,8 @@ package com.duobang.jetpackmvvm.ui.adapter.project;
 
 import com.chad.library.adapter.base.BaseNodeAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
-import com.duobang.jetpackmvvm.data.bean.Structure;
-import com.duobang.jetpackmvvm.data.bean.StructureGroup;
+import com.duobang.common.data.bean.Structure;
+import com.duobang.common.data.bean.StructureGroup;
 import com.duobang.jetpackmvvm.ui.fragment.project.provider.FirstProvider;
 import com.duobang.jetpackmvvm.ui.fragment.project.provider.SecondProvider;
 

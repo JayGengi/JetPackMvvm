@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.duobang.jetpackmvvm.R;
-import com.duobang.jetpackmvvm.data.bean.Structure;
+import com.duobang.common.data.bean.Structure;
 
 import org.jetbrains.annotations.NotNull;
 

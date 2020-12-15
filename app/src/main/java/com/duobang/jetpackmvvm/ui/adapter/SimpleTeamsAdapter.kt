@@ -3,7 +3,7 @@ package com.duobang.jetpackmvvm.ui.adapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.duobang.jetpackmvvm.R
-import com.duobang.jetpackmvvm.data.bean.RecordLaborTeam
+import com.duobang.common.data.bean.RecordLaborTeam
 
 class SimpleTeamsAdapter(list: List<RecordLaborTeam>?) :
     BaseQuickAdapter<RecordLaborTeam, BaseViewHolder>(

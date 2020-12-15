@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.duobang.jetpackmvvm.base.BaseActivity
-import com.duobang.jetpackmvvm.util.CacheUtil
+import com.duobang.common.base.BaseActivity
+import com.duobang.common.util.CacheUtil
 import com.duobang.jetpackmvvm.R
-import com.duobang.jetpackmvvm.base.viewmodel.BaseViewModel
+import com.duobang.common.base.viewmodel.BaseViewModel
+import com.duobang.common.data.constant.RouterConstant
+import com.duobang.common.ext.routerJump
 import com.duobang.jetpackmvvm.databinding.ActivityWelcomeBinding
-import com.duobang.jetpackmvvm.ui.activity.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 /**
@@ -44,9 +45,10 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivityWelcomeBinding>() {
             override fun onAnimationEnd(arg0: Animation) {
                 val tokenStr = CacheUtil.getToken()
                 if ("" == tokenStr) {
-                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                    routerJump(RouterConstant.ACT.LOGIN)
                 } else {
-                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    routerJump(RouterConstant.ACT.MAIN)
+//                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                 }
                 finish()
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)

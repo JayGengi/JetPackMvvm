@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+//ARouter
+//kapt {
+//    arguments {
+//        arg("moduleName", project.getName())
+//    }
+//    generateStubs = true
+//}
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    dataBinding{
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def dependencies = rootProject.ext.dependencies
+    //multidex
+    api dependencies.multidex
+    api dependencies.appcompat
+    //kotlin
+    api dependencies.kotlinStdlib
+    api dependencies.coreKtx
+    //lifecycle
+    api dependencies.lifecycleRuntime
+    api dependencies.lifecycleCommon
+    api dependencies.lifecycleExt
+    // viewModel
+    api dependencies.lifecycleVM
+    api dependencies.fragmentKtx
+    // liveData
+    api dependencies.lifecycleLiveData
+    //retrofit
+    api dependencies.retrofit
+    api dependencies.retrofitGson
+    api dependencies.PersistentCookieJar
+    api dependencies.httpLog
+
+    //arouter
+    api dependencies.aroutreApi
+    kapt dependencies.arouterCompiler
+}
+

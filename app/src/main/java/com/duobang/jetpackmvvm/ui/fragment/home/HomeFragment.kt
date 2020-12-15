@@ -4,11 +4,13 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ConvertUtils
-import com.duobang.jetpackmvvm.base.BaseFragment
-import com.duobang.jetpackmvvm.ext.*
-import com.duobang.jetpackmvvm.weight.recyclerview.DefineLoadMoreView
-import com.duobang.jetpackmvvm.weight.recyclerview.SpaceItemDecoration
+import com.duobang.common.base.BaseFragment
+import com.duobang.common.ext.*
+import com.duobang.common.util.StatusBarUtil
+import com.duobang.common.weight.recyclerview.DefineLoadMoreView
+import com.duobang.common.weight.recyclerview.SpaceItemDecoration
 import com.duobang.jetpackmvvm.R
 import com.duobang.jetpackmvvm.databinding.FragmentHomeBinding
 import com.duobang.jetpackmvvm.ui.adapter.RecordAdapter
@@ -45,7 +47,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun layoutId() = R.layout.fragment_home
 
     override fun initView(savedInstanceState: Bundle?) {
-//        SettingUtil.setShapColor(toolbar, R.color.white)
         //状态页配置
         loadsir = loadServiceInit(swipeRefresh) {
             //点击重试时触发的操作
@@ -87,7 +88,13 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             //监听首页文章列表请求的数据变化
             recordListData.observe(viewLifecycleOwner, Observer {
                 //设值 新写了个拓展函数，搞死了这个恶心的重复代码
-                loadListData(it, mRecordAdapter, loadsir, recyclerView, swipeRefresh)
+                loadListData(
+                    it,
+                    mRecordAdapter,
+                    loadsir,
+                    recyclerView,
+                    swipeRefresh
+                )
             })
 //            //监听轮播图请求的数据变化
 //            bannerData.observe(viewLifecycleOwner, Observer { resultState ->

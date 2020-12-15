@@ -1,33 +1,17 @@
 package com.duobang.jetpackmvvm.ext
 
-import android.app.Activity
-import android.text.TextUtils
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.duobang.jetpackmvvm.base.appContext
 import com.duobang.jetpackmvvm.ui.fragment.home.HomeFragment
 import com.duobang.jetpackmvvm.ui.fragment.me.MeFragment
 import com.duobang.jetpackmvvm.ui.fragment.org.OrgFragment
 import com.duobang.jetpackmvvm.ui.fragment.project.ProjectFragment
 import com.duobang.jetpackmvvm.ui.fragment.workbench.WorkBenchFragment
-import com.duobang.jetpackmvvm.util.SettingUtil
-import com.duobang.jetpackmvvm.weight.recyclerview.DefineLoadMoreView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
-import com.kingja.loadsir.core.LoadService
-import java.io.BufferedReader
-import java.io.FileReader
-import java.io.IOException
 
 /**
  * 作者　: JayGengi
@@ -51,10 +35,10 @@ fun ViewPager2.initMain(activity: FragmentActivity): ViewPager2 {
                     return ProjectFragment()
                 }
                 2 -> {
-                    return OrgFragment()
+                    return WorkBenchFragment()
                 }
                 3 -> {
-                    return WorkBenchFragment()
+                    return OrgFragment()
                 }
                 4 -> {
                     return MeFragment()
