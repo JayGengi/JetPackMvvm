@@ -36,6 +36,14 @@ interface ApiService {
     suspend fun loadPersonOrg(): ApiResponse<Organization>
 
     /**
+     * 切换主组织
+     *
+     * @param orgId
+     * @return
+     */
+    @PUT("/api/account/v1/org/my/home/org/{orgId}")
+    suspend fun updateHomeOrg(@Path("orgId") orgId: String?): ApiResponse<OrganizationInfo>
+    /**
      * 获取总览页面指标
      *
      * @param orgId

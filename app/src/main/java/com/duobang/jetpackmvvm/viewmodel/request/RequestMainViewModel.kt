@@ -20,7 +20,7 @@ class RequestMainViewModel : BaseViewModel() {
     /**
      * 获取总览页面指标
      */
-    fun loadDashboardQuota() {
+    fun loadPersonOrg() {
         request({ apiService.loadPersonOrg() }, resultPersonOrgData)
     }
 }

@@ -37,7 +37,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
         BarUtils.transparentStatusBar(this)
 
-        requestMainViewModel.loadDashboardQuota()
+        requestMainViewModel.loadPersonOrg()
     }
 
     override fun createObserver() {
