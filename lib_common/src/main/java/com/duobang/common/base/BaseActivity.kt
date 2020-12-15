@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
+import com.blankj.utilcode.util.BarUtils
+import com.duobang.common.R
 import com.duobang.common.base.activity.BaseVmDbActivity
 import com.duobang.common.base.viewmodel.BaseViewModel
 import com.duobang.common.ext.dismissLoadingExt
@@ -29,10 +31,8 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmDb
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //状态栏全透明
-//        StatusBarUtil.setColor(this, ContextCompat.getColor(this, Color.WHITE), 0)
-//        StatusBarUtil.setTranslucent(this, 0)
-//        StatusBarUtil.setLightMode(this)
+
+        BarUtils.setStatusBarLightMode(this, true)
         AppManager.addActivity(this)
     }
 

@@ -1,11 +1,13 @@
-package com.duobang.jetpackmvvm.ui.fragment.org
+package com.duobang.org.ui
 
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.blankj.utilcode.util.BarUtils
 import com.duobang.common.base.BaseFragment
 import com.duobang.common.base.viewmodel.BaseViewModel
-import com.duobang.jetpackmvvm.R
-import com.duobang.jetpackmvvm.databinding.FragmentOrgBinding
+import com.duobang.common.data.constant.RouterConstant
+import com.duobang.org.R
+import com.duobang.org.databinding.FragmentOrgBinding
 import kotlinx.android.synthetic.main.fragment_org.*
 
 /**
@@ -13,10 +15,8 @@ import kotlinx.android.synthetic.main.fragment_org.*
   * @时间　: 2020/12/13 17:21
   * @描述　: 联系人
  */
-
+@Route(path = RouterConstant.FRAG.ORG)
 class OrgFragment : BaseFragment<BaseViewModel, FragmentOrgBinding>() {
-
-
 
     override fun layoutId() = R.layout.fragment_org
 

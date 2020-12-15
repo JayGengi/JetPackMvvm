@@ -69,9 +69,12 @@ dependencies {
 
     def dependencies = rootProject.ext.dependencies
 
-    //项目核心框架
-    implementation project(":lib_common")
-    implementation project(":module_login")
 
+    implementation project(":module_login")
+    implementation project(":module_project")
+    implementation project(":module_workbench")
+    implementation project(":module_org")
+
+    implementation project(":lib_common")
     kapt dependencies.arouterCompiler
 }

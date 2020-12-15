@@ -1,4 +1,4 @@
-package com.duobang.jetpackmvvm.viewmodel.request
+package com.duobang.project.viewmodel.request
 
 import androidx.lifecycle.MutableLiveData
 import com.duobang.common.base.viewmodel.BaseViewModel

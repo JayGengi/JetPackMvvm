@@ -11,6 +11,7 @@ import com.afollestad.materialdialogs.actions.getActionButton
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.duobang.common.App
+import com.duobang.common.data.constant.RouterConstant
 import com.duobang.common.util.SettingUtil
 import com.duobang.common.util.permissions.LiveDataFragment
 
@@ -154,7 +155,9 @@ private fun getInstance(manager: FragmentManager) = synchronized(manager) {
     }
     else findFragment as LiveDataFragment
 }
-
+/**
+  * @描述　: 无参
+ */
 fun AppCompatActivity.routerJump(path: String) {
     ARouter.getInstance().build(path).navigation()
 }
@@ -162,4 +165,3 @@ fun AppCompatActivity.routerJump(path: String) {
 fun Context.routerJump(path: String) {
     ARouter.getInstance().build(path).navigation(this)
 }
-

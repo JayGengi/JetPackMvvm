@@ -1,4 +1,4 @@
-package com.duobang.jetpackmvvm.ui.fragment.project
+package com.duobang.project.ui.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -6,33 +6,33 @@ import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.blankj.utilcode.util.BarUtils
 import com.chad.library.adapter.base.entity.node.BaseNode
-import com.duobang.jetpackmvvm.R
 import com.duobang.common.base.BaseFragment
-import com.duobang.common.base.viewmodel.BaseViewModel
+import com.duobang.common.data.bean.Structure
+import com.duobang.common.data.bean.StructureGroup
+import com.duobang.common.data.constant.RouterConstant
 import com.duobang.common.ext.init
 import com.duobang.common.ext.loadServiceInit
 import com.duobang.common.ext.setErrorText
-import com.duobang.common.ext.showLoading
-import com.duobang.common.data.bean.Structure
-import com.duobang.common.data.bean.StructureGroup
-import com.duobang.jetpackmvvm.databinding.FragmentProjectBinding
-import com.duobang.jetpackmvvm.ext.*
-import com.duobang.jetpackmvvm.ui.adapter.project.ProjectNodeAdapter
-import com.duobang.jetpackmvvm.viewmodel.request.RequestProjectViewModel
 import com.duobang.common.weight.loadCallBack.ErrorCallback
+import com.duobang.jetpackmvvm.ext.parseState
+import com.duobang.project.R
+import com.duobang.project.databinding.FragmentProjectBinding
+import com.duobang.project.ui.adapter.ProjectNodeAdapter
+import com.duobang.project.viewmodel.request.RequestProjectViewModel
+import com.duobang.project.viewmodel.state.ProjectViewModel
 import com.kingja.loadsir.core.LoadService
 import kotlinx.android.synthetic.main.fragment_project.*
-import kotlinx.android.synthetic.main.include_recyclerview.*
-import kotlinx.android.synthetic.main.include_toolbar.*
 
 /**
  * @作者　: JayGengi
  * @时间　: 2020/12/6 17:21
  * @描述　: 工程
  */
-class ProjectFragment : BaseFragment<BaseViewModel, FragmentProjectBinding>() {
+@Route(path = RouterConstant.FRAG.PROJECT)
+class ProjectFragment : BaseFragment<ProjectViewModel, FragmentProjectBinding>() {
 
     //界面状态管理者
     private lateinit var loadsir: LoadService<Any>

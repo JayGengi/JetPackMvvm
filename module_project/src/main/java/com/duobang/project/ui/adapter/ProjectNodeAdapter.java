@@ -1,14 +1,11 @@
-package com.duobang.jetpackmvvm.ui.adapter.project;
+package com.duobang.project.ui.adapter;
 
 import com.chad.library.adapter.base.BaseNodeAdapter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.duobang.common.data.bean.Structure;
 import com.duobang.common.data.bean.StructureGroup;
-import com.duobang.jetpackmvvm.ui.fragment.project.provider.FirstProvider;
-import com.duobang.jetpackmvvm.ui.fragment.project.provider.SecondProvider;
-
 import org.jetbrains.annotations.NotNull;
-
+import com.duobang.project.ui.adapter.provider.*;
 import java.util.List;
 
 public class ProjectNodeAdapter extends BaseNodeAdapter {

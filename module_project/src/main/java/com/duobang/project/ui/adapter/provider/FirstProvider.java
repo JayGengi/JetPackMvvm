@@ -1,4 +1,4 @@
-package com.duobang.jetpackmvvm.ui.fragment.project.provider;
+package com.duobang.project.ui.adapter.provider;
 
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -10,9 +10,9 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.duobang.jetpackmvvm.R;
+import com.duobang.project.R;
 import com.duobang.common.data.bean.StructureGroup;
-import com.duobang.jetpackmvvm.ui.adapter.project.ProjectNodeAdapter;
+import com.duobang.project.ui.adapter.ProjectNodeAdapter;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.alibaba.android.arouter.launcher.ARouter
+import com.duobang.common.data.constant.RouterConstant
 import com.duobang.jetpackmvvm.ui.fragment.home.HomeFragment
 import com.duobang.jetpackmvvm.ui.fragment.me.MeFragment
-import com.duobang.jetpackmvvm.ui.fragment.org.OrgFragment
-import com.duobang.jetpackmvvm.ui.fragment.project.ProjectFragment
-import com.duobang.jetpackmvvm.ui.fragment.workbench.WorkBenchFragment
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+
 
 /**
  * 作者　: JayGengi
@@ -32,13 +32,13 @@ fun ViewPager2.initMain(activity: FragmentActivity): ViewPager2 {
                     return HomeFragment()
                 }
                 1 -> {
-                    return ProjectFragment()
+                    return ARouter.getInstance().build(RouterConstant.FRAG.PROJECT).navigation() as Fragment
                 }
                 2 -> {
-                    return WorkBenchFragment()
+                    return ARouter.getInstance().build(RouterConstant.FRAG.WORKBENCH).navigation() as Fragment
                 }
                 3 -> {
-                    return OrgFragment()
+                    return ARouter.getInstance().build(RouterConstant.FRAG.ORG).navigation() as Fragment
                 }
                 4 -> {
                     return MeFragment()

@@ -34,8 +34,9 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     override fun layoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
+
         BarUtils.transparentStatusBar(this)
-        BarUtils.setStatusBarLightMode(this, true)
+
         requestMainViewModel.loadDashboardQuota()
     }
 

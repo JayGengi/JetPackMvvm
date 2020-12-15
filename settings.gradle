@@ -1,3 +1,1 @@
-include ':lib_common'
-include ':module_login'
-include ':app', ':lib_base'
+include ':app',':lib_common', ':lib_base',':module_login',':module_project',':module_workbench',':module_org'
