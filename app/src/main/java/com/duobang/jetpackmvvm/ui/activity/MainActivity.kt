@@ -1,6 +1,5 @@
 package com.duobang.jetpackmvvm.ui.activity
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.activity.viewModels
@@ -8,25 +7,28 @@ import androidx.lifecycle.Observer
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.duobang.jetpackmvvm.R
 import com.duobang.common.base.BaseActivity
 import com.duobang.common.data.constant.RouterConstant
-import com.duobang.jetpackmvvm.databinding.ActivityMainBinding
-import com.duobang.jetpackmvvm.ext.initMain
-import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.common.ext.showToast
 import com.duobang.common.network.manager.NetState
 import com.duobang.common.util.CacheUtil
+import com.duobang.common.util.SettingUtil
+import com.duobang.jetpackmvvm.R
+import com.duobang.jetpackmvvm.databinding.ActivityMainBinding
 import com.duobang.jetpackmvvm.ext.init
+import com.duobang.jetpackmvvm.ext.initMain
+import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.jetpackmvvm.viewmodel.request.RequestMainViewModel
 import com.duobang.jetpackmvvm.viewmodel.state.MainViewModel
+import com.duobang.org.ui.fragment.OrgFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * 项目主页Activity
  */
 @Route(path = RouterConstant.ACT.MAIN)
-class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
+    OrgFragment.OnOrganizationSwitchListener {
 
     //请求数据ViewModel
     private val requestMainViewModel: RequestMainViewModel by viewModels()
@@ -61,11 +63,14 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                             R.id.menu_me -> mainViewpager.setCurrentItem(4, false)
                         }
                     }
+                    mainBottom.setTextTintList(2,SettingUtil.getColorStateList(R.color.bottom_selector2))
+                    mainBottom.setIconTintList(2,SettingUtil.getColorStateList(R.color.bottom_selector2))
                 }, {
                     ToastUtils.showShort(it.errorMsg)
                 })
             })
     }
+
 
     /**
      * 示例，在Activity/Fragment中如果想监听网络变化，可重写onNetworkStateChanged该方法
@@ -91,6 +96,14 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             return true
         }
         return super.onKeyDown(keyCode, event)
+    }
+    /**
+     * 切换组织重新加载
+     */
+    override fun onOrganizationSwitch() {
+        //切回首页重新加载数据
+        mainBottom.currentItem = 0
+        requestMainViewModel.loadPersonOrg()
     }
 
 

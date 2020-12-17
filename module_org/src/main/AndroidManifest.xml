@@ -4,6 +4,9 @@
 
     <application
         >
+        <activity android:name=".ui.activity.OrgStructureActivity" />
+        <activity android:name=".ui.activity.OrgGroupUserActivity" />
+
     </application>
 
 </manifest>

@@ -14,11 +14,10 @@ import com.duobang.jetpackmvvm.state.ResultState
  */
 class RequestMainViewModel : BaseViewModel() {
 
-    //获取总览页面指标
     var resultPersonOrgData: MutableLiveData<ResultState<Organization>> = MutableLiveData()
 
     /**
-     * 获取总览页面指标
+     * 获取自己所在组织
      */
     fun loadPersonOrg() {
         request({ apiService.loadPersonOrg() }, resultPersonOrgData)

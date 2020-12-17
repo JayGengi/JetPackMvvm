@@ -89,4 +89,26 @@ interface ApiService {
     </StructureGroup> */
     @GET("api/model/v1/structure/org/{orgId}/group/list")
     suspend fun getStructureList(@Path("orgId") orgId: String?): ApiResponse<List<StructureGroup>>
+
+    /**
+     * 获取组织下全部人员，包括部门
+     *
+     * @param orgId 组织ID
+     * @param hasRole 是否需要角色
+     * @return DuobangResponse<OrgWrapper>
+    </OrgWrapper> */
+    @GET("api/account/v1/org/{orgId}/user-group")
+    suspend fun getOrgGroupUserWrapper(
+        @Path("orgId") orgId: String?,
+        @Query("hasRole") hasRole: Boolean
+    ): ApiResponse<OrgWrapper>
+
+    /**
+     * 获取部门下人员
+     *
+     * @param groupId
+     * @return
+     */
+    @GET("api/account/v1/group/{groupId}")
+    suspend fun getOrgGroupUsers(@Path("groupId") groupId: String?): ApiResponse<List<User>>
 }

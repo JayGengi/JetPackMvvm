@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ConvertUtils
 import com.duobang.common.base.BaseFragment
 import com.duobang.common.ext.*
-import com.duobang.common.util.StatusBarUtil
 import com.duobang.common.weight.recyclerview.DefineLoadMoreView
 import com.duobang.common.weight.recyclerview.SpaceItemDecoration
 import com.duobang.jetpackmvvm.R

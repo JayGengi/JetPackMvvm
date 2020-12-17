@@ -18,7 +18,7 @@ class RequestOrgViewModel : BaseViewModel() {
     //获取自己所在组织
     var resultPersonOrgData: MutableLiveData<ResultState<Organization>> = MutableLiveData()
 
-    //获取自己所在组织
+    //切换主组织
     var resultHomeOrgData: MutableLiveData<ResultState<OrganizationInfo>> = MutableLiveData()
 
     /**
@@ -27,7 +27,9 @@ class RequestOrgViewModel : BaseViewModel() {
     fun loadPersonOrg() {
         request({ apiService.loadPersonOrg() }, resultPersonOrgData)
     }
-
+    /**
+     * 切换主组织
+     */
     fun switchHomeOrg(id : String) {
         request({ apiService.updateHomeOrg(id) }, resultHomeOrgData)
     }
