@@ -111,4 +111,26 @@ interface ApiService {
      */
     @GET("api/account/v1/group/{groupId}")
     suspend fun getOrgGroupUsers(@Path("groupId") groupId: String?): ApiResponse<List<User>>
+
+    /**
+     * 获取项目下某天日事日毕用户的提交情况
+     *
+     * @param orgId
+     * @param date
+     * @return
+     */
+    @GET("api/daily-task/v1/daily-task/org/{orgId}/submission")
+    suspend fun loadSubmission(@Path("orgId") orgId: String?,@Query("date") date: String?
+    ): ApiResponse<List<DailySubmission>>
+
+    /**
+     * 获取工作项列表
+     *
+     * @return DuobangResponse<ModelTree>
+    </ModelTree> */
+    @GET("api/daily-task/v1/daily-task/org/{orgId}")
+    suspend fun getDailyTaskList(
+        @Path("orgId") orgId: String?,
+        @Query("date") date: String?
+    ): ApiResponse<List<DailyTaskWrapper>>
 }

@@ -42,6 +42,14 @@ fun LoadService<*>.setErrorText(message: String) {
     }
 }
 
+fun LoadService<*>.setEmptyText(message: String) {
+    if (message.isNotEmpty()) {
+        this.setCallBack(EmptyCallback::class.java) { _, view ->
+            view.findViewById<TextView>(R.id.tip_empty).text = message
+        }
+    }
+}
+
 /**
  * 设置错误布局
  * @param message 错误布局显示的提示内容
@@ -51,6 +59,14 @@ fun LoadService<*>.showError(message: String = "") {
     this.showCallback(ErrorCallback::class.java)
 }
 
+/**
+ * 设置空布局
+ * @param message 空布局显示的提示内容
+ */
+fun LoadService<*>.showEmpty(message: String = "") {
+    this.setEmptyText(message)
+    this.showCallback(EmptyCallback::class.java)
+}
 /**
  * 设置空布局
  */

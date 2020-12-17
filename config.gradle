@@ -20,6 +20,11 @@ ext {
             fragmentKtx            : "androidx.fragment:fragment-ktx:1.2.5",
             // liveData
             lifecycleLiveData      : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
+            // room
+            room                   : 'androidx.room:room-runtime:2.2.5',
+            roomKtx                : 'androidx.room:room-ktx:2.2.5',
+            roomCompiler           : 'androidx.room:room-compiler:2.2.5',
+
             //androidx UI
             appcompat              :'androidx.appcompat:appcompat:1.2.0',
             constraintlayout       :'androidx.constraintlayout:constraintlayout:2.0.2',
@@ -75,4 +80,5 @@ ext {
             // 图片剪裁
             ucrop                  :'com.github.yalantis:ucrop:2.2.2',
     ]
+
 }

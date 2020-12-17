@@ -11,6 +11,7 @@ import com.duobang.common.base.BaseActivity
 import com.duobang.common.data.constant.RouterConstant
 import com.duobang.common.ext.showToast
 import com.duobang.common.network.manager.NetState
+import com.duobang.common.room.repository.PmsRepository
 import com.duobang.common.util.CacheUtil
 import com.duobang.common.util.SettingUtil
 import com.duobang.jetpackmvvm.R
@@ -40,35 +41,56 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
         BarUtils.transparentStatusBar(this)
 
         requestMainViewModel.loadPersonOrg()
+
     }
 
     override fun createObserver() {
-        requestMainViewModel.resultPersonOrgData.observe(
-            this,
-            Observer { resultState ->
-                parseState(resultState, {
-                    //缓存组织信息（orgId）
-                    CacheUtil.setOrg(it)
-                    appViewModel.orginfo.value = it
-
-                    //初始化viewpager2
-                    mainViewpager.initMain(this)
-                    //初始化 bottomBar
-                    mainBottom.init {
-                        when (it) {
-                            R.id.menu_main -> mainViewpager.setCurrentItem(0, false)
-                            R.id.menu_project -> mainViewpager.setCurrentItem(1, false)
-                            R.id.menu_work -> mainViewpager.setCurrentItem(2, false)
-                            R.id.menu_org -> mainViewpager.setCurrentItem(3, false)
-                            R.id.menu_me -> mainViewpager.setCurrentItem(4, false)
+        requestMainViewModel.run {
+            resultPersonOrgData.observe(
+                this@MainActivity,
+                Observer { resultState ->
+                    parseState(resultState, {
+                        //缓存组织信息（orgId）
+                        CacheUtil.setOrg(it)
+                        appViewModel.orginfo.value = it
+                        requestMainViewModel.getOrgGroupUserWrapper(it.homeOrgId!!)
+                        //初始化viewpager2
+                        mainViewpager.initMain(this@MainActivity)
+                        //初始化 bottomBar
+                        mainBottom.init {
+                            when (it) {
+                                R.id.menu_main -> mainViewpager.setCurrentItem(0, false)
+                                R.id.menu_project -> mainViewpager.setCurrentItem(1, false)
+                                R.id.menu_work -> mainViewpager.setCurrentItem(2, false)
+                                R.id.menu_org -> mainViewpager.setCurrentItem(3, false)
+                                R.id.menu_me -> mainViewpager.setCurrentItem(4, false)
+                            }
                         }
-                    }
-                    mainBottom.setTextTintList(2,SettingUtil.getColorStateList(R.color.bottom_selector2))
-                    mainBottom.setIconTintList(2,SettingUtil.getColorStateList(R.color.bottom_selector2))
-                }, {
-                    ToastUtils.showShort(it.errorMsg)
+                        mainBottom.setTextTintList(
+                            2,
+                            SettingUtil.getColorStateList(R.color.bottom_selector2)
+                        )
+                        mainBottom.setIconTintList(
+                            2,
+                            SettingUtil.getColorStateList(R.color.bottom_selector2)
+                        )
+                    }, {
+                        ToastUtils.showShort(it.errorMsg)
+                    })
                 })
-            })
+            //当前组织下所有用户
+            orgGroupUserResult.observe(
+                this@MainActivity,
+                Observer { resultState ->
+                    parseState(resultState, {
+                        //设置部门头
+                        PmsRepository(this@MainActivity).delAllUser()
+                        PmsRepository(this@MainActivity).insertAllUser(it.userList!!)
+                    }, {
+                        ToastUtils.showShort(it.errorMsg)
+                    })
+                })
+        }
     }
 
 
@@ -97,6 +119,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
         }
         return super.onKeyDown(keyCode, event)
     }
+
     /**
      * 切换组织重新加载
      */

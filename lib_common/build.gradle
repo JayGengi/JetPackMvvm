@@ -3,12 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-//kapt {
-//    arguments {
-//        arg("moduleName", project.getName())
-//    }
-//    generateStubs = true
-//}
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
@@ -20,6 +14,12 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
+//                arguments += [
+//                        AROUTER_MODULE_NAME: project.getName(),
+//                        "room.schemaLocation":"$projectDir/schemas".toString(),  //配置并启用架构导出到给定目录中【"$projectDir/schemas".toString()】的json文件功能
+//                        "room.incremental":"true",  //启用 Gradle 增量注释处理器
+//                        "room.expandProjection":"true" //配置 Room 以重写查询 ，设置成false则不需要导出到指定目录json文件
+//                ]
             }
         }
     }
@@ -54,7 +54,10 @@ dependencies {
     api project(":lib_base")
 
     def dependencies = rootProject.ext.dependencies
-
+    // Room
+    implementation dependencies.room
+    kapt dependencies.roomCompiler
+    implementation dependencies.roomKtx
     //底部bottomBar
     api dependencies.BottomNavigationViewEx
     //androidx UI

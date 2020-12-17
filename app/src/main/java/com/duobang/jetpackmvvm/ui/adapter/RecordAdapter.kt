@@ -17,6 +17,8 @@ import com.duobang.common.data.constant.IConstant
 import com.duobang.common.data.constant.IPmsConstant
 import com.duobang.common.ext.setAdapterAnimation
 import com.duobang.common.ext.setNbOnItemClickListener
+import com.duobang.common.room.PmsDataBase
+import com.duobang.common.room.repository.PmsRepository
 import com.duobang.common.util.AppImageLoader
 import com.duobang.common.util.CacheUtil
 import com.duobang.common.util.DateUtil
@@ -33,10 +35,10 @@ class RecordAdapter(list: MutableList<Record>?) :BaseQuickAdapter<Record, BaseVi
         setAdapterAnimation(SettingUtil.getListMode())
     }
     override fun convert(holder: BaseViewHolder, item: Record) {
-        val creator = CacheUtil.getUser();
+        val creator = PmsRepository(context).getUserById(item.userId!!)
         creator.notNull({
-            AppImageLoader.displayAvatar(creator?.avatar, creator?.nickname, holder.getView(R.id.avatar_user_record_item))
-            holder.setText(R.id.name_user_record_item,creator?.nickname)
+            AppImageLoader.displayAvatar(creator.avatar, creator.nickname, holder.getView(R.id.avatar_user_record_item))
+            holder.setText(R.id.name_user_record_item,creator.nickname)
         },{})
         holder.setText(R.id.create_date_record_item,
             DateUtil.formatMinute(Date(item.createTime!!.toLong())))

@@ -1,16 +1,31 @@
 package com.duobang.common.data.bean
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "user",
+    ignoredColumns = ["roleList", "roles", "groupList", "isRead", "isIgnore", "isSelected", "isPermission", "isShowArrow"])
 class User {
-    var id: String? = null
+    @PrimaryKey
+    var id: String = ""
+    @ColumnInfo(name = "user_name")
     var username: String? = null
+    @ColumnInfo(name = "user_nick_name")
     var nickname: String? = null
+    @ColumnInfo(name = "user_phone")
     var phone: String? = null
+    @ColumnInfo(name = "user_state")
     var state = 0
+    @ColumnInfo(name = "user_avatar")
     var avatar: String? = null
+    @ColumnInfo(name = "user_group_id")
+    var groupId: String? = null
+    @ColumnInfo(name = "user_group_name")
+    var groupName: String? = null
     var roleList: List<Role>? = null
     var roles: List<Role>? = null
-    var groupList: List<Group>? =
-        null
+    var groupList: List<Group>? =null
     var isRead = false
 
     /**
@@ -33,7 +48,6 @@ class User {
      * 组最后一个用户isShowArrow = true
      */
     var isShowArrow = false
-    var groupId: String? = null
-    var groupName: String? = null
+
 
 }
