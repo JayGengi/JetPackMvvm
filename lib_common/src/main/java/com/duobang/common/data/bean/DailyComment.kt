@@ -3,6 +3,7 @@ package com.duobang.common.data.bean
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.duobang.common.util.CacheUtil
 import java.util.*
 
 @Entity(tableName = "daily_comment", ignoredColumns = ["imageList", "replyUserId"])
@@ -74,9 +75,9 @@ class DailyComment {
 //            return null
 //        }
 //
-//    val isPersonal: Boolean
-//        get() {
-//            val userId: String = PreferenceManager.getInstance().getUserPreferences().getUserId()
-//            return creator == userId
-//        }
+    val isPersonal: Boolean
+        get() {
+            val userId: String = CacheUtil.getUser()!!.id
+            return creator == userId
+        }
 }

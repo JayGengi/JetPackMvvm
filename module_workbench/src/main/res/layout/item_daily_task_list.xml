@@ -85,6 +85,7 @@
             android:textSize="12sp"
             android:text="评论"
             android:layout_gravity="end|center_vertical"
+            android:gravity="end|center"
             app:backgroundTint="@android:color/transparent"
             app:icon="@drawable/ic_message"
             app:iconGravity="textStart"

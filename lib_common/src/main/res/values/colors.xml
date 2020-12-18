@@ -5,7 +5,7 @@
     <color name="colorPrimaryDark">#1479ca</color>
     <color name="colorAccent">#319aef</color>
     <color name="colorLess">#a0a5ab</color>
-
+    <color name="transparent">#00000000</color>
 
     <color name="textHint">#999999</color>
     <color name="colorGray">#333</color>

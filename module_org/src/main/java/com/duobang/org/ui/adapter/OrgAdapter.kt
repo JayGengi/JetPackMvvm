@@ -14,9 +14,6 @@ class OrgAdapter(list: List<OrganizationInfo>?) :
     BaseQuickAdapter<OrganizationInfo, BaseViewHolder>(
         R.layout.item_org_list, list as MutableList<OrganizationInfo>?
     ) {
-    init {
-        setAdapterAnimation(SettingUtil.getListMode())
-    }
     override fun convert(holder: BaseViewHolder, item: OrganizationInfo) {
         val name: TextView = holder.getView(R.id.name_org_list_item)
         val sign: ImageView = holder.getView(R.id.sign_org_list_item)

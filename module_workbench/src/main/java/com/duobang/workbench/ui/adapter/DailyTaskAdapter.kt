@@ -13,7 +13,6 @@ import com.duobang.common.data.bean.User
 import com.duobang.common.ext.init
 import com.duobang.common.ext.setAdapterAnimation
 import com.duobang.common.ext.setNbOnItemChildClickListener
-import com.duobang.common.room.PmsDataBase
 import com.duobang.common.room.repository.PmsRepository
 import com.duobang.common.util.AppImageLoader
 import com.duobang.common.util.SettingUtil
@@ -25,9 +24,6 @@ class DailyTaskAdapter(list: List<DailyTaskWrapper>?) :
         R.layout.item_daily_task_list, list as MutableList<DailyTaskWrapper>?
     ) {
 
-    init {
-        setAdapterAnimation(SettingUtil.getListMode())
-    }
 
     private var onInnerItemDelayClickListener: OnInnerItemDelayClickListener? = null
     override fun convert(holder: BaseViewHolder, item: DailyTaskWrapper) {
@@ -85,7 +81,7 @@ class DailyTaskAdapter(list: List<DailyTaskWrapper>?) :
     }
 
     interface OnInnerItemDelayClickListener {
-        fun OnItemDelayClick(v: View?, task: DailyTask?)
+        fun OnItemDelayClick(v: View?, task: DailyTask)
     }
 
 }

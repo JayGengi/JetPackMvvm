@@ -36,7 +36,7 @@ class LoginActivity : BaseActivity<LoginRegisterViewModel, ActivityLoginBinding>
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.viewmodel = mViewModel
         mDatabind.click = ProxyClick()
-        toolbar.initClose("", R.drawable.ic_delete) {
+        toolbar.initClose("", R.drawable.ic_close) {
             finish()
         }
         toolbar.background = null

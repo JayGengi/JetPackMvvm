@@ -43,6 +43,7 @@ interface ApiService {
      */
     @PUT("/api/account/v1/org/my/home/org/{orgId}")
     suspend fun updateHomeOrg(@Path("orgId") orgId: String?): ApiResponse<OrganizationInfo>
+
     /**
      * 获取总览页面指标
      *
@@ -120,7 +121,8 @@ interface ApiService {
      * @return
      */
     @GET("api/daily-task/v1/daily-task/org/{orgId}/submission")
-    suspend fun loadSubmission(@Path("orgId") orgId: String?,@Query("date") date: String?
+    suspend fun loadSubmission(
+        @Path("orgId") orgId: String?, @Query("date") date: String?
     ): ApiResponse<List<DailySubmission>>
 
     /**
@@ -133,4 +135,35 @@ interface ApiService {
         @Path("orgId") orgId: String?,
         @Query("date") date: String?
     ): ApiResponse<List<DailyTaskWrapper>>
+
+    /**
+     * 推迟之前未完成的事项到今天
+     *
+     * @param dailyTaskId
+     * @return
+     */
+    @PUT("api/daily-task/v1/daily-task/{dailyTaskId}/delay")
+    suspend fun delayTask(@Path("dailyTaskId") dailyTaskId: String): ApiResponse<DailyTask>
+
+    /**
+     * 发表评论
+     *
+     * @param dailyGroupId
+     * @param body
+     * @return
+     */
+    @POST("api/daily-task/v1/daily-task/comment/{dailyGroupId}")
+    suspend fun uploadDailyComment(
+        @Path("dailyGroupId") dailyGroupId: String?,
+        @Body map: Map<String, @JvmSuppressWildcards Any>
+    ): ApiResponse<DailyTaskWrapper>
+
+    /**
+     * 删除评论
+     *
+     * @param commentId
+     * @return
+     */
+    @DELETE("api/daily-task/v1/daily-task/comment/{commentId}")
+    suspend fun deleteDailyComment(@Path("commentId") commentId: String?): ApiResponse<Any>
 }

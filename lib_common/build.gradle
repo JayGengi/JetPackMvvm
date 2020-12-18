@@ -70,9 +70,9 @@ dependencies {
     //dialog
     api dependencies.dialogLifecycle
     api dependencies.dialogCore
-    api dependencies.dialogColor
-    api dependencies.dialogDatetime
-    api dependencies.dialogBottomsheets
+//    api dependencies.dialogColor
+//    api dependencies.dialogDatetime
+//    api dependencies.dialogBottomsheets
     //util
     api dependencies.blankj
     //RevealLayout
