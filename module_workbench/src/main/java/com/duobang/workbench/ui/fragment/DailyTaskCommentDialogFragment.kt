@@ -14,7 +14,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.duobang.common.data.bean.DailyComment
+import com.duobang.common.data.bean.DailyTaskBus
 import com.duobang.common.data.bean.DailyTaskWrapper
+import com.duobang.common.event.EventViewModel
 import com.duobang.common.ext.init
 import com.duobang.common.ext.setNbOnItemChildClickListener
 import com.duobang.common.ext.showToast
@@ -22,6 +24,7 @@ import com.duobang.common.room.repository.PmsRepository
 import com.duobang.common.util.AppImageLoader
 import com.duobang.common.weight.bottomDialog.BaseBottomDialogFragment
 import com.duobang.common.weight.customview.AvatarView
+import com.duobang.jetpackmvvm.ext.getAppViewModel
 import com.duobang.jetpackmvvm.state.ResultState
 import com.duobang.workbench.R
 import com.duobang.workbench.ui.adapter.DailyCommentAdapter
@@ -43,10 +46,11 @@ class DailyTaskCommentDialogFragment : BaseBottomDialogFragment() {
     private var comments: List<DailyComment>? = null
     private lateinit var input: EditText
     private var delPos = 0
-    private var onCommentChangedListener: OnCommentChangedListener? = null
     private val mAdapter: DailyCommentAdapter by lazy { DailyCommentAdapter(arrayListOf()) }
     //请求数据ViewModel
     private val requestDailyTaskViewModel: RequestDailyTaskViewModel by viewModels()
+    //Application全局的ViewModel，用于发送全局通知操作
+    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
     companion object {
         fun newInstance(wrapper: DailyTaskWrapper,position: Int): DailyTaskCommentDialogFragment {
             val fragment = DailyTaskCommentDialogFragment()
@@ -131,7 +135,7 @@ class DailyTaskCommentDialogFragment : BaseBottomDialogFragment() {
                     when (resultState) {
                         is ResultState.Success -> {
                             mAdapter.removeAt(delPos)
-                            onCommentChangedListener?.onCommentChanged(position, mAdapter.data)
+                            eventViewModel.dailyCommentEvent.value = DailyTaskBus(position,mAdapter.data)
                             showToast("删除成功")
                         }
                         is ResultState.Error -> {
@@ -150,9 +154,7 @@ class DailyTaskCommentDialogFragment : BaseBottomDialogFragment() {
                             comments = info.comments
                             mAdapter.setList(comments)
                             mRecyclerView!!.scrollToPosition(mAdapter.itemCount -1)
-                            if (onCommentChangedListener != null) {
-                                comments?.let { onCommentChangedListener?.onCommentChanged(position, it) }
-                            }
+                            eventViewModel.dailyCommentEvent.value = DailyTaskBus(position,comments!!)
                         }
                         is ResultState.Error -> {
                             showToast(resultState.error.errorMsg)
@@ -161,10 +163,6 @@ class DailyTaskCommentDialogFragment : BaseBottomDialogFragment() {
                 })
         }
     }
-    override fun onDetach() {
-        onCommentChangedListener = null
-        super.onDetach()
-    }
     private class CommentTextWatcher(var button: MaterialButton) : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -172,13 +170,5 @@ class DailyTaskCommentDialogFragment : BaseBottomDialogFragment() {
         }
 
         override fun afterTextChanged(s: Editable) {}
-
-    }
-
-    interface OnCommentChangedListener {
-        fun onCommentChanged(
-            position: Int,
-            dailyCommentList: List<DailyComment>
-        )
     }
 }

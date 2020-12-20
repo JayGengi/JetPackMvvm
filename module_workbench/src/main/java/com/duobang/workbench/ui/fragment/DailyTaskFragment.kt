@@ -8,14 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.ToastUtils
 import com.duobang.common.base.BaseFragment
 import com.duobang.common.base.viewmodel.BaseViewModel
-import com.duobang.common.data.bean.DailyComment
 import com.duobang.common.data.bean.DailyTask
 import com.duobang.common.data.bean.DailyTaskWrapper
 import com.duobang.common.ext.*
+import com.duobang.common.room.repository.PmsRepository
+import com.duobang.common.util.ActivityMessenger
 import com.duobang.common.util.DateUtil
+import com.duobang.common.util.JsonUtil
 import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.workbench.R
 import com.duobang.workbench.databinding.FragmentDailyManageBinding
+import com.duobang.workbench.ui.activity.DailyTaskCreateActivity
 import com.duobang.workbench.ui.adapter.DailyTaskAdapter
 import com.duobang.workbench.viewmodel.request.RequestDailyTaskViewModel
 import com.kingja.loadsir.core.LoadService
@@ -27,8 +30,7 @@ import kotlinx.android.synthetic.main.include_workbench_recyclerview.*
  * @时间　: 2020/11/26 9:41
  * @描述　: 日事日毕
  */
-class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding>(),
-    DailyTaskCommentDialogFragment.OnCommentChangedListener {
+class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding>() {
 
     //请求数据ViewModel
     private val requestDailyTaskViewModel: RequestDailyTaskViewModel by viewModels()
@@ -39,6 +41,8 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
     private val mAdapter: DailyTaskAdapter by lazy { DailyTaskAdapter(arrayListOf()) }
     private var emptyList = false
     private var date: String = DateUtil.getCurrentDate()
+
+    private var orgId = ""
     override fun layoutId() = R.layout.fragment_daily_manage
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -47,18 +51,18 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
         loadsir = loadServiceInit(swipeRefresh) {
             //点击重试时触发的操作
             if(emptyList){
-                showToast("添加go go go")
+                ActivityMessenger.startActivity(this,DailyTaskCreateActivity::class)
             }else {
                 lazyLoadData()
             }
         }
-
+        orgId = appViewModel.orginfo.value!!.homeOrgId!!
         //初始化recyclerView
         recyclerView.init(LinearLayoutManager(context), mAdapter).initFloatBtn(floatbtn)
         //初始化 SwipeRefreshLayout
         swipeRefresh.init {
             //触发刷新监听时请求数据
-            requestDailyTaskViewModel.loadDailyTaskList(appViewModel.orginfo.value!!.homeOrgId!!,date)
+            requestDailyTaskViewModel.loadDailyTaskList(orgId,date)
         }
 
 
@@ -95,8 +99,49 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
     }
 
     override fun lazyLoadData() {
+        loadDailyTaskList()
+    }
+
+    /**
+     * 当天数据走socket推送，历史数据走api服务
+     * */
+    private fun loadDailyTaskList(){
         loadsir.showLoading()
-        requestDailyTaskViewModel.loadDailyTaskList(appViewModel.orginfo.value!!.homeOrgId!!,date)
+        //每天的数据是socket推送，判断是否今天数据拉取，历史数据根据时间戳是否拉取数据
+        if (date == DateUtil.getCurrentDate()) {
+            swipeRefresh.isEnabled = false
+            loadRoomDailyTask(date)
+        }else{
+
+            swipeRefresh.isEnabled = true
+            requestDailyTaskViewModel.loadDailyTaskList(orgId,date)
+        }
+    }
+
+
+    /**
+     * @作者　: JayGengi
+     * @时间　: 2020/12/7 9:11
+     * @描述　: 获取今日本地日事日毕数据
+     */
+    private fun loadRoomDailyTask(date: String) {
+        val ymdStr: Array<String> = DateUtil.getYMD(DateUtil.parseDate(date))
+        val year = ymdStr[0].toInt() //获取年
+        val month = ymdStr[1].toInt() //获取月
+        val day = ymdStr[2].toInt() //获取日
+        val list: List<DailyTaskWrapper?>? =
+            PmsRepository(requireContext()).dailyTaskWrapperDao!!.getDailyTaskFromData(year, month, day, orgId)
+        val dailyTaskJson: String = JsonUtil.toJson(list)
+        val dailyTaskWrappers: List<DailyTaskWrapper> = JsonUtil.toList(dailyTaskJson,
+            DailyTaskWrapper::class.java)
+        if(dailyTaskWrappers.isNotNull()) {
+            emptyList = false
+            loadsir.showSuccess()
+            mAdapter.setList(dailyTaskWrappers)
+        }else{
+            emptyList = true
+            loadsir.showEmpty("快来创建一条吧～")
+        }
     }
 
     override fun createObserver() {
@@ -132,20 +177,26 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
                     })
                 })
         }
+        //评论或删除评论，通过全局消息刷新
+        eventViewModel.run {
+            dailyCommentEvent.observe(this@DailyTaskFragment, Observer {
+                mAdapter.data[it.position].comments = it.comments
+                mAdapter.notifyItemChanged(it.position)
+            })
+            dailyTaskEvent.observe(this@DailyTaskFragment, Observer {
+                if (it){
+                    //首页收到socket通知，刷新数据
+                    loadDailyTaskList()
+                }
+            })
+        }
     }
     fun dateChange(date: String?) {
         this.date = date!!
         if (isVisible) {
-            requestDailyTaskViewModel.loadDailyTaskList(
-                appViewModel.orginfo.value!!.homeOrgId!!,
-                date
-            )
+            //当天禁用下拉刷新
+            loadDailyTaskList()
         }
-    }
-
-    override fun onCommentChanged(position: Int, dailyCommentList: List<DailyComment>) {
-        mAdapter.data[position].comments = dailyCommentList
-        mAdapter.notifyItemChanged(position)
     }
 
 }

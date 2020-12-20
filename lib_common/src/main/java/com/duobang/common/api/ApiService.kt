@@ -166,4 +166,24 @@ interface ApiService {
      */
     @DELETE("api/daily-task/v1/daily-task/comment/{commentId}")
     suspend fun deleteDailyComment(@Path("commentId") commentId: String?): ApiResponse<Any>
+
+    /**
+     * 获取个人当天日事日毕列表
+     *
+     * @param orgId
+     * @return
+     */
+    @GET("api/daily-task/v1/daily-task/org/{orgId}/mine/today")
+    suspend fun getPersonalDailyTasks(@Path("orgId") orgId: String): ApiResponse<List<DailyTask>>
+
+    /**
+     * 创建新的日事日毕事项
+     *
+     * @param orgId
+     * @param body
+     * @return
+     */
+    @POST("api/daily-task/v1/daily-task/org/{orgId}/")
+    suspend fun uploadDailyTask(@Path("orgId") orgId: String,  @Body body: RequestBody
+    ): ApiResponse<List<DailyTask>>
 }

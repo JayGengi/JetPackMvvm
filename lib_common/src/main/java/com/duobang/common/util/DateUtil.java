@@ -193,8 +193,12 @@ public class DateUtil {
         return text;
     }
 
-    public static String getNowHour(){
+    public static String getNowHour() {
         Calendar now = Calendar.getInstance();
-        return now.get(Calendar.HOUR_OF_DAY)+"";
+        return now.get(Calendar.HOUR_OF_DAY) + "";
+    }
+
+    public static String[] getYMD(Date date) {
+        return sdfDate.format(date).split("-");
     }
 }

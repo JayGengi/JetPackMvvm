@@ -7,10 +7,12 @@ import com.blankj.utilcode.util.BarUtils
 import com.duobang.common.base.BaseFragment
 import com.duobang.common.base.viewmodel.BaseViewModel
 import com.duobang.common.data.constant.RouterConstant
+import com.duobang.common.util.ActivityMessenger
 import com.duobang.common.util.AppDatePicker
 import com.duobang.common.util.DateUtil
 import com.duobang.workbench.R
 import com.duobang.workbench.databinding.FragmentWorkbenchBinding
+import com.duobang.workbench.ui.activity.DailyTaskCreateActivity
 import kotlinx.android.synthetic.main.fragment_workbench.*
 import java.util.*
 
@@ -68,8 +70,7 @@ class WorkBenchFragment : BaseFragment<BaseViewModel, FragmentWorkbenchBinding>(
             upDate(true)
         }
         fun createTask() {
-            //TODO
-//            ActivityMessenger.startActivity(this,)
+            ActivityMessenger.startActivity(this@WorkBenchFragment, DailyTaskCreateActivity::class)
         }
     }
 

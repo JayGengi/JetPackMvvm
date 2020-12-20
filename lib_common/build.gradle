@@ -55,9 +55,9 @@ dependencies {
 
     def dependencies = rootProject.ext.dependencies
     // Room
-    implementation dependencies.room
+    api dependencies.room
     kapt dependencies.roomCompiler
-    implementation dependencies.roomKtx
+    api dependencies.roomKtx
     //底部bottomBar
     api dependencies.BottomNavigationViewEx
     //androidx UI
@@ -105,4 +105,6 @@ dependencies {
     api dependencies.matisse
     //图片剪裁
     api dependencies.ucrop
+    //socket.io
+    api dependencies.socket
 }

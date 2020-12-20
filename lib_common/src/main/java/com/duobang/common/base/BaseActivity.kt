@@ -12,6 +12,7 @@ import com.duobang.common.ext.dismissLoadingExt
 import com.duobang.common.ext.showLoadingExt
 import com.duobang.jetpackmvvm.ext.getAppViewModel
 import com.duobang.common.event.AppViewModel
+import com.duobang.common.event.EventViewModel
 import me.jessyan.autosize.AutoSizeCompat
 
 /**
@@ -25,6 +26,9 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmDb
 
     //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
     val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
+
+    //Application全局的ViewModel，用于发送全局通知操作
+    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
 
     abstract override fun layoutId(): Int
 

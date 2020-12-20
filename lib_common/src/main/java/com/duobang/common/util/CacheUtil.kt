@@ -76,6 +76,21 @@ object CacheUtil {
     }
 
     /**
+     * SocketTimeStamp
+     */
+    fun getSocketTimeStamp(): String {
+        val kv = MMKV.mmkvWithID("app")
+        return kv.decodeString("socketTimeStamp", "")
+    }
+
+    /**
+     * SocketTimeStamp
+     */
+    fun setSocketTimeStamp(socketTimeStamp: String): String {
+        val kv = MMKV.mmkvWithID("app")
+        return kv.encode("socketTimeStamp", socketTimeStamp).toString()
+    }
+    /**
      * 是否是第一次登陆
      */
     fun isFirst(): Boolean {

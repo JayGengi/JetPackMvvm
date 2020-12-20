@@ -79,6 +79,8 @@ ext {
             matisse                :'com.zhihu.android:matisse:0.5.3-beta3',
             // 图片剪裁
             ucrop                  :'com.github.yalantis:ucrop:2.2.2',
+            // Socket.io
+            socket                 :'io.socket:socket.io-client:0.8.3',
     ]
 
 }
