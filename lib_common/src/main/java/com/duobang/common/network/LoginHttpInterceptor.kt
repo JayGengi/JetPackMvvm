@@ -1,6 +1,9 @@
 package com.duobang.common.network
 
 import com.blankj.utilcode.util.LogUtils
+import com.duobang.common.base.appContext
+import com.duobang.common.data.constant.RouterConstant
+import com.duobang.common.ext.routerJump
 import com.duobang.common.util.CacheUtil
 import com.duobang.jetpackmvvm.ext.util.logd
 import okhttp3.Interceptor
@@ -30,9 +33,9 @@ class LoginHttpInterceptor : Interceptor {
             }
         } else {
             if (401 == response.code() || 403 == response.code()) {
+                //重新登录
                 CacheUtil.setToken("")
-                //去登陆 TODO
-//                goLogin()
+                appContext.routerJump(RouterConstant.ACT.LOGIN)
             } else {
                 response.header("cookie", "sessionId=$token")
             }

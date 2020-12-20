@@ -83,7 +83,7 @@ class DailyTaskCreateAdapter(list: List<DailyTask>?) :
             stateSign.visibility = View.VISIBLE
             when (item.state) {
                 1 ->stateSign.setImageResource(R.drawable.ic_ok_orange)
-                2 -> stateSign.setImageResource(R.drawable.ic_error)
+                2 -> stateSign.setImageResource(R.drawable.ic_err)
                 else -> stateSign.setImageResource(R.drawable.ic_going)
             }
         }

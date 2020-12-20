@@ -107,4 +107,6 @@ dependencies {
     api dependencies.ucrop
     //socket.io
     api dependencies.socket
+    //tbssdk
+    api dependencies.tbssdk
 }

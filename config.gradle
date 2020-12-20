@@ -81,6 +81,8 @@ ext {
             ucrop                  :'com.github.yalantis:ucrop:2.2.2',
             // Socket.io
             socket                 :'io.socket:socket.io-client:0.8.3',
+            //tbssdk
+            tbssdk                 : 'com.tencent.tbs.tbssdk:sdk:43939',
     ]
 
 }
