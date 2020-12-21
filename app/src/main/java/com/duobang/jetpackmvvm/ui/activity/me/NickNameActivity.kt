@@ -30,7 +30,6 @@ class NickNameActivity : BaseActivity<NickNameViewModel, ActivityNickNameBinding
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.vm = mViewModel
         mDatabind.click = ProxyClick()
-        BarUtils.setStatusBarLightMode(this, true)
         toolbar.run {
             initClose("昵称修改") {
                 finish()

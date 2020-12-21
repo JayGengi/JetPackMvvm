@@ -47,7 +47,7 @@ dependencies {
 
     def dependencies = rootProject.ext.dependencies
     implementation project(path: ':lib_common')
-
+    implementation project(path: ':libraries:image_preview')
     kapt dependencies.arouterCompiler
     kapt dependencies.roomCompiler
 }

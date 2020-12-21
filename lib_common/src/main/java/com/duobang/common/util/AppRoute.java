@@ -1,11 +1,14 @@
 package com.duobang.common.util;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.duobang.common.data.constant.IWorkbenchConstant;
+import com.duobang.common.data.constant.RouterConstant;
 
 /**
  * 路由
@@ -38,5 +41,25 @@ public class AppRoute {
     public static void route(Context context, String path) {
         ARouter.getInstance().build(path).navigation(context);
     }
+
+    public static void openX5WebView(String url,String fileName,String type){
+        ARouter.getInstance().build(RouterConstant.ACT.TBS_READER)
+                .withString("url", url)
+                .withString("file_name", fileName)
+                .withString("type", type)
+                .navigation();
+    }
+
+    /**
+     * 打开单选用户页
+     */
+    public static void openChooseUserView(Activity activity, int requestCode, boolean isSingle, String json) {
+        ARouter.getInstance().build(RouterConstant.ACT.CHOOSE_USER)
+                .withBoolean(IWorkbenchConstant.USER.IS_SINGLE, isSingle)
+                .withString(IWorkbenchConstant.USER.CHOOSE_LIST, json)
+                .withInt(IWorkbenchConstant.USER.REQUSET_CODE, requestCode)
+                .navigation(activity, requestCode);
+    }
+
 
 }

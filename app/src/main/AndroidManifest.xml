@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.duobang.jetpackmvvm">
 
-    <application>
+    <application
+
+        >
 
         <activity
             android:name=".ui.activity.SplashActivity"

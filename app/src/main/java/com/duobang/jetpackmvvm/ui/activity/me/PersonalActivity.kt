@@ -51,7 +51,6 @@ class PersonalActivity : BaseActivity<PersonalViewModel, ActivityPersonalBinding
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.vm = mViewModel
         mDatabind.click = ProxyClick()
-        BarUtils.setStatusBarLightMode(this, true)
         toolbar.initClose("个人信息") { finish() }
 
         appViewModel.userinfo.value!!.apply {

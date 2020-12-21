@@ -9,7 +9,7 @@ interface RouterConstant {
              */
             private const val MODULE_HOME = "/act_home"
             const val MAIN = "$MODULE_HOME/Main"
-
+            const val TBS_READER = "$MODULE_HOME/tbsReader"
             /**
              * 工程
              */
@@ -19,6 +19,7 @@ interface RouterConstant {
              * 工作台
              */
             private const val MODULE_WORKBENCH = "/act_workbench"
+            const val CHOOSE_USER = "$MODULE_WORKBENCH/ChooseUser"
 
             /**
              * 登录

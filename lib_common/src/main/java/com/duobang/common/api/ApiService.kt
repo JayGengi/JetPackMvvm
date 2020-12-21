@@ -186,4 +186,88 @@ interface ApiService {
     @POST("api/daily-task/v1/daily-task/org/{orgId}/")
     suspend fun uploadDailyTask(@Path("orgId") orgId: String,  @Body body: RequestBody
     ): ApiResponse<List<DailyTask>>
+
+
+    /**----------------------------云盘begin----------------------------*/
+    /**
+     * 检查云盘管理员权限
+     */
+    @GET("/api/file/disk/org/{orgId}/admin/permission")
+    suspend fun diskPermission(@Path("orgId") orgId: String): ApiResponse<Boolean>
+
+    /**
+     * 创建文件夹,没有pid属性(或者不赋值)则为顶级目录，只能由云盘管理权限创建，子文件夹必须要pid
+     */
+    @POST("/api/file/disk/org/{orgId}/dir")
+    suspend fun diskDir(@Path("orgId") orgId: String, @Body map: Map<String, @JvmSuppressWildcards Any>): ApiResponse<Any>
+
+    /**
+     * 设置顶级的文件夹的属性, 私密性, 管理员, 成员
+     */
+    @PUT("/api/file/disk/org/{orgId}/dirs/options")
+    suspend fun diskManager(@Path("orgId") orgId: String, @Body map: Map<String, @JvmSuppressWildcards Any>): ApiResponse<Any>
+
+    /**
+     * 云盘文件上传，必须有文件夹id
+     */
+    @POST("/api/file/disk/dir/{id}/file")
+    suspend fun diskFileUp(@Path("id") id: String, @Body body: RequestBody): ApiResponse<Any>
+
+    /**
+     * 获取某个文件夹下的文件(文件夹列表)
+     */
+    @GET("/api/file/disk/org/{orgId}/list")
+    suspend fun diskList(@Path("orgId") orgId: String, @Query("pid") pid: String): ApiResponse<List<DiskBean>>
+
+    /**
+     * 获取文件在oss上面的url，用于web前端下载或预览文件
+     */
+    @GET("/api/file/disk/{fileId}/url")
+    fun diskFileUrlAdapter(@Path("fileId") fileId: String): ApiResponse<String>
+
+    /**
+     * 获取文件在oss上面的url，用于web前端下载或预览文件
+     */
+    @GET("/api/file/disk/{fileId}/url")
+    suspend fun diskFileUrl(@Path("fileId") fileId: String): ApiResponse<String>
+    /**
+     * 删除多个文件或者文件夹，包括服务器端和oss端
+     */
+    @HTTP(method = "DELETE", path = "/api/file/disk/org/{orgId}", hasBody = true)
+    suspend fun diskFileDel(@Path("orgId") orgId: String?, @Body map: Map<String, @JvmSuppressWildcards Any>
+    ): ApiResponse<Any>
+
+    /**
+     * 获取某个文件夹下的子文件夹列表(供文件移动选择目录使用)
+     */
+    @GET("/api/file/disk/org/{orgId}/current/{currentId}/dir/list")
+    suspend fun diskMoveList(
+        @Path("orgId") orgId: String,
+        @Path("currentId") currentId: String,
+        @Query("pid") pid: String
+    ): ApiResponse<List<DiskBean>>
+
+    /**
+     * 文件或文件夹移动
+     */
+    @PUT("/api/file/disk/org/{orgId}/target/dir/{dirId}")
+    suspend fun diskFileMove(
+        @Path("orgId") orgId: String,
+        @Path("dirId") dirId: String,
+        @Body map: Map<String, @JvmSuppressWildcards Any>
+    ): ApiResponse<Any>
+
+    /**
+     * 目录重命名
+     */
+    @PUT("/api/file/disk/item/{id}/rename")
+    suspend fun diskFileReName(@Path("id") id: String, @Body map: Map<String, @JvmSuppressWildcards Any>): ApiResponse<Any>
+
+    /**
+     * 获取当前文件夹的面包屑导航路径
+     */
+    @GET("/api/file/disk/dir/{dirId}/path/breadcrumbs")
+    suspend fun diskBreadcrumbs(@Path("dirId") dirId: String): ApiResponse<List<DiskBean>>
+
+    /**----------------------------云盘end----------------------------*/
 }
