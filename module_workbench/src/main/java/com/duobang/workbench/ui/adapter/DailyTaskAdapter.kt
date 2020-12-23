@@ -83,5 +83,4 @@ class DailyTaskAdapter(list: List<DailyTaskWrapper>?) :
     interface OnInnerItemDelayClickListener {
         fun OnItemDelayClick(v: View?, task: DailyTask)
     }
-
 }

@@ -5,26 +5,25 @@ import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
-import androidx.lifecycle.MutableLiveData
 import com.chad.library.adapter.base.BaseDelegateMultiAdapter
 import com.chad.library.adapter.base.delegate.BaseMultiTypeDelegate
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.duobang.common.data.bean.DiskBean
 import com.duobang.common.data.constant.IConstant
-import com.duobang.common.network.BaseResponse
 import com.duobang.common.network.apiService
 import com.duobang.common.util.AppImageLoader
 import com.duobang.common.util.CacheUtil
 import com.duobang.common.util.DateUtil
 import com.duobang.common.util.FileFormUtils
-import com.duobang.jetpackmvvm.ext.request
-import com.duobang.jetpackmvvm.state.ResultState
+import com.duobang.common.weight.roundImage.RoundedImageView
 import com.duobang.workbench.R
-import com.duobang.workbench.ui.activity.DiskActivity
-import com.google.android.material.imageview.ShapeableImageView
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class DiskMultiAdapter : BaseDelegateMultiAdapter<DiskBean, BaseViewHolder>() {
+class DiskMultiAdapter() :
+    BaseDelegateMultiAdapter<DiskBean, BaseViewHolder>() {
     private var showEdit = false
 
     //    //用于二级目录 操作 使用（owner操作属于自己 筛离）
@@ -35,6 +34,13 @@ class DiskMultiAdapter : BaseDelegateMultiAdapter<DiskBean, BaseViewHolder>() {
     //    }
     private val userId: String = CacheUtil.getUser()!!.id
 
+
+    private var imgMap : MutableMap<String,String> = HashMap()
+
+
+    public fun getImgMap(): MutableMap<String, String> {
+        return imgMap
+    }
     @SuppressLint("SetTextI18n")
     override fun convert(holder: BaseViewHolder, item: DiskBean) {
         val checkView = holder.getView<ImageView>(R.id.check_view)
@@ -71,14 +77,14 @@ class DiskMultiAdapter : BaseDelegateMultiAdapter<DiskBean, BaseViewHolder>() {
         }
         when (holder.itemViewType) {
             DiskBean.FOLDER, DiskBean.IMG -> {
-                val img: ShapeableImageView = holder.getView(R.id.img_photo_item)
+                val img: RoundedImageView = holder.getView(R.id.img_photo_item)
                 if (item.subType == DiskBean.FOLDER) {
                     holder.setImageResource(R.id.img_photo_item, R.drawable.ic_folder)
                 } else {
                     try {
                         //缓存图片集合 map静态变量跟着生命周期销毁
                         val cacheImage: String? =
-                            DiskActivity().imgMap?.get(DateUtil.getNowHour().toString() + item.id)
+                            imgMap[DateUtil.getNowHour().toString() + item.id]
                         if (null != cacheImage && "" != cacheImage) {
                             AppImageLoader.showImageView(context, R.color.glass, cacheImage, img)
                         } else {
@@ -143,23 +149,28 @@ class DiskMultiAdapter : BaseDelegateMultiAdapter<DiskBean, BaseViewHolder>() {
 
     /**
      * 获取文件在oss上面的url
-     *
+     * 在adapter粗暴使用协程同步response
      * @param fileId
      * @return
      * @throws Exception
      */
     @Throws(Exception::class)
-    private fun getRedirectUrl(iv: ShapeableImageView, fileId: String?) {
-
-        val diskFileUrl = apiService.diskFileUrlAdapter(fileId!!)
-        if(diskFileUrl.isSucces()){
-            val files = diskFileUrl.data
-            DiskActivity().imgMap?.put(DateUtil.getNowHour().toString() + fileId, files)
-            //缓存路径
-            AppImageLoader.showImageView(context, R.color.glass, files, iv)
+    private fun getRedirectUrl(iv: RoundedImageView, fileId: String) {
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                val responseJson = withContext(Dispatchers.IO){
+                    val fileRes = apiService.diskFileUrlAdapter(fileId)
+                    fileRes
+                }
+                val files = responseJson.data
+                imgMap[DateUtil.getNowHour().toString() + fileId] = files
+                //缓存路径
+                AppImageLoader.showImageView(context, R.color.glass, files, iv)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally { }
         }
     }
-
 
     init {
         // 实现自己的代理类：

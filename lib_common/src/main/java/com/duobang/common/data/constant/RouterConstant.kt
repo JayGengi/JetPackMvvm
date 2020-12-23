@@ -9,7 +9,7 @@ interface RouterConstant {
              */
             private const val MODULE_HOME = "/act_home"
             const val MAIN = "$MODULE_HOME/Main"
-            const val TBS_READER = "$MODULE_HOME/tbsReader"
+            const val TBS_READER = "$MODULE_HOME/TbsReader"
             /**
              * 工程
              */

@@ -31,7 +31,7 @@ class DailyManageAdapter(list: List<DailySubmission>?) :
             val today: Long = DateUtil.parseDate(DateUtil.getCurrentDate()).time
             if (DateUtil.parseDate(date).time < today) {
                 state.setIconTintResource(R.color.red)
-                state.setIconResource(R.drawable.ic_err)
+                state.setIconResource(R.drawable.ic_error)
             } else {
                 state.setIconTintResource(R.color.orange)
                 state.setIconResource(R.drawable.ic_going)

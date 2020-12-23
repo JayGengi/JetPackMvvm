@@ -8,6 +8,7 @@
         <activity android:name=".ui.activity.DiskActivity"/>
         <activity android:name=".ui.activity.DiskFolderActivity"/>
         <activity android:name=".ui.activity.DiskConfigActivity"/>
+        <activity android:name=".ui.activity.ChooseUserActivity"/>
         <activity
             android:name=".ui.activity.TbsReaderActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />

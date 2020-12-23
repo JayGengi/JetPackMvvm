@@ -7,6 +7,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/daily_header_recycler"
+        android:paddingLeft="12dp"
+        android:paddingVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

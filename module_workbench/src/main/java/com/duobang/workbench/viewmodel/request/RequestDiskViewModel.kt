@@ -36,6 +36,7 @@ class RequestDiskViewModel : BaseViewModel() {
     var loadDiskFileUpResult = MutableLiveData<ResultState<Any>>()
 
     var loadDiskFileUrlResult = MutableLiveData<ResultState<String>>()
+
     //检查云盘管理员权限
     fun diskPermission() {
         request(

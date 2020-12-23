@@ -27,7 +27,8 @@
                 android:layout_height="wrap_content"
                 android:minWidth="0dp"
                 android:onClick="@{()->click.backDisk()}"
-                app:icon="@drawable/ic_google_back"
+                app:icon="@drawable/back"
+                app:iconSize="20dp"
                 app:iconTint="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

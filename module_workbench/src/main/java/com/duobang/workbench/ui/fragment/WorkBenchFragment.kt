@@ -114,7 +114,7 @@ class WorkBenchFragment : BaseFragment<BaseViewModel, FragmentWorkbenchBinding>(
             manage_daily_task.setIconResource(R.drawable.ic_manage)
             commit_daily_task.visibility = View.VISIBLE
         } else {
-            manage_daily_task.setIconResource(R.drawable.ic_err)
+            manage_daily_task.setIconResource(R.drawable.ic_error)
             commit_daily_task.visibility = View.GONE
         }
     }

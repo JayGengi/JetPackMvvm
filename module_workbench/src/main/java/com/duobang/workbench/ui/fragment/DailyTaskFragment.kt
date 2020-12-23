@@ -5,14 +5,12 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
 import com.duobang.common.base.BaseFragment
 import com.duobang.common.base.viewmodel.BaseViewModel
 import com.duobang.common.data.bean.DailyHeader
 import com.duobang.common.data.bean.DailyTask
 import com.duobang.common.data.bean.DailyTaskWrapper
-import com.duobang.common.data.bean.OrgGroup
 import com.duobang.common.ext.*
 import com.duobang.common.room.repository.PmsRepository
 import com.duobang.common.util.ActivityMessenger
@@ -23,10 +21,12 @@ import com.duobang.jetpackmvvm.ext.parseState
 import com.duobang.workbench.R
 import com.duobang.workbench.databinding.FragmentDailyManageBinding
 import com.duobang.workbench.ui.activity.DailyTaskCreateActivity
+import com.duobang.workbench.ui.activity.DiskActivity
 import com.duobang.workbench.ui.adapter.DailyHeaderAdapter
 import com.duobang.workbench.ui.adapter.DailyTaskAdapter
 import com.duobang.workbench.viewmodel.request.RequestDailyTaskViewModel
 import com.kingja.loadsir.core.LoadService
+import kotlinx.android.synthetic.main.header_daily_task.*
 import kotlinx.android.synthetic.main.include_workbench_list.*
 import kotlinx.android.synthetic.main.include_workbench_recyclerview.*
 
@@ -62,6 +62,7 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
             }
         }
         orgId = appViewModel.orginfo.value!!.homeOrgId!!
+        dailyTaskHeader()
         //初始化recyclerView
         recyclerView.init(LinearLayoutManager(context), mAdapter).initFloatBtn(floatbtn)
         //初始化 SwipeRefreshLayout
@@ -69,7 +70,7 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
             //触发刷新监听时请求数据
             requestDailyTaskViewModel.loadDailyTaskList(orgId, date)
         }
-        recyclerView.addHeaderView(dailyTaskHeader())
+//        recyclerView.addHeaderView(dailyTaskHeader())
         mAdapter.addChildClickViewIds(
             R.id.topping_daily_task_item,
             R.id.show_more_daily_task_item,
@@ -112,7 +113,7 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
     /**
      * 日事日毕头布局
      * */
-    private fun dailyTaskHeader(): View {
+    private fun dailyTaskHeader() {
         val list: ArrayList<DailyHeader> = ArrayList()
         list.add(DailyHeader("公告", R.drawable.ic_notice))
         list.add(DailyHeader("随笔记录", R.drawable.ic_note_fill))
@@ -122,19 +123,26 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
         list.add(DailyHeader("汇报", R.drawable.ic_report))
         list.add(DailyHeader("云盘", R.drawable.ic_disk))
         list.add(DailyHeader("例会", R.drawable.ic_meeting))
-        val view: View = layoutInflater.inflate(R.layout.header_daily_task, recyclerView, false)
-        val dailyHeaderRecycler: RecyclerView = view.findViewById(R.id.daily_header_recycler)
+//        val view: View = layoutInflater.inflate(R.layout.header_daily_task, recyclerView, false)
+//        val dailyHeaderRecycler: RecyclerView = view.findViewById(R.id.daily_header_recycler)
         //初始化recyclerView
-        dailyHeaderRecycler.layoutManager =
+        daily_header_recycler.layoutManager =
             DuobangLinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val dailyHeaderAdapter = DailyHeaderAdapter(list)
-        dailyHeaderRecycler.adapter = dailyHeaderAdapter
+        daily_header_recycler.adapter = dailyHeaderAdapter
         dailyHeaderAdapter.setNbOnItemClickListener { adapter, view, position ->
             when (position) {
-                0 -> showToast("1111")
+                0 -> {}
+                1 -> {}
+                2 -> {}
+                3 -> {}
+                4 -> {}
+                5 -> {}
+                6 -> ActivityMessenger.startActivity(this,DiskActivity::class)
+                7 -> {}
             }
         }
-        return view
+//        return view
     }
 
     override fun lazyLoadData() {
@@ -156,7 +164,6 @@ class DailyTaskFragment : BaseFragment<BaseViewModel, FragmentDailyManageBinding
             requestDailyTaskViewModel.loadDailyTaskList(orgId, date)
         }
     }
-
 
     /**
      * @作者　: JayGengi

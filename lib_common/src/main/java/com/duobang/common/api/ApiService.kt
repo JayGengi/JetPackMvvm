@@ -223,7 +223,7 @@ interface ApiService {
      * 获取文件在oss上面的url，用于web前端下载或预览文件
      */
     @GET("/api/file/disk/{fileId}/url")
-    fun diskFileUrlAdapter(@Path("fileId") fileId: String): ApiResponse<String>
+    suspend fun diskFileUrlAdapter(@Path("fileId") fileId: String): ApiResponse<String>
 
     /**
      * 获取文件在oss上面的url，用于web前端下载或预览文件

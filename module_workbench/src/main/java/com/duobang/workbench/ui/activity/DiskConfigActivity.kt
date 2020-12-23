@@ -77,8 +77,9 @@ class DiskConfigActivity : BaseActivity<BaseViewModel, ActivityDiskConfigBinding
         //创建者
         createOperator = PmsRepository(this).getUserById(diskInfo!!.userId)
         //管理员
-        operator = PmsRepository(this).getUserById(diskInfo!!.manager)
-
+        if(null != diskInfo!!.manager) {
+            operator = PmsRepository(this).getUserById(diskInfo!!.manager!!)
+        }
         //成员
         if (null != diskInfo!!.members && diskInfo!!.members.size > 0) {
             for (j in 0 until diskInfo!!.members.size) {
@@ -102,7 +103,10 @@ class DiskConfigActivity : BaseActivity<BaseViewModel, ActivityDiskConfigBinding
         allow_create_task.adapter = allowUserAdapter;
         allowUserAdapter.setNbOnItemClickListener { adapter, view, position ->
             val item = adapter.getItem(position) as User
-            val json = JsonUtil.toJson(allowUsers)
+            var json  = ""
+            if(allowUsers.size>0){
+                json = JsonUtil.toJson(allowUsers)
+            }
             openAllowView(json)
         }
 
@@ -177,8 +181,11 @@ class DiskConfigActivity : BaseActivity<BaseViewModel, ActivityDiskConfigBinding
 
         fun operatorView() {
             if (IPmsConstant.DISK.ROOT_FOLDER_DIR == userPermissions) {
-                val json = JsonUtil.toJson(operator)
-                openOperatorView(json);
+                var json = ""
+                if(null != operator){
+                    json = JsonUtil.toJson(operator)
+                }
+                openOperatorView(json)
             }
         }
 
@@ -191,8 +198,11 @@ class DiskConfigActivity : BaseActivity<BaseViewModel, ActivityDiskConfigBinding
 
         fun member() {
             if (IPmsConstant.DISK.MEMBER_FOLDER_DIR != userPermissions) {
-                val json = JsonUtil.toJson(allowUsers)
-                openAllowView(json);
+                var json  = ""
+                if(allowUsers.size>0){
+                    json = JsonUtil.toJson(allowUsers)
+                }
+                openAllowView(json)
             }
         }
     }

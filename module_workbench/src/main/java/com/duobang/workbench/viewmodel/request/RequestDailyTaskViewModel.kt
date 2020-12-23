@@ -16,11 +16,6 @@ class RequestDailyTaskViewModel : BaseViewModel() {
 
     var loadDailyTaskResult = MutableLiveData<ResultState<List<DailyTaskWrapper>>>()
 
-    var loadDelayTaskResult = MutableLiveData<ResultState<DailyTask>>()
-
-    var loadUploadDailyComment = MutableLiveData<ResultState<DailyTaskWrapper>>()
-
-    var loadDeleteDailyComment = MutableLiveData<ResultState<Any>>()
     //获取工作项列表
     fun loadDailyTaskList(ordId :String,date:String) {
         request(
@@ -29,6 +24,13 @@ class RequestDailyTaskViewModel : BaseViewModel() {
             false
         )
     }
+
+    var loadDelayTaskResult = MutableLiveData<ResultState<DailyTask>>()
+
+    var loadUploadDailyComment = MutableLiveData<ResultState<DailyTaskWrapper>>()
+
+    var loadDeleteDailyComment = MutableLiveData<ResultState<Any>>()
+
 
     //推迟之前未完成的事项到今天
     fun loadDelayTask(dailyTaskId :String) {

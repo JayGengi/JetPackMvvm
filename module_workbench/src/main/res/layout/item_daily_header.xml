@@ -6,7 +6,7 @@
     android:id="@+id/note_daily_task"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
     android:orientation="vertical">
 
     <ImageView
@@ -14,7 +14,7 @@
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:background="@drawable/shape_circle"
-        android:padding="1dp"
+        android:padding="4dp"
         android:scaleType="fitCenter"
         />
 
@@ -23,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="随笔记录"
         android:textColor="@color/black"
         android:textSize="10sp" />
 </LinearLayout>

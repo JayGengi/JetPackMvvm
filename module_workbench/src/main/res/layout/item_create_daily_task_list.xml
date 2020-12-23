@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/daily_task_state_background"
             android:button="@null"
-            android:drawableStart="@drawable/ic_err"
+            android:drawableStart="@drawable/ic_error"
             android:drawablePadding="6dp"
             android:padding="12dp"
             android:text="未完成"

@@ -1,5 +1,6 @@
 package com.duobang.workbench.ui.activity
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -16,17 +17,21 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import cc.shinichi.library.ImagePreview
 import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.duobang.common.base.BaseActivity
 import com.duobang.common.base.viewmodel.BaseViewModel
 import com.duobang.common.data.bean.DiskBean
 import com.duobang.common.data.constant.IPmsConstant
 import com.duobang.common.data.constant.REQUEST_CODE
+import com.duobang.common.ext.requestPermission
 import com.duobang.common.ext.showMessage
 import com.duobang.common.ext.showToast
 import com.duobang.common.util.*
+import com.duobang.common.util.permissions.PermissionResult
 import com.duobang.common.weight.bottomDialog.CommonDialog
 import com.duobang.common.weight.recyclerview.DuobangLinearLayoutManager
 import com.duobang.jetpackmvvm.ext.parseState
+import com.duobang.jetpackmvvm.ext.util.logd
 import com.duobang.workbench.R
 import com.duobang.workbench.databinding.ActivityDiskBinding
 import com.duobang.workbench.ui.adapter.DiskMenuAdapter
@@ -38,6 +43,7 @@ import com.duobang.workbench.viewmodel.request.RequestDiskViewModel
 import kotlinx.android.synthetic.main.activity_disk.*
 import java.io.File
 import java.util.*
+import kotlin.collections.HashMap
 
 /**
  * 1.云盘管理员 -->文件夹管理管 -->成员<br/>
@@ -54,7 +60,6 @@ import java.util.*
 class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
     DiskLabelDialogFragment.OnLabelItemClickListener {
 
-    var imgMap: HashMap<String, String>? = null
     private var edit = false
     private var pid: String = "" //子文件夹目录，当有value时代表在子级目录
 
@@ -64,14 +69,16 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
     private var userPermissions = 0
     private var userId = CacheUtil.getUser()!!.id
 
-    private var diskFileUrlItem : DiskBean? = null
+    private var diskFileUrlItem: DiskBean? = null
     private var diskFileUrlDown = false
+
     //用于下载拦截文件夹操作
     private var canDown = false
     private var canMoveOrDel = false
     private var canReName = false
     private var isResume = false
     private var dialog: DiskSearchDialog? = null
+
     //请求数据ViewModel
     private val requestDiskViewModel: RequestDiskViewModel by viewModels()
 
@@ -85,7 +92,6 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.click = ProxyClick()
 
-        imgMap = HashMap()
         recycler_menu.layoutManager =
             DuobangLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recycler_menu.adapter = menuAdapter
@@ -138,10 +144,12 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                         requestDiskViewModel.diskList(pid)
                     }
                     DiskBean.IMG -> {
-                        val cacheImage: String = imgMap?.get(DateUtil.getNowHour() + item.id)!!
+                        val cacheImage: String = mAdapter.getImgMap()[DateUtil.getNowHour() + item.id]!!
                         if ("" != cacheImage) {
                             ImagePreview.getInstance().setContext(this@DiskActivity)
                                 .setImage(cacheImage)
+                                // 是否启用下拉关闭。默认不启用
+                                .setEnableDragClose(true)
                                 .start()
                         } else {
                             diskFileUrlItem = item
@@ -150,9 +158,26 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                         }
                     }
                     DiskBean.FILE -> {
-                        diskFileUrlItem = item
-                        diskFileUrlDown = false
-                        requestDiskViewModel.diskFileUrl(diskFileUrlItem!!.id!!)
+                        requestPermission(
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        ).observe(this@DiskActivity, Observer {
+                            when (it) {
+                                is PermissionResult.Grant -> {
+                                    "申请权限成功".logd("permission")
+                                    diskFileUrlItem = item
+                                    diskFileUrlDown = false
+                                    requestDiskViewModel.diskFileUrl(diskFileUrlItem!!.id!!)
+                                }
+                                is PermissionResult.Deny -> {
+                                    it.permissions.forEach { per ->
+                                        "拒绝的权限:${per.permissionName} 是否可以重复申请：${per.isRetryEnable}".logd("permission")
+                                    }
+                                    ToastUtils.showShort("权限拒绝")
+                                }
+                            }
+                        })
+
                     }
                     else -> {
                     }
@@ -166,7 +191,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
     override fun createObserver() {
         requestDiskViewModel.run {
             //检查云盘管理员权限
-            loadDiskPermissionResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskPermissionResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     if (it) {
                         userPermissions = IPmsConstant.DISK.ROOT_FOLDER_DIR
@@ -180,7 +205,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //创建文件夹
-            loadDiskDirResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskDirResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     showToast("创建成功")
                     diskListRefresh()
@@ -189,7 +214,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //获取某个文件夹下的文件(文件夹列表)
-            loadDiskListResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskListResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     baseList.clear()
                     baseList.addAll(it)
@@ -199,7 +224,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //目录重命名
-            loadReNameResult.observe(this@DiskActivity, Observer {resultState ->
+            loadReNameResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     showToast("修改成功")
                     diskListRefresh()
@@ -208,7 +233,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //删除多个文件或者文件夹，包括服务器端和oss端
-            loadDiskFileDelResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskFileDelResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     showToast("删除成功")
                     diskListRefresh()
@@ -217,7 +242,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //获取当前文件夹的面包屑导航路径
-            loadDiskkBreadcrumbsResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskkBreadcrumbsResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     menuAdapter.setList(it)
                 }, {
@@ -225,7 +250,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //云盘文件上传，必须有文件夹id
-            loadDiskFileUpResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskFileUpResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     showToast("上传成功")
                     requestDiskViewModel.diskList(pid)
@@ -234,7 +259,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 })
             })
             //获取文件在oss上面的url，用于web前端下载或预览文件
-            loadDiskFileUrlResult.observe(this@DiskActivity, Observer {resultState ->
+            loadDiskFileUrlResult.observe(this@DiskActivity, Observer { resultState ->
                 parseState(resultState, {
                     this@DiskActivity.diskFileUrl(it)
                 }, {
@@ -243,6 +268,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
             })
         }
     }
+
     private fun diskFileUrl(filePath: String) {
         if (diskFileUrlDown) {
             downLoadFile(filePath, diskFileUrlItem!!.name)
@@ -251,10 +277,17 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 DiskBean.IMG -> {
                     ImagePreview.getInstance().setContext(this@DiskActivity)
                         .setImage(filePath)
+                        // 是否启用下拉关闭。默认不启用
+                        .setEnableDragClose(true)
                         .start()
                 }
-                DiskBean.FILE -> AppRoute.openX5WebView(
-                    filePath, diskFileUrlItem!!.name, DownloadUtil.getFileType(diskFileUrlItem!!.name))
+                DiskBean.FILE ->{
+                    ActivityMessenger.startActivity(this,TbsReaderActivity::class,
+                        "url" to filePath,
+                        "file_name" to diskFileUrlItem!!.name,
+                        "type" to DownloadUtil.getFileType(diskFileUrlItem!!.name))
+                }
+
                 else -> {
                 }
             }
@@ -287,12 +320,13 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 }
             })
     }
+
     /**
-      * @作者　: JayGengi
-      * @时间　: 2020/12/21 11:20
-      * @描述　: 创建修改接口刷新列表
+     * @作者　: JayGengi
+     * @时间　: 2020/12/21 11:20
+     * @描述　: 创建修改接口刷新列表
      */
-    private fun diskListRefresh(){
+    private fun diskListRefresh() {
         edit = false
         edit_disk.setIconResource(R.drawable.ic_edit)
         bottom_lay.visibility = View.GONE
@@ -479,8 +513,6 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
         ok.setOnClickListener {
             val names = name.text.toString().trim { it <= ' ' }
             if (names.isNotEmpty()) {
-                showToast("名称为必填项！！")
-            } else {
                 val map: MutableMap<String, Any> =
                     HashMap()
                 if (0 == index) {
@@ -491,14 +523,18 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                     map["name"] = names + rightType
                     requestDiskViewModel.diskFileReName(disk!!.id, map)
                 }
+            } else {
+                showToast("名称为必填项！！")
             }
             dialog.cancel()
         }
     }
+
     private class CommentTextWatcher(var button: TextView) : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
-        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int
+        override fun onTextChanged(
+            s: CharSequence, start: Int, before: Int, count: Int
         ) {
             if (s.isNotEmpty()) {
                 button.setTextColor(Color.parseColor("#298eff"))
@@ -510,6 +546,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
         override fun afterTextChanged(s: Editable) {}
 
     }
+
     private fun showDeleteDialog(itemIds: List<String>) {
         val map: MutableMap<String, Any> = HashMap()
         map["itemIds"] = itemIds
@@ -517,10 +554,11 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
             "您确定要删除所选中？删除后将无法找回",
             "删除",
             "确定",
-            {requestDiskViewModel.diskFileDel(map)},
+            { requestDiskViewModel.diskFileDel(map) },
             "取消"
         )
     }
+
     /**
      * @param index 0 新建文件夹  1 创建文件
      */
@@ -535,6 +573,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
             startActivityForResult(intent, REQUEST_CODE.CHOOSE_FILE)
         }
     }
+
     inner class ProxyClick {
         fun backDisk() {
             finish()
@@ -600,7 +639,11 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                     DateUtil.formatDate(chooseList[0].createAt)
                 )
                 bundle.putParcelable("disk_info", chooseList[0])
-                startActivity(Intent(this@DiskActivity, DiskConfigActivity::class.java).putExtras(bundle))
+                startActivity(
+                    Intent(this@DiskActivity, DiskConfigActivity::class.java).putExtras(
+                        bundle
+                    )
+                )
             }
         }
 
@@ -629,7 +672,11 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
                 val bundle = Bundle()
                 bundle.putString("current_id", pid)
                 bundle.putStringArrayList("item_ids", itemIds)
-                startActivity(Intent(this@DiskActivity, DiskFolderActivity::class.java).putExtras(bundle))
+                startActivity(
+                    Intent(this@DiskActivity, DiskFolderActivity::class.java).putExtras(
+                        bundle
+                    )
+                )
             }
         }
 
@@ -688,6 +735,7 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
             }
         }
     }
+
     override fun onResume() {
         super.onResume()
         if (isResume) {
@@ -696,15 +744,6 @@ class DiskActivity : BaseActivity<BaseViewModel, ActivityDiskBinding>(),
             edit_disk.setIconResource(R.drawable.ic_edit)
             bottom_lay.visibility = View.GONE
             requestDiskViewModel.diskList(pid)
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        //释放静态变量
-        if (null != imgMap && imgMap!!.isNotEmpty()) {
-            imgMap!!.clear()
-            imgMap = null
         }
     }
 }

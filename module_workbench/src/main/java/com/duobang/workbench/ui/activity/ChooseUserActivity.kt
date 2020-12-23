@@ -61,7 +61,7 @@ class ChooseUserActivity : BaseActivity<BaseViewModel, ActivityUserChooseBinding
             isSingle = bundle.getBoolean(IWorkbenchConstant.USER.IS_SINGLE, false)
             val json = bundle.getString(IWorkbenchConstant.USER.CHOOSE_LIST)
             requestCode = bundle.getInt(IWorkbenchConstant.USER.REQUSET_CODE, -1)
-            if (json != null) {
+            if (json != null && "" != json) {
                 if (isSingle) {
                     singleUser = JsonUtil.toObj(json, User::class.java)
                     selected.add(singleUser)

@@ -100,15 +100,17 @@ class TbsReaderActivity : BaseActivity<BaseViewModel, ActivityTbsReaderBinding>(
             officeSaveName,
             object : OnDownloadListener {
                 override fun onDownloadSuccess(file: File) {
-                    loadsir.showSuccess()
-                    runOnUiThread { showOffice(file) }
+                    runOnUiThread {
+                        loadsir.showSuccess()
+                        showOffice(file) }
                 }
 
                 override fun onDownloading(progress: Int) {}
                 override fun onDownloadFailed(e: Exception) {
                     //下载异常进行相关提示操作
-                    e.printStackTrace()
-                    loadsir.showError("下载附件失败")
+                    runOnUiThread {
+                        loadsir.showError("下载附件失败")
+                        e.printStackTrace() }
                 }
             })
     }

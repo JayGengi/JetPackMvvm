@@ -20,7 +20,7 @@ class DailyTaskInnerAdapter(list: List<DailyTask>?) :
         when (item.state) {
             0 -> sign.setImageResource(R.drawable.ic_going)
             1 -> sign.setImageResource(R.drawable.ic_ok_orange)
-            2 -> sign.setImageResource(R.drawable.ic_err)
+            2 -> sign.setImageResource(R.drawable.ic_error)
         }
         holder.setText(R.id.content_daily_task_inner_item,item.content)
 
