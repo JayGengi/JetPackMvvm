@@ -1,8 +1,0 @@
-include ':app',
-        ':lib_common',
-        ':lib_base',
-        ':libraries:image_preview',
-        ':module_login',
-        ':module_project',
-        ':module_workbench',
-        ':module_org'
