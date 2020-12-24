@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">多邦路云Demo</string>
+    <string name="bottom_name1">总览</string>
+    <string name="bottom_name2">工程</string>
+    <string name="bottom_name3">日事日毕</string>
+    <string name="bottom_name4">联系人</string>
+    <string name="bottom_name5">我</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="done">完成</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">You can only select one media file</item>
+        <item quantity="many">You can only select up to %1$d media files</item>
+    </plurals>
+</resources>

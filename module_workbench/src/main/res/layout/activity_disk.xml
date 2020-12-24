@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.duobang.workbench.ui.activity.DiskActivity.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_disk"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:onClick="@{()->click.backDisk()}"
+                app:icon="@drawable/back"
+                app:iconSize="20dp"
+                app:iconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/search_disk"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:visibility="invisible"
+                app:icon="@drawable/ic_search"
+                app:iconSize="18dp"
+                app:iconTint="@color/black"
+                android:onClick="@{()->click.searchDisk()}"
+                app:layout_constraintEnd_toStartOf="@id/edit_disk"
+                app:layout_constraintStart_toEndOf="@id/back_disk"
+                app:layout_constraintTop_toTopOf="@id/back_disk" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/edit_disk"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                app:icon="@drawable/ic_edit"
+                app:iconSize="16dp"
+                app:iconTint="@color/colorPrimary"
+                android:onClick="@{()->click.editDisk()}"
+                app:layout_constraintEnd_toStartOf="@id/add_disk"
+                app:layout_constraintStart_toEndOf="@id/search_disk"
+                app:layout_constraintTop_toTopOf="@id/search_disk" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_disk"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_menu_right"
+                app:iconSize="16dp"
+                app:iconTint="#999999"
+                android:onClick="@{()->click.addDisk()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/grey_background" />
+
+        <LinearLayout
+            android:id="@+id/middle_lay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/disk_menu_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="云盘"
+                    android:onClick="@{()->click.menuDisk()}"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_lay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F5F5F5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tv_config"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="配置"
+                    android:onClick="@{()->click.configDisk()}"
+                    android:textColor="@color/grey"
+                    android:textSize="11sp"
+                    app:drawableTint="@color/grey"
+                    app:drawableTopCompat="@drawable/ic_setting" />
+
+                <TextView
+                    android:id="@+id/tv_re_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="重命名"
+                    android:onClick="@{()->click.renameDisk()}"
+                    android:textColor="@color/grey"
+                    android:textSize="11sp"
+                    app:drawableTint="@color/grey"
+                    app:drawableTopCompat="@drawable/ic_disk_rename" />
+
+                <TextView
+                    android:id="@+id/tv_move"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="移动"
+                    android:textColor="@color/grey"
+                    android:textSize="11sp"
+                    android:visibility="gone"
+                    android:onClick="@{()->click.moveDisk()}"
+                    app:drawableTint="@color/grey"
+                    app:drawableTopCompat="@drawable/ic_disk_move" />
+
+                <TextView
+                    android:id="@+id/tv_down"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="下载"
+                    android:textColor="@color/grey"
+                    android:textSize="11sp"
+                    android:onClick="@{()->click.downDisk()}"
+                    android:visibility="gone"
+                    app:drawableTint="@color/grey"
+                    app:drawableTopCompat="@drawable/ic_download" />
+
+                <TextView
+                    android:id="@+id/tv_del"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textColor="@color/grey"
+                    android:textSize="11sp"
+                    android:onClick="@{()->click.delDisk()}"
+                    app:drawableTint="@color/grey"
+                    app:drawableTopCompat="@drawable/ic_delete" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

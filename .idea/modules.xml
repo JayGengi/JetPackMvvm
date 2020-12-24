@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zhongli-android.iml" filepath="$PROJECT_DIR$/.idea/modules/zhongli-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/zhongli-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/zhongli-android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_base/zhongli-android.lib_base.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_base/zhongli-android.lib_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_common/zhongli-android.lib_common.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_common/zhongli-android.lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/zhongli-android.libraries.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/zhongli-android.libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libraries/image_preview/zhongli-android.libraries.image_preview.iml" filepath="$PROJECT_DIR$/.idea/modules/libraries/image_preview/zhongli-android.libraries.image_preview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_login/zhongli-android.module_login.iml" filepath="$PROJECT_DIR$/.idea/modules/module_login/zhongli-android.module_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_org/zhongli-android.module_org.iml" filepath="$PROJECT_DIR$/.idea/modules/module_org/zhongli-android.module_org.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_project/zhongli-android.module_project.iml" filepath="$PROJECT_DIR$/.idea/modules/module_project/zhongli-android.module_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_workbench/zhongli-android.module_workbench.iml" filepath="$PROJECT_DIR$/.idea/modules/module_workbench/zhongli-android.module_workbench.iml" />
+    </modules>
+  </component>
+</project>

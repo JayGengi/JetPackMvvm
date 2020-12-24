@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_daily_submission_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.duobang.common.weight.customview.AvatarView
+            android:id="@+id/avatar_daily_submission_item"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_daily_submission_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/avatar_daily_submission_item"
+            app:layout_constraintStart_toEndOf="@id/avatar_daily_submission_item"
+            app:layout_constraintTop_toTopOf="@id/avatar_daily_submission_item" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/state_daily_submission_item"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:icon="@drawable/ic_ok"
+            app:iconSize="16dp"
+            android:minWidth="0dp"
+            app:iconTint="@color/green"
+            app:layout_constraintBottom_toBottomOf="@id/avatar_daily_submission_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar_daily_submission_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/grey_background" />
+</FrameLayout>

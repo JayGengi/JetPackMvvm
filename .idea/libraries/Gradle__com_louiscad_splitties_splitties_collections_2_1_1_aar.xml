@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.louiscad.splitties:splitties-collections:2.1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03d9edc4724ac4a5a7f1fb2a3fb4128b/jetified-splitties-collections-2.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03d9edc4724ac4a5a7f1fb2a3fb4128b/jetified-splitties-collections-2.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/03d9edc4724ac4a5a7f1fb2a3fb4128b/jetified-splitties-collections-2.1.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.louiscad.splitties/splitties-collections/2.1.1/8033d02d62817caad50c1eda543464d06d47b678/splitties-collections-2.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

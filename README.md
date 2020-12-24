@@ -1,11 +1,10 @@
 
-# JetPackMvvm
-- **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、Navigation组件**
+# zly
+- **基于MVVM模式集成谷歌官方推荐的JetPack组件库：LiveData、ViewModel、Lifecycle、等组件**
 - **使用kotlin语言，添加大量拓展函数，简化代码**
 - **加入Retrofit网络请求,协程，帮你简化各种操作，让你快速请求网络**  
 
- 利用Navigation组件以单Activity+Fragment架构编写，开发效率与舒适度要提高了不少
- 
+
 
 ## 1.如何集成
 
@@ -227,7 +226,6 @@ class NetworkApi : BaseNetworkApi() {
     "errorMsg": ""
 }
 ```
-该示例格式是 [玩Android Api](https://www.wanandroid.com/blog/show/2)返回的数据格式，如果errorCode等于0 请求成功，否则请求失败
 作为开发者的角度来说，我们主要是想得到脱壳数据-data，且不想每次都判断errorCode==0请求是否成功或失败
 这时我们可以在服务器返回数据基类中继承BaseResponse，实现相关方法：
 
@@ -399,9 +397,8 @@ private val mainViewModel by lazy { getAppViewModel<MainViewModel>()}
 ```
 ## 6.写了一些常用的拓展函数
 ```
- 算了不写了，这个不重要，想具体看的话可以在
- me.hgj.jetpackmvvm.ext.util
- me.hgj.jetpackmvvm.ext.view
- 的包中看，反正你也可以自己写，按照自己的喜好与需求来
+ 在
+ **.**.**.ext.util
+ **.**.**.ext.view
 ```
 
